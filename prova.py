@@ -13,4 +13,3 @@ plt.figure(figsize=(10, 6))
 nx.draw(G, with_labels=False, node_size=50)
 plt.title("Barabasi-Albert Graph")
 plt.show()
-
