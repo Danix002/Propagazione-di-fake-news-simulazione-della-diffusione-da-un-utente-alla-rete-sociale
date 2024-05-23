@@ -1,15 +1,18 @@
 import networkx as nx
-import matplotlib.pyplot as plt
 
-# Definire i parametri del modello
-n = 100  # Numero totale di nodi
-m = 2    # Numero di archi da aggiungere ad ogni nuovo nodo
+# Leggi il file edgelist e crea un grafo NetworkX
+G = nx.read_weighted_edgelist("higgs-retweet_network_copy.edgelist")
 
-# Generare la rete con il modello di Barabasi-Albert
-G = nx.barabasi_albert_graph(n, m)
+# Salva il grafo in formato GraphML
+# nx.write_graphml(G, "higgs-retweet_network_copy.graphml")
 
-# Disegnare il grafo
-plt.figure(figsize=(10, 6))
-nx.draw(G, with_labels=False, node_size=50)
-plt.title("Barabasi-Albert Graph")
-plt.show()
+connected_components = nx.connected_components(G)
+
+# Trova la giant component
+giant_component = max(connected_components, key=len)
+
+# Crea un sottografo contenente solo la giant component
+giant_component_subgraph = G.subgraph(giant_component)
+
+# Ora puoi fare quello che vuoi con la giant component, ad esempio salvarla in un nuovo file
+nx.write_graphml(giant_component_subgraph, "higgs-retweet_network_giant_component.graphml")
