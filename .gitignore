@@ -154,3 +154,5 @@ cython_debug/
 higgs-retweet_network_copy.edgelist
 higgs-retweet_network_giant_component.graphml
 higgs-retweet_network_copy.graphml
+Barabasi-Albert-Graph.graphml
+diffusion_SIR.png
