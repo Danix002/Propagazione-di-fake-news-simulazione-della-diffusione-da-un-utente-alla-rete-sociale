@@ -1,5 +1,7 @@
 TO DO:
-- fix problem with class "stochastic_attribute_model"
-- decide on the uniform distribution
+- check "prova.py"
+
+- check rank model on gephi
+- decide on the uniform distribution (probability)
 - decide layout gephi
 - clean code
