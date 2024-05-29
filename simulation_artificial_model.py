@@ -9,6 +9,26 @@ import random
 import math
 import ndlib.models.ModelConfig as mc
 import ndlib.models.epidemics as ep
+import numpy as np
+
+
+def rank_model_graph(n, m):
+    G = nx.complete_graph(m)
+    
+    for new_node in range(m, n):
+        degrees = np.array([G.degree(node) for node in G.nodes()])
+        ranks = np.argsort(degrees)
+        
+        rank_probabilities = (ranks + 1) / np.sum(ranks + 1)
+        
+        existing_nodes = list(G.nodes())
+        chosen_nodes = np.random.choice(existing_nodes, m, replace=False, p=rank_probabilities)
+        
+        for node in chosen_nodes:
+            G.add_edge(new_node, node)
+            
+    return G
+
 
 # Funzione di probabilità di infezione personalizzata usando una sigmoide
 def custom_infection_probability(node, graph):
@@ -20,8 +40,43 @@ def custom_infection_probability(node, graph):
 n = 2000 # Numero totale di nodi
 m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
 
-# Definizione del grafo
-g = nx.barabasi_albert_graph(n, m)
+
+
+# code for albert barabasi extension, rank model
+g = rank_model_graph(n, m)
+
+
+
+# Estrazione dei dati statistici 
+"""
+#proprietà strtutturali
+degree = nx.degree(g)
+num_nodes = g.number_of_nodes()
+num_edges = g.number_of_edges()
+average_degree = sum(dict(degree).values()) / num_nodes
+degree = nx.degree(g)
+num_nodes = g.number_of_nodes()
+num_edges = g.number_of_edges()
+average_degree = sum(dict(degree).values()) / num_nodes
+average_shortest_path = nx.average_shortest_path_length(g)
+connectivity = nx.node_connectivity(g)
+diametro = nx.diameter(g)
+
+#coefficiente di clustering della rete per capire la chiusura di triangoli
+average_clustering = nx.average_clustering(g)
+#find  all the hubs of the network
+hubs = [node for node in g.nodes() if g.degree(node) > 2]
+#number of hubs
+num_hubs = len(hubs)
+
+degree_centrality = nx.degree_centrality(g)
+closeness_centrality = nx.closeness_centrality(g)
+betweenness_centrality = nx.betweenness_centrality(g)
+eigenvector_centrality = nx.eigenvector_centrality(g)
+"""
+
+
+# Plotting degli stati e dati statistici
 
 # Aggiunta di attributi ai nodi
 for node in g.nodes():
@@ -42,7 +97,7 @@ model.add_status("Recovered")
 
 config = mc.Configuration()
 config.add_model_parameter('fraction_infected', 0.2)
-print(config.get_model_parameters())
+
 
 
 # Definizione delle regole di transizione usando compartimenti
@@ -87,8 +142,6 @@ for node, color in zip(g.nodes(), colors):
 #viz.plot("diffusion_SIR.png")
 nx.write_graphml(g, "Barabasi-Albert-Graph.graphml")
 
-# Estrazione dei dati statistici
 
-# Plotting degli stati e dati statistici
 
 # Debunking (classificazione del punto di partenza)
