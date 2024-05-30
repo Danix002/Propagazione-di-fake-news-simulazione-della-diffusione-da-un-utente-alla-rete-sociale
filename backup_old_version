@@ -13,9 +13,6 @@ import ndlib.models.epidemics as ep
 import ndlib.models.compartments.NodeNumericalAttribute as na
 import numpy as np
 
-
-
-
 def rank_model_graph(n, m):
     G = nx.complete_graph(m)
     for new_node in range(m, n):
@@ -73,7 +70,6 @@ betweenness_centrality = nx.betweenness_centrality(g)
 eigenvector_centrality = nx.eigenvector_centrality(g)
 """
 
-
 # Plotting degli stati e dati statistici
 
 # Aggiunta di attributi ai nodi
@@ -130,13 +126,5 @@ for i in range(0, len(iterations)):
 for node, color in zip(g.nodes(), colors):
     g.nodes[node]['color'] = color
 
-
-
 # Show simulation
-#viz = DiffusionTrend(model, trends)
-#viz.plot("diffusion_SIR.png")
 nx.write_graphml(g, "Barabasi-Albert-Graph.graphml")
-
-
-
-# Debunking (classificazione del punto di partenza)
