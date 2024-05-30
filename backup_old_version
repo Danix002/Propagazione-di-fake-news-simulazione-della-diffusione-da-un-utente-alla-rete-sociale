@@ -1,3 +1,4 @@
+
 import matplotlib
 matplotlib.use('Qt5Agg')
 import networkx as nx
@@ -11,6 +12,8 @@ import ndlib.models.ModelConfig as mc
 import ndlib.models.epidemics as ep
 import ndlib.models.compartments.NodeNumericalAttribute as na
 import numpy as np
+
+
 
 
 def rank_model_graph(n, m):
@@ -29,38 +32,12 @@ def rank_model_graph(n, m):
             
     return G
 
-# Funzione per eseguire un'iterazione personalizzata
-def custom_iteration(model, graph, current_iteration):
-    actual_status = model.status.copy()
-    new_status = actual_status.copy()
-    count_new_infected = 0
-    for node in graph.nodes():
-        if actual_status[node] == 1:  # Nodo infetto
-            for neighbor in graph.neighbors(node):
-                if actual_status[neighbor] == 0:  # Nodo suscettibile
-                    infection_risk =  custom_infection_probability(node, graph)
-                    if random.random() < infection_risk:
-                        new_status[neighbor] = 1  # Diventa infetto
-                        count_new_infected = count_new_infected + 1
-    model.status = new_status
-    current_iteration_results = model.iteration_bunch(1)[0]
-    current_iteration_results["status_delta"][0] = count_new_infected
-    return current_iteration_results
-
-def custom_iteration_bunch(model, g, num_iterations): 
-    # Esecuzione della simulazione personalizzata
-    iterations = []
-    for i in range(num_iterations):
-        iteration_status = custom_iteration(model, g, current_iteration=i)
-        iterations.append(iteration_status)
-    return iterations
-
 # Funzione di probabilità di infezione personalizzata usando una sigmoide
 def custom_infection_probability(node, graph):
     # Esempio di calcolo usando una sigmoide degli attributi del nodo
-    #attribute = graph.nodes[node]['percentage_of_knowledge']  # Usa uno degli attributi
-    #sigmoid = 1 / (1 + math.exp(-attribute))
-    return random.uniform(0.01, 0.1)  # Probabilità casuale
+    attribute = graph.nodes[node]['percentage_of_knowledge']  # Usa uno degli attributi
+    sigmoid = 1 / (1 + math.exp(-attribute))
+    return sigmoid
 
 n = 2000 # Numero totale di nodi
 m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
@@ -118,30 +95,29 @@ model.add_status("Recovered")
 config = mc.Configuration()
 config.add_model_parameter('fraction_infected', 0.2)
 
-
 # Definizione delle regole di transizione usando compartimenti
-c1 = cpm.NodeStochastic( 0, triggering_status = "Infected")
+c1 = cpm.NodeStochastic(0.0, triggering_status = "Infected")
 model.add_rule("Susceptible", "Infected", c1)
 
-c2 = cpm.NodeThreshold( 0, triggering_status = "Infected")
+c2 = cpm.NodeThreshold(0.0, triggering_status = "Recovered")
 model.add_rule("Infected", "Recovered", c2)
 
 # Imposto una probabilità personalizzata per ogni nodo
 for i in g.nodes():
     beta = custom_infection_probability(i, g)
     config.add_node_configuration("probability", i, beta)
-    config.add_node_configuration("threshold", i, 0.5)
+    config.add_node_configuration("threshold", i, 0.0)
 
 model.set_initial_status(config)
 
 # Esecuzione della simulazione
-iterations = custom_iteration_bunch(model, g, 3)
+iterations = model.iteration_bunch(20)
 print(iterations)
 
 # Colori dei nodi in base al loro stato
 colors = ["blue"] * len(g.nodes)
 for i in range(0, len(iterations)):
-    node_statuses = iterations[i]["status"]
+    node_statuses = iterations[i]['status']
     for key in node_statuses.keys():
         if node_statuses[key] == 1:  # Stato infetto
             colors[key] = 'red'
