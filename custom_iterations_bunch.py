@@ -2,7 +2,7 @@ import random
 import math
 
 # Funzione per eseguire un'iterazione personalizzata
-def custom_iteration(model, graph, current_iteration):
+def _custom_iteration(model, graph, current_iteration):
     actual_status = model.status.copy()
     new_status = actual_status.copy()
     count_new_infected = 0
@@ -29,7 +29,7 @@ def custom_iteration_bunch(model, g, num_iterations):
     # Esecuzione della simulazione personalizzata
     iterations = []
     for i in range(num_iterations):
-        iteration_status = custom_iteration(model, g, current_iteration=i)
+        iteration_status = _custom_iteration(model, g, current_iteration=i)
         iterations.append(iteration_status)
     return iterations
 

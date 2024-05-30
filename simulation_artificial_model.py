@@ -22,7 +22,8 @@ from bokeh.io import output_notebook, show
 from ndlib.viz.bokeh.DiffusionTrend import DiffusionTrend
 from bokeh.io import export_png
 from bokeh.plotting import output_file, save
-
+import attribute.age as ag
+import attribute.instruction as ins
 
 def rank_model_graph(n, m):
     G = nx.complete_graph(m)
@@ -40,7 +41,7 @@ def rank_model_graph(n, m):
             
     return G
 
-n = 2000 # Numero totale di nodi
+n = 10 # Numero totale di nodi
 m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
 
 # Code for albert barabasi extension, rank model
@@ -48,10 +49,9 @@ g = rank_model_graph(n, m)
 
 # Aggiunta di attributi ai nodi
 for node in g.nodes():
-    g.nodes[node]['percentage_of_knowledge'] = random.uniform(0.5, 1.5)
+    g.nodes[node]['percentage_of_knowledge'] = ins.get_instruction_type_gaussian()
     g.nodes[node]['probability_of_fact-checking'] = random.uniform(0.5, 1.5)
-    g.nodes[node]['distance_from_the_center_of_diffusion'] = random.uniform(0.5, 1.5)
-    g.nodes[node]['age'] = random.uniform(0.5, 1.5)
+    g.nodes[node]['age'] = ag.get_node_age_from_gaussian()
     g.nodes[node]['probability_of_forgetting'] = random.uniform(0.5, 1.5)
    
 # Selezione del modello
@@ -82,7 +82,7 @@ for i in g.nodes():
 model.set_initial_status(config)
 
 # Esecuzione della simulazione
-iterations = cib.custom_iteration_bunch(model, g, 3)
+iterations = cib.custom_iteration_bunch(model, g, 200)
 print(iterations)
 
 # Colori dei nodi in base al loro stato
@@ -105,11 +105,11 @@ for node, color in zip(g.nodes(), colors):
 # Show simulation
 trends = model.build_trends(iterations)
 print(trends)
-viz = DiffusionTrend(model, trends)
-viz.plot()  # Visualizza il grafico con Matplotlib
+#viz = DiffusionTrend(model, trends)
+#viz.plot()  # Visualizza il grafico con Matplotlib
 
 # Salva la figura
-plt.savefig("diffusion_SIR.png")
+#plt.savefig("diffusion_SIR.png")
 
 nx.write_graphml(g, "Barabasi-Albert-Graph.graphml")
 
