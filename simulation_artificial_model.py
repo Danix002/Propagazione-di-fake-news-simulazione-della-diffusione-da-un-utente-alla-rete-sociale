@@ -49,8 +49,8 @@ g = rank_model_graph(n, m)
 
 # Aggiunta di attributi ai nodi
 for node in g.nodes():
-    g.nodes[node]['percentage_of_knowledge'] = ins.get_instruction_type_gaussian()
-    print(g.nodes[node]['percentage_of_knowledge'])
+    g.nodes[node]['instruction'] = ins.get_instruction_type()
+    g.nodes[node]['percentage_of_instruction'] = ins.get_instruction_probability(g.nodes[node]['instruction'])
     g.nodes[node]['probability_of_fact-checking'] = random.uniform(0.5, 1.5)
     g.nodes[node]['age'] = ag.get_node_age_from_gaussian()
     g.nodes[node]['probability_of_forgetting'] = random.uniform(0.5, 1.5)
