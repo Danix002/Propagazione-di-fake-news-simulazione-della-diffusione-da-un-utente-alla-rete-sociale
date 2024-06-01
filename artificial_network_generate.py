@@ -1,10 +1,6 @@
 import networkx as nx
 import numpy as np
 
-
-
-
-
 def rank_model_graph_generate(n, m):
     G = nx.complete_graph(m)
     for new_node in range(m, n):

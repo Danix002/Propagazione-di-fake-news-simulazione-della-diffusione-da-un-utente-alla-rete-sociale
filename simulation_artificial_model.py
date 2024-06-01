@@ -50,7 +50,7 @@ def print_test_results(name_test, iterations):
         # add 'node_count' in the print of the iteration
         print("Iteration: ", i, "newInfected: ", count_infected, "newRecovered: ", count_recovered, "node count: ", iterations[i]["node_count"])
         
-        #if status is the same of the previous iteration for 5 time, print "Stable status"
+        # if status is the same of the previous iteration for 5 time, print "Stable status"
         if i > 5:
             if iterations[i]["status"] == iterations[i-1]["status"] == iterations[i-2]["status"] == iterations[i-3]["status"] == iterations[i-4]["status"]:
                 print("Stable status - end of the simulation at iteration ",i," of ", len(iterations))
@@ -73,9 +73,8 @@ def write_graph_to_file(g, file_name, iterations):
     #write the graph to a file
     nx.write_graphml(g, file_name)
 
-
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
-n = 2000 # Numero totale di nodi
+n = 200 # Numero totale di nodi
 m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
 
 # 1.1) Add all the attributes to the nodes
@@ -130,6 +129,7 @@ for i in g.nodes():
             
 config.add_model_initial_configuration("Recovered", intial_seed)
 model.set_initial_status(config)
+
 # Esecution of the simulation
 iterations = cib.custom_iteration_bunch(model, g, 50, fake_news_credibility)
 
@@ -151,3 +151,16 @@ trends = model.build_trends(iterations)
 
 
 # Debunking (classificazione del punto di partenza)
+
+
+
+
+def get_infected_node():
+    infected_node = []
+    for i  in range(1, len(iterations)):
+        node_statuses = iterations[i]["status"]
+        for key in node_statuses.keys():
+            if node_statuses[key] == 1:  # State infected
+              infected_node.append(g.nodes()[key])
+    print(infected_node)
+    return infected_node
