@@ -31,7 +31,7 @@ import artificial_network_generate as ang
 
 def print_iterations_results(iterations):
     # visualize all iteration but merge iteration that have the same status
-    #print initial status
+    # print initial status
     print("INITIAL STATUS AT ITERATION 0 - ", iterations[0]["node_count"])
     for i  in range(1, len(iterations)):
         node_statuses = iterations[i]["status"]
@@ -45,8 +45,7 @@ def print_iterations_results(iterations):
                 count_recovered += 1
             else:
                 count_susceptible += 1
-        #add 'node_count' in the print of the iteration
-        
+        # add 'node_count' in the print of the iteration
         print("Iteration: ", i, "newInfected: ", count_infected, "newRecovered: ", count_recovered, "node count: ", iterations[i]["node_count"])
         """ 
         #if status is the same for the next iteration, merge the iteration in the print of the iteration
@@ -58,9 +57,9 @@ def print_iterations_results(iterations):
         else:
             print("FINAL STATUS AT ITERATION: Stable stat ", i, " - ", iterations[i]["node_count"])   
         """
-# 1) Creation of a Barabasi-Albert graph with Rank model extension
 
-n = 10000 # Numero totale di nodi
+# 1) Creation of a Barabasi-Albert graph with Rank model extension
+n = 2000 # Numero totale di nodi
 m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
 
 # 1.1) Add all the attributes to the nodes
@@ -77,7 +76,6 @@ for node in g.nodes():
     g.nodes[node]['latitude'] = sc.get_spatial_coordinate_latitude(city)
     g.nodes[node]['longitude']  = sc.get_spatial_coordinate_longitude(city)
    
-
 # 2) Getting all necessary statistics of the graph
 
 # 3) Simulation of the diffusion process on the graph
@@ -94,7 +92,6 @@ model.add_status("Recovered")
 config = mc.Configuration()
 config.add_model_parameter('fraction_infected', 0.02)
 
-
 # Transition from Susceptible to Infected
 c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
 model.add_rule("Susceptible", "Infected", c1)
@@ -103,21 +100,15 @@ model.add_rule("Susceptible", "Infected", c1)
 c2 = cpm.NodeThreshold(None, triggering_status = "Infected")
 model.add_rule("Infected", "Recovered", c2)
 
-
-#setting threshold for each node
+# setting threshold for each node
 for i in g.nodes():
     config.add_node_configuration("threshold", i, cib.custom_infection_probability(i, g, fake_news_credibility))
 
 model.set_initial_status(config)
 
-
-
 # Esecution of the simulation
-iterations = cib.custom_iteration_bunch(model, g, 1000, fake_news_credibility)
+iterations = cib.custom_iteration_bunch(model, g, 50, fake_news_credibility)
 print_iterations_results(iterations)
-
-
-
 
 # 4) Visualization of the simulation
 colors = ["blue"] * len(g.nodes)
@@ -134,7 +125,6 @@ for i in range(0, len(iterations)):
 # Add the 'color' attribute to the nodes
 for node, color in zip(g.nodes(), colors):
     g.nodes[node]['color'] = color
-
 
 # Show simulation
 trends = model.build_trends(iterations)
