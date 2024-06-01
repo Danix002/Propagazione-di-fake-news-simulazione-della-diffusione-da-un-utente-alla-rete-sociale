@@ -29,9 +29,7 @@ import geopandas as gpd
 import artificial_network_generate as ang
 import custom_iterations_bunch as cib
 from debunking_test.debunking_test_functions import make_test_1_debunking, make_test_2_debunking
-
-
-    
+ 
     
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
 n = 200 # Numero totale di nodi
@@ -100,7 +98,7 @@ def get_infected_node():
         for key in node_statuses.keys():
             if node_statuses[key] == 1:  # State infected
               infected_node.append(g.nodes()[key])
-    print(infected_node)
+    #print(infected_node)
     return infected_node
 
 def get_number_of_nodes_in_simulation():
