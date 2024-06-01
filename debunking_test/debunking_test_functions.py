@@ -3,7 +3,7 @@ import dynetx as dn
 import matplotlib.pyplot as plt
 import math
 import custom_iterations_bunch as cib
-
+import random
 
 
 
@@ -109,6 +109,30 @@ def make_test_2_debunking(g, model, config, num_iterations, fake_news_credibilit
     name_test = "Debunking test 2: setting as initial recovered seed all the local bridges nodes"
     print_test_results(name_test, iterations)
     write_graph_to_file(g, "debunking_test_2_hubs.graphml", iterations)
+    
+    return iterations
+
+def make_test_3_debunking(g, model, config, num_iterations, fake_news_credibility):
+    #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
+    intial_seed = []
+    num_nodes = g.number_of_nodes()
+    num_random_nodes = math.ceil(num_nodes * 0.2)
+    random_nodes = random.sample(g.nodes(), num_random_nodes)
+
+    # Add the hub nodes to the initial seed
+    for node in random_nodes:
+        intial_seed.append(node)
+
+    config.add_model_initial_configuration("Recovered", intial_seed)
+    model.set_initial_status(config)
+
+    # Esecution of the simulation
+    iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
+
+    # Visualization of the simulation results
+    name_test = "Debunking test 3: setting a random number of nodes as initial seed"
+    print_test_results(name_test, iterations)
+    write_graph_to_file(g, "debunking_test_3_hubs.graphml", iterations)
     
     return iterations
     
