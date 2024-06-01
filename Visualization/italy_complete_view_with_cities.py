@@ -34,17 +34,18 @@ def italy_reference_map_with_cities(show_principal_cities_only):
     geometry = [Point(xy) for xy in zip(filtered_df['lng'], filtered_df['lat'])]
     gdf = gpd.GeoDataFrame(filtered_df, geometry=geometry, crs="EPSG:4326")
     gdf = gdf.to_crs("EPSG:32632")
-    gdf.plot(ax=italy_map, color='red', markersize=20, label='Principal Cities', zorder=5)
+    gdf.plot(ax=italy_map, color='black', markersize=20, label='Principal Cities', zorder=5)
     # Aggiungi etichette con il nome delle città vicino ai punti
     for x, y, label in zip(gdf.geometry.x, gdf.geometry.y, gdf['city']):
-        italy_map.annotate(label, xy=(x, y), xytext=(3, 3), textcoords="offset points")
-        
+        italy_map.annotate(label, xy=(x, y), xytext=(3, 3), textcoords="offset points", zorder=6)
+    
     # Filtra il DataFrame per le città non principali
     filtered_df = df[~df['city'].isin(principal_city['city'])]
     geometry = [Point(xy) for xy in zip(filtered_df['lng'], filtered_df['lat'])]
     gdf = gpd.GeoDataFrame(filtered_df, geometry=geometry, crs="EPSG:4326")
     gdf = gdf.to_crs("EPSG:32632")
-    gdf.plot(ax=italy_map, color='pink', markersize=10, label='Other Cities', zorder=4)
+    grigio_scuro = '#666666'
+    gdf.plot(ax=italy_map, color=grigio_scuro, markersize=10, label='Other Cities', zorder=4)
 
     if(not(show_principal_cities_only)):
         # Aggiungi etichette con il nome delle città vicino ai punti
@@ -57,7 +58,7 @@ def italy_reference_map_with_cities(show_principal_cities_only):
     # Aggiungi una legenda
     italy_map.legend()
 
-    plt.show()
-    #return italy_map
+    #plt.show()
+    return italy_map
 
-italy_reference_map_with_cities(show_principal_cities_only=True)
+#italy_reference_map_with_cities(show_principal_cities_only=True)

@@ -1,5 +1,5 @@
 import simulation_artificial_model as sam
-import Visualization.italy_complete_view as icv
+import Visualization.italy_sample_view as isv
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -12,7 +12,15 @@ from matplotlib.colorbar import Colorbar
 import matplotlib.patches as mpatches
 
 def _add_legend(ax, ticks, labels):
-    legend_handles = [mpatches.Patch(color=_color_density(tick, max_count), label=label) for tick, label in zip(ticks, labels)]
+    legend_handles = [
+        mpatches.Patch(
+            facecolor=_color_density(tick, max_count),
+            edgecolor= '#555555',
+            linewidth=1,
+            label=label
+        )
+        for tick, label in zip(ticks, labels)
+    ]
     ax.legend(handles=legend_handles, title='Infetti', loc='lower right')
 
 
@@ -94,22 +102,27 @@ for reg in regions_counts:
     if(reg['region'] == 'Tuscany'):
           reg['region'] = 'Toscana'
 
-italy_map = icv.italy_reference_map()
 regioni = gpd.read_file("Visualization\\Limiti01012024\\Limiti01012024\\Reg01012024\\Reg01012024_WGS84.shp")
 
+grigio_scuro = '#555555'
+bianco = '#FFFFFF'
+fig, ax = plt.subplots(figsize=(10, 10))  
 for reg in regions_counts:
     specific_region = regioni[regioni["DEN_REG"] == reg['region']]
     if (not specific_region.empty):
         color_region = _color_density(reg['count'], max_count)
         print("Regione: " + reg['region'] + ", infetti: " +  str(reg['count']) + ", color: " + color_region)
-        specific_region.plot(ax=italy_map, color=color_region, alpha=0.3, edgecolor=grigio_scuro, linewidth=1)
+        specific_region.plot(ax=ax, color=color_region, edgecolor=grigio_scuro, linewidth=1)  
     else:
         print("Regione: " + reg['region'] + " non trovata")
 
+ax.axis('off') 
+
 # Aggiungi la legenda
-step = 10
+step = 50
 ticks = list(range(0, max_count + 1, step))  # Ticks per la legenda
 labels = [str(i) for i in ticks]  # Etichette per la legenda
 _add_legend(plt.gca(), ticks, labels)
 
-plt.show()    
+plt.savefig("Visualization/img_output/choroplet_sample_view.png")
+plt.show()   

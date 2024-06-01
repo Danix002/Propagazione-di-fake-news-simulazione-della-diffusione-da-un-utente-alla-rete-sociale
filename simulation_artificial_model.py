@@ -32,7 +32,7 @@ from Analysis.debunking_test.debunking_test_functions import make_test_1_debunki
 
     
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
-n = 20000 # Numero totale di nodi
+n = 2000 # Numero totale di nodi
 m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
 
 # 1.1) Add all the attributes to the nodes
