@@ -18,5 +18,3 @@ def italy_reference_map():
     confine_italia = regioni.unary_union
     gpd.GeoSeries([confine_italia]).boundary.plot(ax=ax, edgecolor='#555555', linewidth=1.1)
     return ax
-
-    # plt.show()

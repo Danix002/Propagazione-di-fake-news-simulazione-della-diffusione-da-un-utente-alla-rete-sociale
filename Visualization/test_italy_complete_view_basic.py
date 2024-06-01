@@ -7,7 +7,7 @@ from shapely.geometry import Point
 italy_map = icv.italy_reference_map()
 
 data = {
-    'city': ['Aquila', 'Potenza', 'Catanzaro', 'Naples', 'Bologna', 'Trieste', 'Rome', 'Genoa', 'Milan', 'Ancona', 'Campobasso', 'Turin', 'Bari', 'Cagliari', 'Palermo', 'Florence', 'Trento', 'Perugia', 'Aosta', 'Venice'],
+    'city': ['L\'Aquila', 'Potenza', 'Catanzaro', 'Naples', 'Bologna', 'Trieste', 'Rome', 'Genoa', 'Milan', 'Ancona', 'Campobasso', 'Turin', 'Bari', 'Cagliari', 'Palermo', 'Florence', 'Trento', 'Perugia', 'Aosta', 'Venice'],
     'lat': [42.3505, 40.6444, 38.8910, 40.8518, 44.4949, 45.6500, 41.9028, 44.4056, 45.4642, 43.6158, 41.5638, 45.0703, 41.1172, 39.2238, 38.1157, 43.7696, 46.0679, 43.1107, 45.7380, 45.4408],
     'lng': [13.3995, 15.8086, 16.5994, 14.2681, 11.3426, 13.8000, 12.4964, 8.9463, 9.1900, 13.5189, 14.6563, 7.6869, 16.8719, 9.1217, 13.3615, 11.2558, 11.1211, 12.3892, 7.3153, 12.3155]
 }
