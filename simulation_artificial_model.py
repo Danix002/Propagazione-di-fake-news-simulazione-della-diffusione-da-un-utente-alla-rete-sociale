@@ -54,7 +54,8 @@ for node in g.nodes():
     g.nodes[node]['probability_infection_instruction'] = ins.get_probability_infection_for_instruction(g.nodes[node]['instruction'])
     g.nodes[node]['age'] = ag.get_node_age_from_gaussian()
     g.nodes[node]['probability_infection_for_age'] = ag.get_probability_infection_for_age(g.nodes[node]['age'])
-    g.nodes[node]['spatial coordinate'] = sc.get_spatial_coordinate()
+    g.nodes[node]['latitude'] = sc.get_spatial_coordinate_latitude()
+    g.nodes[node]['longitude']  = sc.get_spatial_coordinate_longitude()
    
 # Selezione del modello
 model = gc.CompositeModel(g)
