@@ -41,7 +41,7 @@ def rank_model_graph(n, m):
             
     return G
 
-n = 200 # Numero totale di nodi
+n = 2000 # Numero totale di nodi
 m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
 
 # Code for albert barabasi extension, rank model
@@ -50,10 +50,9 @@ g = rank_model_graph(n, m)
 # Aggiunta di attributi ai nodi
 for node in g.nodes():
     g.nodes[node]['instruction'] = ins.get_instruction_type()
-    g.nodes[node]['percentage_of_instruction'] = ins.get_instruction_probability(g.nodes[node]['instruction'])
-    g.nodes[node]['probability_of_fact-checking'] = random.uniform(0.5, 1.5)
+    g.nodes[node]['instruction_probability_infection'] = ins.get_instruction_probability(g.nodes[node]['instruction'])
     g.nodes[node]['age'] = ag.get_node_age_from_gaussian()
-    g.nodes[node]['probability_of_forgetting'] = random.uniform(0.5, 1.5)
+    g.nodes[node]['age_probability_infection'] = ag.age_probability_infection(g.nodes[node]['age'])
    
 # Selezione del modello
 model = gc.CompositeModel(g)
@@ -64,26 +63,26 @@ model.add_status("Infected")
 model.add_status("Recovered")
 
 config = mc.Configuration()
-config.add_model_parameter('fraction_infected', 0.2)
+config.add_model_parameter('fraction_infected', 0.02)
 
 
 # Definizione delle regole di transizione usando compartimenti
 c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
 model.add_rule("Susceptible", "Infected", c1)
 
-c2 = cpm.NodeThreshold( 0, triggering_status = "Infected")
+c2 = cpm.NodeThreshold( None, triggering_status = "Infected")
 model.add_rule("Infected", "Recovered", c2)
 
-# Imposto una probabilità personalizzata per ogni nodo
+fake_news_credibility = 0.7
+# Imposto una probabilità personalizzata per ogni nodo, 
+# se probabilità di essere infettato alta allora threshold sarà bassa, viceversa alta
 for i in g.nodes():
-    beta = cib.custom_infection_probability(i, g)
-    config.add_node_configuration("probability", i, beta)
-    config.add_node_configuration("threshold", i, 0.5)
+    config.add_node_configuration("threshold", i, 1-cib.custom_infection_probability(i, g, fake_news_credibility))
 
 model.set_initial_status(config)
 
 # Esecuzione della simulazione
-iterations = cib.custom_iteration_bunch(model, g, 200)
+iterations = cib.custom_iteration_bunch(model, g, 200, fake_news_credibility)
 print(iterations)
 
 # Colori dei nodi in base al loro stato
@@ -105,7 +104,7 @@ for node, color in zip(g.nodes(), colors):
 
 # Show simulation
 trends = model.build_trends(iterations)
-print(trends)
+
 #viz = DiffusionTrend(model, trends)
 #viz.plot()  # Visualizza il grafico con Matplotlib
 

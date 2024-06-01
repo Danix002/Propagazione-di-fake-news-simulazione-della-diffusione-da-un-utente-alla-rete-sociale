@@ -36,9 +36,9 @@ def get_instruction_type():
 
 
 def get_instruction_probability(node_instruction):
-    peso_diploma = 60
-    peso_laurea = 40
-    peso_formazione_dopo_laurea = 30
+    peso_diploma = 0.8
+    peso_laurea = 0.6
+    peso_formazione_dopo_laurea = 0.4
     
     if node_instruction == "high_school":
         x_values = peso_diploma
@@ -49,9 +49,20 @@ def get_instruction_probability(node_instruction):
     else:
         # Assegna un valore casuale in caso di input non riconosciuto
         x_values = np.random.choice([peso_diploma, peso_laurea, peso_formazione_dopo_laurea])
+        
+    probability = 0.5
+    
+    if x_values == peso_diploma:
+        # La probabilità di infezione è tra 0.2 e 0.7
+        probability = np.random.uniform(0.2, peso_diploma)
 
-    # Calcola la probabilità in base al peso
-    probability = x_values / (peso_diploma + peso_laurea + peso_formazione_dopo_laurea)
+    if x_values == peso_laurea:
+        # La probabilità di infezione è tra 0.2 e 0.5
+        probability = np.random.uniform(0.2, peso_laurea)
+        
+    if x_values == peso_formazione_dopo_laurea:
+        # La probabilità di infezione è tra 0.2 e 0.4
+        probability = np.random.uniform(0.6, peso_formazione_dopo_laurea)
     
     #arrotonda la probabilità a 2 decimali
     probability = round(probability, 2)
