@@ -3,17 +3,10 @@ import geopandas as gpd
 from shapely.geometry import Point
 import csv 
 
-def get_spatial_coordinate_latitude():
-    file_path = 'italy_cities.csv'
-    cities = gpd.read_file(file_path)
-    city = cities.sample(n=1) 
-    latitude = city['lat'].values[0] 
+def get_spatial_coordinate_latitude(city):
+    latitude = city['lat'].values[0]
     return latitude
 
-def get_spatial_coordinate_longitude():
-    file_path = 'italy_cities.csv'
-    cities = gpd.read_file(file_path)
-    city = cities.sample(n=1) 
+def get_spatial_coordinate_longitude(city):   
     longitude = city['lng'].values[0]
     return longitude
-

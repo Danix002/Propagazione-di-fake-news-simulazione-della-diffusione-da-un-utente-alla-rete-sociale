@@ -25,6 +25,7 @@ from bokeh.plotting import output_file, save
 import attribute.age as ag
 import attribute.instruction as ins
 import attribute.spatial_coordinate as sc
+import geopandas as gpd
 
 def rank_model_graph(n, m):
     G = nx.complete_graph(m)
@@ -48,14 +49,18 @@ m = 3 # Numero di archi da aggiungere ad ogni nuovo nodo
 # Code for albert barabasi extension, rank model
 g = rank_model_graph(n, m)
 
+file_path = 'italy_cities.csv'
+cities = gpd.read_file(file_path)
 # Aggiunta di attributi ai nodi
 for node in g.nodes():
     g.nodes[node]['instruction'] = ins.get_instruction_type()
-    g.nodes[node]['probability_infection_instruction'] = ins.get_probability_infection_for_instruction(g.nodes[node]['instruction'])
+    g.nodes[node]['probability_infection_for_instruction'] = ins.get_probability_infection_for_instruction(g.nodes[node]['instruction'])
     g.nodes[node]['age'] = ag.get_node_age_from_gaussian()
     g.nodes[node]['probability_infection_for_age'] = ag.get_probability_infection_for_age(g.nodes[node]['age'])
-    g.nodes[node]['latitude'] = sc.get_spatial_coordinate_latitude()
-    g.nodes[node]['longitude']  = sc.get_spatial_coordinate_longitude()
+    city = cities.sample(n=1)
+    print(city)
+    g.nodes[node]['latitude'] = sc.get_spatial_coordinate_latitude(city)
+    g.nodes[node]['longitude']  = sc.get_spatial_coordinate_longitude(city)
    
 # Selezione del modello
 model = gc.CompositeModel(g)

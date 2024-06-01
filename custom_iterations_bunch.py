@@ -35,8 +35,8 @@ def custom_iteration_bunch(model, g, num_iterations, fake_news_credibility ):
 
 # Funzione di probabilità di infezione calcolata come media tra gli attributi del nodo
 def custom_infection_probability(node, graph, fake_news_credibility):
-    percentage_of_instruction_probability = graph.nodes[node]['instruction_probability_infection']
-    age_probability = graph.nodes[node]['age_probability_infection']
+    percentage_of_instruction_probability = graph.nodes[node]['probability_infection_for_instruction']
+    age_probability = graph.nodes[node]['probability_infection_for_age']
 
 
     #probability depends 30% on the percentage of instruction, 20% on the age  and 50% on the fake news credibility
