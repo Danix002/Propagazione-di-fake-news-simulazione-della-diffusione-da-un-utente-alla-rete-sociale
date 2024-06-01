@@ -5,10 +5,6 @@ import math
 import custom_iterations_bunch as cib
 import random
 
-
-
-
-
 def print_test_results(name_test, iterations):
     # visualize all iteration but merge iteration that have the same status
     print("\n\n<---------TEST: ", name_test, "--------->\n")
@@ -90,7 +86,7 @@ def make_test_2_debunking(g, model, config, num_iterations, fake_news_credibilit
     betweenness_centrality = nx.betweenness_centrality(g, normalized=True)
 
     num_nodes = g.number_of_nodes()
-    num_bridging_nodes = math.ceil(num_nodes* 0.2)
+    num_bridging_nodes = math.ceil(num_nodes * 0.2)
 
     sorted_nodes = sorted(betweenness_centrality, key=betweenness_centrality.get, reverse=True)
     bridging_nodes = sorted_nodes[:num_bridging_nodes]
@@ -117,7 +113,7 @@ def make_test_3_debunking(g, model, config, num_iterations, fake_news_credibilit
     intial_seed = []
     num_nodes = g.number_of_nodes()
     num_random_nodes = math.ceil(num_nodes * 0.1)
-    random_nodes = random.sample(g.nodes(), num_random_nodes)
+    random_nodes = random.sample(list(g.nodes()), num_random_nodes)
 
     # Add the hub nodes to the initial seed
     for node in random_nodes:

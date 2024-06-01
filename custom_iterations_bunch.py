@@ -38,7 +38,6 @@ def custom_infection_probability(node, graph, fake_news_credibility):
     percentage_of_instruction_probability = graph.nodes[node]['probability_infection_for_instruction']
     age_probability = graph.nodes[node]['probability_infection_for_age']
 
-
     #probability depends 30% on the percentage of instruction, 20% on the age  and 50% on the fake news credibility
     #probability = (0.3 * percentage_of_instruction_probability) + (0.3 * age_probability) + (0.4 * fake_news_credibility)
     
