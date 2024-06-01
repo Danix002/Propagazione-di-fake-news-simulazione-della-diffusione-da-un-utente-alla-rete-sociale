@@ -58,7 +58,6 @@ for node in g.nodes():
     g.nodes[node]['age'] = ag.get_node_age_from_gaussian()
     g.nodes[node]['probability_infection_for_age'] = ag.get_probability_infection_for_age(g.nodes[node]['age'])
     city = cities.sample(n=1)
-    print(city)
     g.nodes[node]['latitude'] = sc.get_spatial_coordinate_latitude(city)
     g.nodes[node]['longitude']  = sc.get_spatial_coordinate_longitude(city)
    
