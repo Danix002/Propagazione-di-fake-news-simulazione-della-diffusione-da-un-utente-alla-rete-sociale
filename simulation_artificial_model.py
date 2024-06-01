@@ -121,12 +121,22 @@ for i in g.nodes():
 
 # 3.2) Configuration of the simulation
 
-#-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph
+#-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
+
 intial_seed = []
-for i in g.nodes():
-    if g.degree[i] > 10:
-        intial_seed.append(i)
-            
+
+# Get the degree centrality of the nodes
+degree_centrality = nx.degree_centrality(g)
+
+# Get the nodes (10%) with the highest degree centrality
+num_hub_nodes = math.ceil(n * 0.1)
+
+hub_nodes = sorted(degree_centrality, key=degree_centrality.get, reverse=True)[:num_hub_nodes]
+
+# Add the hub nodes to the initial seed
+for node in hub_nodes:
+    intial_seed.append(node)
+    
 config.add_model_initial_configuration("Recovered", intial_seed)
 model.set_initial_status(config)
 
