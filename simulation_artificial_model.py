@@ -29,10 +29,12 @@ import geopandas as gpd
 import artificial_network_generate as ang
 
 
-def print_iterations_results(iterations):
+def print_test_results(name_test, iterations):
     # visualize all iteration but merge iteration that have the same status
+    
+    print("\n\n<---------TEST: ", name_test, "--------->\n")
     # print initial status
-    print("INITIAL STATUS AT ITERATION 0 - ", iterations[0]["node_count"])
+    print("\nINITIAL STATUS AT ITERATION 0 - ", iterations[0]["node_count"])
     for i  in range(1, len(iterations)):
         node_statuses = iterations[i]["status"]
         count_susceptible = 0
@@ -47,16 +49,30 @@ def print_iterations_results(iterations):
                 count_susceptible += 1
         # add 'node_count' in the print of the iteration
         print("Iteration: ", i, "newInfected: ", count_infected, "newRecovered: ", count_recovered, "node count: ", iterations[i]["node_count"])
-        """ 
-        #if status is the same for the next iteration, merge the iteration in the print of the iteration
-        while i < len(iterations) - 1 and iterations[i]["status"] == iterations[i + 1]["status"]:
-            i += 1
-        #print final status
-        if i < len(iterations) - 1:
-            print("FINAL STATUS AT ITERATION: Stable stat ", i, " - ", iterations[i]["node_count"])
-        else:
-            print("FINAL STATUS AT ITERATION: Stable stat ", i, " - ", iterations[i]["node_count"])   
-        """
+        
+        #if status is the same of the previous iteration for 5 time, print "Stable status"
+        if i > 5:
+            if iterations[i]["status"] == iterations[i-1]["status"] == iterations[i-2]["status"] == iterations[i-3]["status"] == iterations[i-4]["status"]:
+                print("Stable status - end of the simulation at iteration ",i," of ", len(iterations))
+                break
+       
+def write_graph_to_file(g, file_name, iterations):
+    colors = ["blue"] * len(g.nodes)
+    for i in range(0, len(iterations)):
+        node_statuses = iterations[i]["status"]
+        for key in node_statuses.keys():
+            if node_statuses[key] == 1:  # State infected
+                colors[key] = 'red'
+            if node_statuses[key] == 2: # State recovered
+                colors[key] = 'green'
+                
+    # Add the 'color' attribute to the nodes
+    for node, color in zip(g.nodes(), colors):
+        g.nodes[node]['color'] = color
+        
+    #write the graph to a file
+    nx.write_graphml(g, file_name)
+
 
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
 n = 2000 # Numero totale di nodi
@@ -97,44 +113,41 @@ c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
 model.add_rule("Susceptible", "Infected", c1)
 
 # Transition from Infected to Recovered
-c2 = cpm.NodeThreshold(None, triggering_status = "Infected")
+c2 = cpm.NodeThreshold(None, triggering_status = "Recovered")
 model.add_rule("Infected", "Recovered", c2)
 
 # setting threshold for each node
 for i in g.nodes():
-    config.add_node_configuration("threshold", i, cib.custom_infection_probability(i, g, fake_news_credibility))
+    config.add_node_configuration("threshold", i, cib.custom_infection_probability(i, g, fake_news_credibility)-0.1)
 
+# 3.2) Configuration of the simulation
+
+#-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph
+intial_seed = []
+for i in g.nodes():
+    if g.degree[i] > 10:
+        intial_seed.append(i)
+            
+config.add_model_initial_configuration("Recovered", intial_seed)
 model.set_initial_status(config)
-
 # Esecution of the simulation
 iterations = cib.custom_iteration_bunch(model, g, 50, fake_news_credibility)
-print_iterations_results(iterations)
 
-# 4) Visualization of the simulation
-colors = ["blue"] * len(g.nodes)
-for i in range(0, len(iterations)):
-    node_statuses = iterations[i]["status"]
-    for key in node_statuses.keys():
-        if node_statuses[key] == 1:  # State infected
-            colors[key] = 'red'
-        elif node_statuses[key] == 2: # State recovered
-            colors[key] = 'green'
-        else: # State suscetible
-            colors[key] = 'blue'
-
-# Add the 'color' attribute to the nodes
-for node, color in zip(g.nodes(), colors):
-    g.nodes[node]['color'] = color
-
+# 4) Visualization of the simulation results
+name_test = "Debunking test 1: setting as initial recovered seed all the hub of the graph"
+print_test_results(name_test, iterations)
+write_graph_to_file(g, "debunking_test_1_hubs.graphml", iterations)
 # Show simulation
 trends = model.build_trends(iterations)
 
+#-- DEBUNKING TEST 2: 
+
+#-- DEBUNKING TEST 3: 
 #viz = DiffusionTrend(model, trends)
 #viz.plot()  # Visualizza il grafico con Matplotlib
 
 # Salva la figura
 #plt.savefig("diffusion_SIR.png")
 
-nx.write_graphml(g, "Barabasi-Albert-Graph.graphml")
 
 # Debunking (classificazione del punto di partenza)
