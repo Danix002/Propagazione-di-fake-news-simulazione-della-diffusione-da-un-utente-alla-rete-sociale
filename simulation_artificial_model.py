@@ -174,3 +174,6 @@ def get_infected_node():
               infected_node.append(g.nodes()[key])
     print(infected_node)
     return infected_node
+
+def get_number_of_nodes_in_simulation():
+    return n
