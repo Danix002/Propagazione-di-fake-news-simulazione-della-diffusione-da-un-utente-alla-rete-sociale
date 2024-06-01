@@ -1,6 +1,6 @@
 import networkx as nx
-# Estrazione dei dati statistici 
 
+# Estrazione dei dati statistici 
 # Proprietà strtutturali
 def extract_statistic_data(g):
     degree = nx.degree(g)

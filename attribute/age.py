@@ -1,9 +1,7 @@
 import numpy as np
 
-#get the probability of infection based on the age of the node, 
-
-
-def age_probability_infection(age):
+#get the probability of infection based on the age of the node
+def get_probability_infection_for_age(age):
     probability = 0.5
     
     if 15 <= age <= 20:

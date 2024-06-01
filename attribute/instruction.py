@@ -1,13 +1,10 @@
 import numpy as np
 
-
-
 def get_instruction_type():
     # Percentuali di persone che usano Twitter per diversi livelli di istruzione
     percent_unknown = 21
     percent_high_school = 13
     percent_university = 24
-    
 
     # Definizione degli intervalli per le categorie di istruzione
     intervals = {
@@ -33,9 +30,7 @@ def get_instruction_type():
     
 
 
-
-
-def get_instruction_probability(node_instruction):
+def get_probability_infection_for_instruction(node_instruction):
     peso_diploma = 0.8
     peso_laurea = 0.6
     peso_formazione_dopo_laurea = 0.4

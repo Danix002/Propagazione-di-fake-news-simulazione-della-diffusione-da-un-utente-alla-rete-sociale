@@ -24,6 +24,7 @@ from bokeh.io import export_png
 from bokeh.plotting import output_file, save
 import attribute.age as ag
 import attribute.instruction as ins
+import attribute.spatial_coordinate as sc
 
 def rank_model_graph(n, m):
     G = nx.complete_graph(m)
@@ -50,9 +51,10 @@ g = rank_model_graph(n, m)
 # Aggiunta di attributi ai nodi
 for node in g.nodes():
     g.nodes[node]['instruction'] = ins.get_instruction_type()
-    g.nodes[node]['instruction_probability_infection'] = ins.get_instruction_probability(g.nodes[node]['instruction'])
+    g.nodes[node]['probability_infection_instruction'] = ins.get_probability_infection_for_instruction(g.nodes[node]['instruction'])
     g.nodes[node]['age'] = ag.get_node_age_from_gaussian()
-    g.nodes[node]['age_probability_infection'] = ag.age_probability_infection(g.nodes[node]['age'])
+    g.nodes[node]['probability_infection_for_age'] = ag.get_probability_infection_for_age(g.nodes[node]['age'])
+    g.nodes[node]['spatial coordinate'] = sc.get_spatial_coordinate()
    
 # Selezione del modello
 model = gc.CompositeModel(g)
@@ -70,7 +72,7 @@ config.add_model_parameter('fraction_infected', 0.02)
 c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
 model.add_rule("Susceptible", "Infected", c1)
 
-c2 = cpm.NodeThreshold( None, triggering_status = "Infected")
+c2 = cpm.NodeThreshold(None, triggering_status = "Infected")
 model.add_rule("Infected", "Recovered", c2)
 
 fake_news_credibility = 0.7
