@@ -8,6 +8,12 @@ matplotlib.use('TkAgg')
 import mplcursors 
 import matplotlib.colors as mcolors
 from shapely.geometry import Point
+from matplotlib.colorbar import Colorbar
+import matplotlib.patches as mpatches
+
+def _add_legend(ax, ticks, labels):
+    legend_handles = [mpatches.Patch(color=_color_density(tick, max_count), label=label) for tick, label in zip(ticks, labels)]
+    ax.legend(handles=legend_handles, title='Infetti', loc='lower right')
 
 
 def _count_infected(lat, lng):
@@ -18,17 +24,14 @@ def _count_infected(lat, lng):
             count = count + 1
     return count
 
-def _color_density(number):
-    # Normalizza il valore nel range desiderato
-    number_of_nodes_in_simulation = sam.get_number_of_nodes_in_simulation()
-    norm = plt.Normalize(vmin=0, vmax=number_of_nodes_in_simulation)  
-    
-    # Mappa il valore normalizzato a un colore usando la colormap
-    cmap = plt.cm.viridis  
-    color = cmap(norm(number))
-    
-    # Converti il colore in formato esadecimale
-    hex_color = mcolors.rgb2hex(color)
+def _color_density(number, max_count):
+    #number_of_nodes_in_simulation = sam.get_number_of_nodes_in_simulation()
+    color = (1, 0, 0)
+    hsv_color = mcolors.rgb_to_hsv(color)
+    hsv_color[1] *= number / max_count
+    #hsv_color[1] *= number / number_of_nodes_in_simulation
+    rgb_color = mcolors.hsv_to_rgb(hsv_color)
+    hex_color = mcolors.rgb2hex(rgb_color)
     return hex_color
 
 
@@ -73,12 +76,15 @@ regions_counts = [
     {"region": "Veneto", "count": 0}
 ]
 
+max_count = 0
 for reg in regions_counts:
     count = 0
     for el in city_data:
         if(el['region'] == reg['region']):
             count = count + el['count_infected'] 
     reg['count'] = count
+    if(count > max_count):
+         max_count = count
     if(reg['region'] == 'Friuli Venezia Giulia'):
           reg['region'] = 'Friuli-Venezia Giulia'
     if(reg['region'] == 'Piedmont'):
@@ -94,10 +100,16 @@ regioni = gpd.read_file("Visualization\\Limiti01012024\\Limiti01012024\\Reg01012
 for reg in regions_counts:
     specific_region = regioni[regioni["DEN_REG"] == reg['region']]
     if (not specific_region.empty):
-        color_region = _color_density(reg['count'])
-        print("Regione: " + reg['region'] + ", infetti: " +  str(reg['count']))
+        color_region = _color_density(reg['count'], max_count)
+        print("Regione: " + reg['region'] + ", infetti: " +  str(reg['count']) + ", color: " + color_region)
         specific_region.plot(ax=italy_map, color=color_region, alpha=0.3, edgecolor=grigio_scuro, linewidth=1)
     else:
         print("Regione: " + reg['region'] + " non trovata")
 
-#plt.show()    
+# Aggiungi la legenda
+step = 10
+ticks = list(range(0, max_count + 1, step))  # Ticks per la legenda
+labels = [str(i) for i in ticks]  # Etichette per la legenda
+_add_legend(plt.gca(), ticks, labels)
+
+plt.show()    
