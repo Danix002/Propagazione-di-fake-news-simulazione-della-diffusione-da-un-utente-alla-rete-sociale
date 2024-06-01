@@ -28,7 +28,7 @@ import attribute.spatial_coordinate as sc
 import geopandas as gpd
 import artificial_network_generate as ang
 import custom_iterations_bunch as cib
-from debunking_test.debunking_test_functions import make_test_1_debunking, make_test_2_debunking
+from debunking_test.debunking_test_functions import make_test_1_debunking, make_test_2_debunking, make_test_3_debunking
 
     
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
@@ -63,7 +63,7 @@ model.add_status("Infected")
 model.add_status("Recovered")
 
 config = mc.Configuration()
-config.add_model_parameter('fraction_infected', 0.2)
+config.add_model_parameter('fraction_infected', 0.02)
 
 # Transition from Susceptible to Infected
 c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
@@ -87,7 +87,7 @@ for i in g.nodes():
 #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
 iterations_test_three = make_test_3_debunking(g, model, config, 50, fake_news_credibility)
 
-
+print(iterations_test_three)
 
 
 

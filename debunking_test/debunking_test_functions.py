@@ -116,7 +116,7 @@ def make_test_3_debunking(g, model, config, num_iterations, fake_news_credibilit
     #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
     intial_seed = []
     num_nodes = g.number_of_nodes()
-    num_random_nodes = math.ceil(num_nodes * 0.2)
+    num_random_nodes = math.ceil(num_nodes * 0.1)
     random_nodes = random.sample(g.nodes(), num_random_nodes)
 
     # Add the hub nodes to the initial seed
