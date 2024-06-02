@@ -57,8 +57,11 @@ def italy_reference_map_with_cities(show_principal_cities_only, my_ax = None):
             italy_map.annotate(label, xy=(x, y), xytext=(3, 3), textcoords="offset points")
 
     # Remove axis frames
-    #italy_map.axis('off') 
+    #italy_map.axis('off')
+     
     # Aggiungi una legenda
     italy_map.legend()
+
     #plt.show()
-   
+
+#italy_reference_map_with_cities()

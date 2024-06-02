@@ -1,5 +1,5 @@
-import choroplet_sample_view as csv
-import choroplet_complete_view as ccv
+import Visualization.choroplet_sample_view as csv
+import Visualization.choroplet_complete_view as ccv
 
 choose_choroplet = input("Sono disponibili due choroplet con due livelli di dettaglio differenti, se vuoi visualizzare quella più dettagliata premi 1, altrimenti 0: ")
 iteration = input("Inserisci il numero d'iterazione che vuoi visualizzare sulla choroplet: ")

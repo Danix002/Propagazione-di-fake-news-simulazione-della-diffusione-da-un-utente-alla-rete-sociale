@@ -1,28 +1,29 @@
-import simulation_artificial_model as sam
 import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import simulation_artificial_model as sam
 import mpld3
 from mpld3 import plugins
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'Visualization')))
-from Visualization import italy_complete_view_with_cities as icvc
+import italy_complete_view_with_cities as icvc
 import geopandas as gpd
 import htmlmin
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.use('TkAgg')
 import mplcursors 
 import matplotlib.colors as mcolors
 from shapely.geometry import Point
 from matplotlib.colorbar import Colorbar
 import matplotlib.patches as mpatches
-from IPython.display import display
 from copy import copy
+# Chiudi tutte le figure aperte
+plt.close('all')
+# Imposta il backend
+matplotlib.use('TkAgg')
 
 def get_legend_handles_labels(ax):
     # Ottieni tutti gli artisti presenti nell'asse
     handles, labels = ax.get_legend_handles_labels()
-    
     # Se ci sono più artisti, includi solo quelli relativi alla legenda
     legend_handles = []
     for handle, label in zip(handles, labels):
@@ -229,7 +230,7 @@ def create_complete_choroplet_view(index_iteration, test):
     _add_legend_for_susceptible(ax3, ticks_for_susceptible, labels_for_susceptible, max_count_susceptible)
 
     # Ottieni gli handles e le labels dalla legenda degli infetti
-    handles_infetti, labels_infetti = legenda_infetti.legendHandles, [t.get_text() for t in legenda_infetti.get_texts()]
+    handles_infetti, labels_infetti = legenda_infetti.legend_handles, [t.get_text() for t in legenda_infetti.get_texts()]
     # Combina handles ed etichette
     all_handles = handles_cities + handles_infetti
     all_labels = labels_cities + labels_infetti
@@ -244,4 +245,4 @@ def create_complete_choroplet_view(index_iteration, test):
     plt.savefig("Visualization/img_output/choroplet_complete_view_"+ str(test) +".png")
     plt.show()
 
-    
+create_complete_choroplet_view(5, 5)

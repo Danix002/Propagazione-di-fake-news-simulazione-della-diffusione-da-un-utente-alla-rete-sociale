@@ -1,15 +1,21 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import simulation_artificial_model as sam
-import Visualization.italy_sample_view as isv
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.use('TkAgg')
 import mplcursors 
 import matplotlib.colors as mcolors
 from shapely.geometry import Point
 from matplotlib.colorbar import Colorbar
 import matplotlib.patches as mpatches
+# Chiudi tutte le figure aperte
+#plt.close('all')
+# Imposta il backend
+#matplotlib.use('TkAgg')
+matplotlib.use('nbAgg')
 
 def _add_legend(ax, ticks, labels, my_title, max_count):
     legend_handles = [
@@ -127,6 +133,12 @@ def create_sample_choroplet_view(status, index_iteration, test):
             color_region = _color_density(reg['count'], max_count, status)
             """print("Regione: " + reg['region'] + ", " + status + ": " + str(reg['count']) + ", color: " + color_region)"""
             specific_region.plot(ax=ax, color=color_region, edgecolor=grigio_scuro, linewidth=1)  
+            # Aggiungi le informazioni per l'hover
+            mplcursors.cursor(hover=True).connect(
+                    "add", lambda sel: sel.annotation.set_text(
+                        f"{reg['region']}: {status} {reg['count']}"
+                        )
+                    )
         else:
             print("Regione: " + reg['region'] + " non trovata")
 
@@ -144,3 +156,5 @@ def create_sample_choroplet_view(status, index_iteration, test):
 
     plt.savefig("Visualization/img_output/choroplet_sample_view_"+ status + "_" + str(test) +".png")
     plt.show()   
+
+create_sample_choroplet_view('Infected', 5, 5)

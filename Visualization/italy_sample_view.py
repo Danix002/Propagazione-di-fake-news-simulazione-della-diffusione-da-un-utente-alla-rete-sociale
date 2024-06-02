@@ -13,6 +13,6 @@ if os.path.exists(file_path):
     # Visualizza i confini dell'Italia
     italy.plot()
     # Mostra la mappa
-    #plt.show()
+    plt.show()
 else:
     print("Il file non esiste nel percorso specificato.")

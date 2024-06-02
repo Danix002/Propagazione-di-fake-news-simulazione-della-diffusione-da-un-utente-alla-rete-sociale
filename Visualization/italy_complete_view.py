@@ -28,5 +28,9 @@ def italy_reference_map(my_ax = None):
 
     # Remove axis frames
     ax.axis('off') 
-    
+
+    #plt.show()
+
     return ax
+
+#italy_reference_map()
