@@ -43,8 +43,7 @@ def print_test_results(name_test, iterations, initial_status_count):
                 print("Stable status - end of the simulation at iteration ",i," of ", len(iterations))
                 break
         """
-            
-       
+                 
 def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration = False, initial_status = None):
     colors = ["blue"] * len(g.nodes)
     

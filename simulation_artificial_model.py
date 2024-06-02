@@ -46,19 +46,13 @@ for node in g.nodes():
 
 # 3) Simulation of the diffusion process on the graph
 
-# 3.1) Model definition
 fake_news_credibility = 0.7
 
-
-# 3.2) Configuration of the simulation
 #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
 iterations_test_one = make_test_1_debunking(g, 50, fake_news_credibility)
 
-
-
 #-- DEBUNKING TEST 2: setting the 20% with the highes betweennes centrality as initial seed
 iterations_test_two = make_test_2_debunking(g, 50, fake_news_credibility)
-
 
 #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
 iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility)
@@ -66,23 +60,31 @@ iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility)
 
 def get_infected_node():
     infected_node = []
-    recovered_node = []
-    susceptible_node = []
-    
     for i  in range(1, len(iterations_test_one)):
         node_statuses = iterations_test_one[i]["status"]
         for key in node_statuses.keys():
             if node_statuses[key] == 1:  # State infected
               infected_node.append(g.nodes()[key])
-            
+    return infected_node
+
+def get_recovered_node():
+    recovered_node = []
+    for i  in range(1, len(iterations_test_one)):
+        node_statuses = iterations_test_one[i]["status"]
+        for key in node_statuses.keys(): # State recovered
             if node_statuses[key] == 2:
                 recovered_node.append(g.nodes()[key])
-            
+    return recovered_node
+
+def get_susceptible_node():
+    susceptible_node = []
+    
+    for i  in range(1, len(iterations_test_one)):
+        node_statuses = iterations_test_one[i]["status"]
+        for key in node_statuses.keys():  # State recovered
             if node_statuses[key] == 0:
                 susceptible_node.append(g.nodes()[key])
-                
-    #print(infected_node)
-    return infected_node, recovered_node, susceptible_node
+    return susceptible_node
 
 def get_number_of_nodes_in_simulation():
     return n
