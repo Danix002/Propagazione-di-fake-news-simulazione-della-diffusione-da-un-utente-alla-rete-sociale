@@ -9,19 +9,12 @@ import random
 import dynetx as dn
 import matplotlib.pyplot as plt
 from ndlib.utils import multi_runs
-from ndlib.viz.mpl.DiffusionTrend import DiffusionTrend
-from ndlib.viz.bokeh.DiffusionPrevalence import DiffusionPrevalence
-from ndlib.viz.mpl.TrendComparison import DiffusionTrendComparison
 import math
 import ndlib.models.ModelConfig as mc
 import ndlib.models.epidemics as ep
 import ndlib.models.compartments.NodeNumericalAttribute as na
 import numpy as np
 import custom_iterations_bunch as cib
-from bokeh.io import output_notebook, show
-from ndlib.viz.bokeh.DiffusionTrend import DiffusionTrend
-from bokeh.io import export_png
-from bokeh.plotting import output_file, save
 import attribute.age as ag
 import attribute.instruction as ins
 import attribute.spatial_coordinate as sc
@@ -55,31 +48,22 @@ for node in g.nodes():
 
 # 3.1) Model definition
 fake_news_credibility = 0.7
-model = gc.CompositeModel(g)
 
-# Aggiunta degli stati del modello
-model.add_status("Susceptible")
-model.add_status("Infected")
-model.add_status("Recovered")
-
-config = mc.Configuration()
-config.add_model_parameter('fraction_infected', 0.01)
-
-# Transition from Susceptible to Infected
-c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
-model.add_rule("Susceptible", "Infected", c1)
-
-# Transition from Infected to Recovered
-c2 = cpm.NodeThreshold(None, triggering_status = "Recovered")
-model.add_rule("Infected", "Recovered", c2)
-
-# setting threshold for each node
-for i in g.nodes():
-    config.add_node_configuration("threshold", i, cib.custom_infection_probability(i, g, fake_news_credibility)-0.1)
 
 # 3.2) Configuration of the simulation
 #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
-iterations_test_one = make_test_1_debunking(g, model, config, 50, fake_news_credibility)
+iterations_test_one = make_test_1_debunking(g, 50, fake_news_credibility)
+
+
+
+#-- DEBUNKING TEST 2: setting the 20% with the highes betweennes centrality as initial seed
+iterations_test_two = make_test_2_debunking(g, 50, fake_news_credibility)
+
+
+#-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
+iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility)
+
+
 def get_infected_node():
     infected_node = []
     for i  in range(1, len(iterations_test_one)):
@@ -89,30 +73,5 @@ def get_infected_node():
               infected_node.append(g.nodes()[key])
     #print(infected_node)
     return infected_node
-
-#-- DEBUNKING TEST 2: setting the 20% with the highes betweennes centrality as initial seed
-#iterations_test_two = make_test_2_debunking(g, model, config, 50, fake_news_credibility)
-"""def get_infected_node():
-    infected_node = []
-    for i  in range(1, len(iterations_test_two)):
-        node_statuses = iterations_test_two[i]["status"]
-        for key in node_statuses.keys():
-            if node_statuses[key] == 1:  # State infected
-              infected_node.append(g.nodes()[key])
-    #print(infected_node)
-    return infected_node"""
-
-#-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
-#iterations_test_three = make_test_3_debunking(g, model, config, 50, fake_news_credibility)
-"""def get_infected_node():
-    infected_node = []
-    for i  in range(1, len(iterations_test_three)):
-        node_statuses = iterations_test_three[i]["status"]
-        for key in node_statuses.keys():
-            if node_statuses[key] == 1:  # State infected
-              infected_node.append(g.nodes()[key])
-    #print(infected_node)
-    return infected_node"""
-
 def get_number_of_nodes_in_simulation():
     return n
