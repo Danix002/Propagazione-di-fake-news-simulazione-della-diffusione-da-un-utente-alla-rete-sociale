@@ -66,12 +66,23 @@ iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility)
 
 def get_infected_node():
     infected_node = []
+    recovered_node = []
+    susceptible_node = []
+    
     for i  in range(1, len(iterations_test_one)):
         node_statuses = iterations_test_one[i]["status"]
         for key in node_statuses.keys():
             if node_statuses[key] == 1:  # State infected
               infected_node.append(g.nodes()[key])
+            
+            if node_statuses[key] == 2:
+                recovered_node.append(g.nodes()[key])
+            
+            if node_statuses[key] == 0:
+                susceptible_node.append(g.nodes()[key])
+                
     #print(infected_node)
-    return infected_node
+    return infected_node, recovered_node, susceptible_node
+
 def get_number_of_nodes_in_simulation():
     return n

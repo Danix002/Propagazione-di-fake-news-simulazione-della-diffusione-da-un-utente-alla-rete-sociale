@@ -16,12 +16,12 @@ import ndlib.models.ModelConfig as mc
 import ndlib.models.CompositeModel as gc
 import ndlib.models.compartments as cpm
 
-def print_test_results(name_test, iterations):
+def print_test_results(name_test, iterations, initial_status_count):
     # visualize all iteration but merge iteration that have the same status
     print("\n\n<---------TEST: ", name_test, "--------->\n")
     
-    print("\nINITIAL STATUS AT ITERATION 0 - ", iterations[0]["node_count"])
-    for i  in range(1, len(iterations)):
+    print("\nINITIAL STATUS ", initial_status_count)
+    for i  in range(0, len(iterations)):
         node_statuses = iterations[i]["status"]
         count_susceptible = 0
         count_infected = 0
@@ -49,12 +49,21 @@ def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration 
     colors = ["blue"] * len(g.nodes)
     
     if only_initial_iteration:
+        count_infected = 0
+        count_recovered = 0
+        count_susceptible = 0
         for key in initial_status.keys():
                     if initial_status[key] == 1:  # State infected
                         colors[key] = 'red'
+                        count_infected += 1
+                        
                     if initial_status[key] == 2: # State recovered
                         colors[key] = 'green'
-        return
+                        count_recovered += 1
+                    
+                    if initial_status[key] == 0:  # State suceptible
+                        count_susceptible +=1
+        return {0: count_infected, 1: count_recovered, 2: count_susceptible}
                     
     for i in range(0, len(iterations)):
         node_statuses = iterations[i]["status"]
@@ -80,7 +89,7 @@ def _build_test_model(g, fake_news_credibility):
     model.add_status("Recovered")
 
     config = mc.Configuration()
-    config.add_model_parameter('fraction_infected', 0.05)
+    config.add_model_parameter('fraction_infected', 0.1)
 
     # Transition from Susceptible to Infected
     c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
@@ -120,13 +129,13 @@ def make_test_1_debunking(g, num_iterations, fake_news_credibility):
     config.add_model_initial_configuration("Recovered", intial_seed)
     model.set_initial_status(config)
     
-    write_graph_to_file(g, "Analysis/debunking_test/test_results/test1/inital_status_infection_and_debunking_test_1_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
+    initial_status_count = write_graph_to_file(g, "Analysis/debunking_test/test_results/test1/inital_status_infection_and_debunking_test_1_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
     # Esecution of the simulation
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
     # Visualization of the simulation results
     name_test = "Debunking test 1: setting as initial recovered seed all the hub of the graph"
-    print_test_results(name_test, iterations)
+    print_test_results(name_test, iterations, initial_status_count)
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test1/final_status_infection_and_debunking_test_1_hubs.graphml", iterations)
     
     build_trend_plot(model, iterations, 1)
@@ -151,14 +160,14 @@ def make_test_2_debunking(g, num_iterations, fake_news_credibility):
     config.add_model_initial_configuration("Recovered", intial_seed)
     model.set_initial_status(config)
 
-    write_graph_to_file(g, "Analysis/debunking_test/test_results/test2/inital_status_infection_and_debunking_test_2_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
+    initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test2/inital_status_infection_and_debunking_test_2_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
     
     # Esecution of the simulation
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
     # Visualization of the simulation results
     name_test = "Debunking test 2: setting as initial recovered seed all the local bridges nodes"
-    print_test_results(name_test, iterations)
+    print_test_results(name_test, iterations, initial_status_count)
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test2/final_status_infection_and_debunking_test_2_hubs.graphml", iterations)
     
@@ -181,14 +190,14 @@ def make_test_3_debunking(g, num_iterations, fake_news_credibility):
     config.add_model_initial_configuration("Recovered", intial_seed)
     model.set_initial_status(config)
 
-    write_graph_to_file(g, "Analysis/debunking_test/test_results/test3/inital_status_infection_and_debunking_test_3_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
+    initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test3/inital_status_infection_and_debunking_test_3_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
     
     # Esecution of the simulation
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
     
     # Visualization of the simulation results
     name_test = "Debunking test 3: setting a random number of nodes as initial seed"
-    print_test_results(name_test, iterations)
+    print_test_results(name_test, iterations, initial_status_count)
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test3/final_status_infection_and_debunking_test_3_hubs.graphml", iterations)
     
