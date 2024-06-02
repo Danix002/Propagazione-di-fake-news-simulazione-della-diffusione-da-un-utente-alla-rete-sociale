@@ -162,7 +162,7 @@ def create_complete_choroplet_view(status, index_iteration, test):
 
     ax.set_title(status + " in test " + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
 
-    plt.savefig("Visualization/img_output/choroplet_complete_view.png")
+    plt.savefig("Visualization/img_output/choroplet_complete_view_"+ status + "_" + str(test) +".png")
     plt.show()
 
 
