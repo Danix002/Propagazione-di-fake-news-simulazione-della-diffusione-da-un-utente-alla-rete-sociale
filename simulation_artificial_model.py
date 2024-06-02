@@ -104,21 +104,18 @@ def get_recovered_node(index_iteration, test):
 def get_susceptible_node(index_iteration, test):
     susceptible_node = []
     if(test == 1):
-        print("Sono nel test 1")
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_one[i]["status"]
             for key in node_statuses.keys():  # State susceptible
                 if node_statuses[key] == 0:
                     susceptible_node.append(g.nodes()[key])
     if(test == 2):
-        print("Sono nel test 2")
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_two[i]["status"]
             for key in node_statuses.keys():  # State susceptible
                 if node_statuses[key] == 0:
                     susceptible_node.append(g.nodes()[key])
     if(test == 3):
-        print("Sono nel test 3")
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_three[i]["status"]
             for key in node_statuses.keys():  # State susceptible

@@ -238,6 +238,6 @@ def create_complete_choroplet_view(index_iteration, test):
     ax2.set_title('Recovered', loc='center')
     ax3.set_title('Susceptible', loc='center')
 
-    plt.savefig("Visualization/img_output/choroplet_complete_view.png")
+    plt.savefig("Visualization/img_output/choroplet_complete_view_"+ str(test) +".png")
 
     plt.show()    
