@@ -213,6 +213,36 @@ def make_test_3_debunking(g, num_iterations, fake_news_credibility, num_initial_
     build_trend_plot(model, iterations, 3)
     return iterations
     
+def make_test_4_debunking(g, num_iterations, fake_news_credibility, num_highest_eigenvector):
+    #-- DEBUNKING TEST 4: setting the n  with the highest eigenvector centrality as initial seed
+    model, config = _build_test_model(g, fake_news_credibility)
+    intial_seed = []
+    
+    eigenvector_centrality = nx.eigenvector_centrality(g)
+
+    sorted_nodes = sorted(eigenvector_centrality, key=eigenvector_centrality.get, reverse=True)
+    highest_eigenvector_nodes = sorted_nodes[:num_highest_eigenvector]
+
+    # Add the hub nodes to the initial seed
+    for node in highest_eigenvector_nodes:
+        intial_seed.append(node)
+
+    config.add_model_initial_configuration("Recovered", intial_seed)
+    model.set_initial_status(config)
+
+    initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test4/inital_status_infection_and_debunking_test_4_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
+    
+    # Esecution of the simulation
+    iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
+
+    # Visualization of the simulation results
+    name_test = "Debunking test 4: setting as initial recovered seed the nodes with the highest eigenvector centrality"
+    print_test_results(name_test, iterations, initial_status_count)
+    
+    write_graph_to_file(g, "Analysis/debunking_test/test_results/test4/final_status_infection_and_debunking_test_4_hubs.graphml", iterations)
+    
+    build_trend_plot(model, iterations, 4)
+    return iterations
     
 def build_trend_plot(model, iterations, test):
     trends = model.build_trends(iterations)

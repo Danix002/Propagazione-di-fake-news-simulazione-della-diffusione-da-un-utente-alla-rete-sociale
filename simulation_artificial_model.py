@@ -21,7 +21,7 @@ import attribute.spatial_coordinate as sc
 import geopandas as gpd
 import artificial_network_generate as ang
 import custom_iterations_bunch as cib
-from Analysis.debunking_test.debunking_test_functions import make_test_1_debunking, make_test_2_debunking, make_test_3_debunking
+from Analysis.debunking_test.debunking_test_functions import make_test_1_debunking, make_test_2_debunking, make_test_3_debunking, make_test_4_debunking
     
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
 n = 2000 # Numero totale di nodi
@@ -50,12 +50,14 @@ fake_news_credibility = 0.7
 #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
 iterations_test_one = make_test_1_debunking(g, 50, fake_news_credibility,  150)
 
-#-- DEBUNKING TEST 2: setting the 20% with the highes betweennes centrality as initial seed
+#-- DEBUNKING TEST 2: setting the n nodes with the highes betweennes centrality as initial seed
 iterations_test_two = make_test_2_debunking(g, 50, fake_news_credibility, 150)
 
 #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
 iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility, 150)
 
+#-- DEBUNKING TEST 4: setting the n  with the highest eigenvector centrality nodes as initial seed
+iterations_test_four = make_test_4_debunking(g, 50, fake_news_credibility, 200)
 
 def get_infected_node(index_iteration, test):
     infected_node = []
