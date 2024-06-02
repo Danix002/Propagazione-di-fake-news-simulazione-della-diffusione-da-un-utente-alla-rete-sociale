@@ -5,17 +5,15 @@ import simulation_artificial_model as sam
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib
 import mplcursors 
+from IPython.display import display
 import matplotlib.colors as mcolors
 from shapely.geometry import Point
 from matplotlib.colorbar import Colorbar
 import matplotlib.patches as mpatches
-# Chiudi tutte le figure aperte
-#plt.close('all')
-# Imposta il backend
-#matplotlib.use('TkAgg')
-matplotlib.use('nbAgg')
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
+
 
 def _add_legend(ax, ticks, labels, my_title, max_count):
     legend_handles = [
@@ -131,14 +129,14 @@ def create_sample_choroplet_view(status, index_iteration, test):
         specific_region = regioni[regioni["DEN_REG"] == reg['region']]
         if (not specific_region.empty):
             color_region = _color_density(reg['count'], max_count, status)
-            """print("Regione: " + reg['region'] + ", " + status + ": " + str(reg['count']) + ", color: " + color_region)"""
+            print("Regione: " + reg['region'] + ", " + status + ": " + str(reg['count']) + ", color: " + color_region)
             specific_region.plot(ax=ax, color=color_region, edgecolor=grigio_scuro, linewidth=1)  
             # Aggiungi le informazioni per l'hover
-            mplcursors.cursor(hover=True).connect(
+            """mplcursors.cursor(hover=True).connect(
                     "add", lambda sel: sel.annotation.set_text(
                         f"{reg['region']}: {status} {reg['count']}"
                         )
-                    )
+                    )"""
         else:
             print("Regione: " + reg['region'] + " non trovata")
 
@@ -155,6 +153,9 @@ def create_sample_choroplet_view(status, index_iteration, test):
     ax.set_title(status + " in test " + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
 
     plt.savefig("Visualization/img_output/choroplet_sample_view_"+ status + "_" + str(test) +".png")
-    plt.show()   
 
-create_sample_choroplet_view('Infected', 5, 5)
+    plt.show()
+    
+
+# Run in Jupyter Notebook
+create_sample_choroplet_view(str(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))

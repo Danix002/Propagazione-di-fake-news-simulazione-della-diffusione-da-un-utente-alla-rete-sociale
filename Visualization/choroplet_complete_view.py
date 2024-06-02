@@ -2,24 +2,19 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import simulation_artificial_model as sam
-import mpld3
-from mpld3 import plugins
 import italy_complete_view_with_cities as icvc
+import matplotlib
+import matplotlib.colors as mcolors
 import geopandas as gpd
-import htmlmin
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib
-import mplcursors 
+from IPython.display import display
 import matplotlib.colors as mcolors
 from shapely.geometry import Point
 from matplotlib.colorbar import Colorbar
 import matplotlib.patches as mpatches
-from copy import copy
-# Chiudi tutte le figure aperte
-plt.close('all')
-# Imposta il backend
-matplotlib.use('TkAgg')
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
 
 def get_legend_handles_labels(ax):
     # Ottieni tutti gli artisti presenti nell'asse
@@ -31,62 +26,28 @@ def get_legend_handles_labels(ax):
             legend_handles.append(handle)
     return legend_handles, labels
 
-def _add_legend_for_infected(ax, ticks, labels, max_count_infected):
+def _add_legend(ax, ticks, labels, max_count, my_title):
     legend_handles = [
         mpatches.Patch(
-            facecolor=_color_density(tick, max_count_infected, status='Infected'),
+            facecolor=_color_density(tick, max_count, my_title),
             edgecolor= '#555555',
             linewidth=1,
             label=label
         )
         for tick, label in zip(ticks, labels)
     ]
-    return ax.legend(handles=legend_handles, title='Infetti', loc='lower right')
+    return ax.legend(handles=legend_handles, title=my_title, loc='lower right')
 
-def _add_legend_for_recovered(ax, ticks, labels, max_count_recovered):
-    legend_handles = [
-        mpatches.Patch(
-            facecolor=_color_density(tick, max_count_recovered, status='Recovered'),
-            edgecolor= '#555555',
-            linewidth=1,
-            label=label
-        )
-        for tick, label in zip(ticks, labels)
-    ]
-    ax.legend(handles=legend_handles, loc='lower right')
-
-def _add_legend_for_susceptible(ax, ticks, labels,max_count_susceptible):
-    legend_handles = [
-        mpatches.Patch(
-            facecolor=_color_density(tick, max_count_susceptible, status='Susceptible'),
-            edgecolor= '#555555',
-            linewidth=1,
-            label=label
-        )
-        for tick, label in zip(ticks, labels)
-    ]
-    ax.legend(handles=legend_handles, loc='lower right')
-
-def _count_infected(lat, lng, i, test):
-    infected_node = sam.get_infected_node(i, test)
+def _count_nodes(lat, lng, index_iteration, test, status):
+    nodes_status = []
+    if(status == 'Infected'):
+        nodes_status = sam.get_infected_node(index_iteration, test)
+    if(status == 'Recovered'):
+        nodes_status = sam.get_recovered_node(index_iteration, test)
+    if(status == 'Susceptible'):
+        nodes_status = sam.get_susceptible_node(index_iteration, test)
     count = 0
-    for el in infected_node:
-        if (el['latitude'] == lat and el['longitude'] == lng):
-            count = count + 1
-    return count
-
-def _count_recovered(lat, lng, i, test):
-    recovered_node = sam.get_recovered_node(i, test)
-    count = 0
-    for el in recovered_node:
-        if (el['latitude'] == lat and el['longitude'] == lng):
-            count = count + 1
-    return count
-
-def _count_susceptible(lat, lng, i, test):
-    susceptible_node = sam.get_susceptible_node(i, test)
-    count = 0
-    for el in susceptible_node:
+    for el in nodes_status:
         if (el['latitude'] == lat and el['longitude'] == lng):
             count = count + 1
     return count
@@ -109,7 +70,7 @@ def _color_density(number, max_count, status):
     #hsv_color[1] *= number / number_of_nodes_in_simulation
     return hex_color
 
-def create_complete_choroplet_view(index_iteration, test):
+def create_complete_choroplet_view(status, index_iteration, test):
     file_path = 'italy_cities.csv'
     cities = gpd.read_file(file_path)
 
@@ -123,55 +84,41 @@ def create_complete_choroplet_view(index_iteration, test):
             'lat': city['lat'],
             'lng': city['lng'],
             'region' : city['admin_name'],
-            'count_infected': _count_infected(city['lat'], city['lng'], index_iteration, test),
-            'count_recovered': _count_recovered(city['lat'], city['lng'], index_iteration, test),
-            'count_susceptible': _count_susceptible(city['lat'], city['lng'], index_iteration, test)
-        }) 
+            'count_nodes': _count_nodes(city['lat'], city['lng'], index_iteration, test, status)
+        })
 
     regions_counts = [
-        {"region": "Abruzzo", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Basilicata", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Calabria", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Campania", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Emilia-Romagna", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Friuli Venezia Giulia", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Lazio", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Liguria", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Lombardy", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Marche", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Molise", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Piedmont", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Puglia", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Sardegna", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Sicilia", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Tuscany", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Trentino-Alto Adige", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Umbria", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Valle d'Aosta", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0},
-        {"region": "Veneto", "count_infected": 0, "count_recovered": 0, "count_susceptible": 0}
+        {"region": "Abruzzo", "count": 0},
+        {"region": "Basilicata", "count": 0},
+        {"region": "Calabria", "count": 0},
+        {"region": "Campania", "count": 0},
+        {"region": "Emilia-Romagna", "count": 0},
+        {"region": "Friuli Venezia Giulia", "count": 0},
+        {"region": "Lazio", "count": 0},
+        {"region": "Liguria", "count": 0},
+        {"region": "Lombardy", "count": 0},
+        {"region": "Marche", "count": 0},
+        {"region": "Molise", "count": 0},
+        {"region": "Piedmont", "count": 0},
+        {"region": "Puglia", "count": 0},
+        {"region": "Sardegna", "count": 0},
+        {"region": "Sicilia", "count": 0},
+        {"region": "Tuscany", "count": 0},
+        {"region": "Trentino-Alto Adige", "count": 0},
+        {"region": "Umbria", "count": 0},
+        {"region": "Valle d'Aosta", "count": 0},
+        {"region": "Veneto", "count": 0}
     ]
 
-    max_count_infected = 0
-    max_count_recovered = 0
-    max_count_susceptible = 0
+    max_count = 0
     for reg in regions_counts:
-        count_infected = 0
-        count_recovered = 0
-        count_susceptible = 0
+        count = 0
         for el in city_data:
             if(el['region'] == reg['region']):
-                count_infected = count_infected + el['count_infected'] 
-                count_recovered = count_recovered + el['count_recovered'] 
-                count_susceptible = count_susceptible + el['count_susceptible']
-        reg['count_infected'] = count_infected
-        reg['count_recovered'] = count_recovered
-        reg['count_susceptible'] = count_susceptible
-        if(count_infected > max_count_infected):
-            max_count_infected = count_infected
-        if(count_recovered > max_count_recovered):
-            max_count_recovered = count_recovered
-        if(count_susceptible > max_count_susceptible):
-            max_count_susceptible = count_susceptible
+                count = count + el['count_nodes']
+        reg['count'] = count
+        if(count > max_count):
+            max_count = count
         if(reg['region'] == 'Friuli Venezia Giulia'):
             reg['region'] = 'Friuli-Venezia Giulia'
         if(reg['region'] == 'Piedmont'):
@@ -181,53 +128,29 @@ def create_complete_choroplet_view(index_iteration, test):
         if(reg['region'] == 'Tuscany'):
             reg['region'] = 'Toscana'
 
-    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(20, 10))
-
+    fig, ax = plt.subplots(figsize=(10, 10)) 
+    icvc.italy_reference_map_with_cities(show_principal_cities_only=True, my_ax = ax)
     regioni = gpd.read_file("Visualization\\Limiti01012024\\Limiti01012024\\Reg01012024\\Reg01012024_WGS84.shp")
 
     grigio_scuro = '#666666'
-    for my_ax in [ax1, ax2, ax3]:
-        icvc.italy_reference_map_with_cities(show_principal_cities_only=True, my_ax = my_ax)
-        for reg in regions_counts:
-            specific_region = regioni[regioni["DEN_REG"] == reg['region']]
-            if (not specific_region.empty):
-                if my_ax == ax1:
-                    color_region = _color_density(reg['count_infected'], max_count_infected, status='Infected')
-                elif my_ax == ax2:
-                    color_region = _color_density(reg['count_recovered'], max_count_recovered, status='Recovered')
-                elif my_ax == ax3:
-                    color_region = _color_density(reg['count_susceptible'], max_count_susceptible, status='Susceptible')
-                specific_region.plot(ax=my_ax, color=color_region, edgecolor=grigio_scuro, linewidth=1)
-                """print("Regione: " + reg['region'] + ", infetti: " +  str(reg['count_infected']) +
-                    ", ricoverati: " +  str(reg['count_recovered']) +
-                    ", suscettibili: " +  str(reg['count_susceptible']))"""
-            else:
-                print("Regione: " + reg['region'] + " non trovata")
+    for reg in regions_counts:
+        specific_region = regioni[regioni["DEN_REG"] == reg['region']]
+        if (not specific_region.empty):
+            color_region = _color_density(reg['count'], max_count, status)
+            print("Regione: " + reg['region'] + ", " + status + ": " + str(reg['count']) + ", color: " + color_region)
+            specific_region.plot(ax=ax, color=color_region, edgecolor=grigio_scuro, linewidth=1)
+        else:
+            print("Regione: " + reg['region'] + " non trovata")
 
     # Aggiungi la legenda
-    # Ottieni gli handles e le labels dalla legenda delle città
-    handles_cities, labels_cities = ax1.get_legend_handles_labels()
+    handles_cities, labels_cities = ax.get_legend_handles_labels()
 
-    if(max_count_infected == 0):
-        max_count_infected = 120
-    step_for_infected = int(max_count_infected / 4)
-    ticks_for_infected = list(range(0, max_count_infected + 1, step_for_infected))  # Ticks per la legenda
-    labels_for_infected = [str(i) for i in ticks_for_infected]  # Etichette per la legenda
-    legenda_infetti = _add_legend_for_infected(ax1, ticks_for_infected, labels_for_infected, max_count_infected)
-
-    if(max_count_recovered == 0):
-        max_count_recovered = 120
-    step_for_recovered = int(max_count_recovered / 4)
-    ticks_for_recovered = list(range(0, max_count_recovered + 1, step_for_recovered))  # Ticks per la legenda
-    labels_for_recovered = [str(i) for i in ticks_for_recovered]  # Etichette per la legenda
-    _add_legend_for_recovered(ax2, ticks_for_recovered, labels_for_recovered, max_count_recovered)
-
-    if(max_count_susceptible == 0):
-        max_count_susceptible = 120
-    step_for_susceptible = int(max_count_susceptible / 4)
-    ticks_for_susceptible = list(range(0, max_count_susceptible + 1, step_for_susceptible))  # Ticks per la legenda
-    labels_for_susceptible = [str(i) for i in ticks_for_susceptible]  # Etichette per la legenda
-    _add_legend_for_susceptible(ax3, ticks_for_susceptible, labels_for_susceptible, max_count_susceptible)
+    if(max_count == 0):
+        max_count = 120
+    step = int(max_count / 4)
+    ticks = list(range(0, max_count + 1, step))  # Ticks per la legenda
+    labels = [str(i) for i in ticks]  # Etichette per la legenda
+    legenda_infetti =_add_legend(plt.gca(), ticks, labels, max_count, status)
 
     # Ottieni gli handles e le labels dalla legenda degli infetti
     handles_infetti, labels_infetti = legenda_infetti.legend_handles, [t.get_text() for t in legenda_infetti.get_texts()]
@@ -235,14 +158,13 @@ def create_complete_choroplet_view(index_iteration, test):
     all_handles = handles_cities + handles_infetti
     all_labels = labels_cities + labels_infetti
     # Aggiungi la legenda combinata all'asse ax1
-    ax1.legend(all_handles, all_labels, loc='lower left')
+    ax.legend(all_handles, all_labels, loc='lower left')
 
-    # Imposta il titolo 
-    ax1.set_title('Infected in test ' + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
-    ax2.set_title('Recovered in test ' + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
-    ax3.set_title('Susceptible in test '+ str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
-    
-    plt.savefig("Visualization/img_output/choroplet_complete_view_"+ str(test) +".png")
+    ax.set_title(status + " in test " + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
+
+    plt.savefig("Visualization/img_output/choroplet_complete_view.png")
     plt.show()
 
-create_complete_choroplet_view(5, 5)
+
+# Run in Jupyter Notebook
+create_complete_choroplet_view(str(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
