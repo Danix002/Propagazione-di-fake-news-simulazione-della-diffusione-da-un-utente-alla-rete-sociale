@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import mplcursors 
 from shapely.geometry import Point
+from copy import copy
 
 def italy_reference_map_with_cities(show_principal_cities_only, my_ax = None):
     file_path = 'italy_cities.csv'
@@ -58,7 +59,6 @@ def italy_reference_map_with_cities(show_principal_cities_only, my_ax = None):
     # Remove axis frames
     #italy_map.axis('off') 
     # Aggiungi una legenda
-    legend_for_cities = italy_map.legend(loc='upper left')
-
+    italy_map.legend()
     #plt.show()
-    return legend_for_cities
+   

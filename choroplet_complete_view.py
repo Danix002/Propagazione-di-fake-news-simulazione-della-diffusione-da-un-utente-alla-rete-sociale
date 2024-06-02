@@ -13,6 +13,19 @@ import matplotlib.colors as mcolors
 from shapely.geometry import Point
 from matplotlib.colorbar import Colorbar
 import matplotlib.patches as mpatches
+from copy import copy
+
+def get_legend_handles_labels(ax):
+    # Ottieni tutti gli artisti presenti nell'asse
+    handles, labels = ax.get_legend_handles_labels()
+    
+    # Se ci sono più artisti, includi solo quelli relativi alla legenda
+    legend_handles = []
+    for handle, label in zip(handles, labels):
+        if isinstance(handle, matplotlib.patches.Patch):
+            legend_handles.append(handle)
+    return legend_handles, labels
+
 
 def _add_legend_for_infected(ax, ticks, labels):
     legend_handles = [
@@ -24,7 +37,7 @@ def _add_legend_for_infected(ax, ticks, labels):
         )
         for tick, label in zip(ticks, labels)
     ]
-    ax.legend(handles=legend_handles, title='Infetti', loc='lower right')
+    return ax.legend(handles=legend_handles, title='Infetti', loc='lower right')
 
 def _add_legend_for_recovered(ax, ticks, labels):
     legend_handles = [
@@ -36,7 +49,7 @@ def _add_legend_for_recovered(ax, ticks, labels):
         )
         for tick, label in zip(ticks, labels)
     ]
-    ax.legend(handles=legend_handles, title='Ricoverati', loc='lower right')
+    ax.legend(handles=legend_handles, loc='lower right')
 
 def _add_legend_for_suscetible(ax, ticks, labels):
     legend_handles = [
@@ -48,7 +61,7 @@ def _add_legend_for_suscetible(ax, ticks, labels):
         )
         for tick, label in zip(ticks, labels)
     ]
-    ax.legend(handles=legend_handles, title='Suscettibili', loc='lower right')
+    ax.legend(handles=legend_handles, loc='lower right')
 
 def _count_infected(lat, lng):
     infected_node = sam.get_infected_node()
@@ -170,7 +183,7 @@ regioni = gpd.read_file("Visualization\\Limiti01012024\\Limiti01012024\\Reg01012
 
 grigio_scuro = '#666666'
 for my_ax in [ax1, ax2, ax3]:
-    legend_for_cities = icvc.italy_reference_map_with_cities(show_principal_cities_only=True, my_ax = my_ax)
+    icvc.italy_reference_map_with_cities(show_principal_cities_only=True, my_ax = my_ax)
     for reg in regions_counts:
         specific_region = regioni[regioni["DEN_REG"] == reg['region']]
         if (not specific_region.empty):
@@ -188,11 +201,18 @@ for my_ax in [ax1, ax2, ax3]:
             print("Regione: " + reg['region'] + " non trovata")
 
 # Aggiungi la legenda
+# Ottieni gli handles e le labels dalla legenda delle città
+handles_cities, labels_cities = ax1.get_legend_handles_labels()
+
+if(max_count_infected == 0):
+    max_count_infected = 120
 step_for_infected = int(max_count_infected / 4)
 ticks_for_infected = list(range(0, max_count_infected + 1, step_for_infected))  # Ticks per la legenda
 labels_for_infected = [str(i) for i in ticks_for_infected]  # Etichette per la legenda
-_add_legend_for_infected(ax1, ticks_for_infected, labels_for_infected)
+legenda_infetti = _add_legend_for_infected(ax1, ticks_for_infected, labels_for_infected)
 
+if(max_count_recovered == 0):
+    max_count_recovered = 120
 step_for_recovered = int(max_count_recovered / 4)
 ticks_for_recovered = list(range(0, max_count_recovered + 1, step_for_recovered))  # Ticks per la legenda
 labels_for_recovered = [str(i) for i in ticks_for_recovered]  # Etichette per la legenda
@@ -205,6 +225,18 @@ ticks_for_suscetible = list(range(0, max_count_suscetible + 1, step_for_suscetib
 labels_for_suscetible = [str(i) for i in ticks_for_suscetible]  # Etichette per la legenda
 _add_legend_for_suscetible(ax3, ticks_for_suscetible, labels_for_suscetible)
 
+# Ottieni gli handles e le labels dalla legenda degli infetti
+handles_infetti, labels_infetti = legenda_infetti.legendHandles, [t.get_text() for t in legenda_infetti.get_texts()]
+# Combina handles ed etichette
+all_handles = handles_cities + handles_infetti
+all_labels = labels_cities + labels_infetti
+# Aggiungi la legenda combinata all'asse ax1
+ax1.legend(all_handles, all_labels, loc='lower left')
+
+# Imposta il titolo 
+ax1.set_title('Infected', loc='center')
+ax2.set_title('Recovered', loc='center')
+ax3.set_title('Suscetible', loc='center')
 
 plt.savefig("Visualization/img_output/choroplet_complete_view.png")
 
