@@ -21,6 +21,10 @@ if(int(choose_choroplet) == 0):
         csv.create_sample_choroplet_view(status='Recovered', index_iteration=int(iteration), test=4)
         csv.create_sample_choroplet_view(status='Infected', index_iteration=int(iteration), test=4)
         csv.create_sample_choroplet_view(status='Susceptible',index_iteration=int(iteration), test=4)
+    if(int(choose_test) == 5):
+        csv.create_sample_choroplet_view(status='Recovered', index_iteration=int(iteration), test=5)
+        csv.create_sample_choroplet_view(status='Infected', index_iteration=int(iteration), test=5)
+        csv.create_sample_choroplet_view(status='Susceptible',index_iteration=int(iteration), test=5)
 elif(int(choose_choroplet) == 1):
     if(int(choose_test) == 1):
         ccv.create_complete_choroplet_view(index_iteration=int(iteration), test=1)
@@ -30,3 +34,5 @@ elif(int(choose_choroplet) == 1):
         ccv.create_complete_choroplet_view(index_iteration=int(iteration), test=3)
     if(int(choose_test) == 4):
         ccv.create_complete_choroplet_view(index_iteration=int(iteration), test=4)
+    if(int(choose_test) == 5):
+        ccv.create_complete_choroplet_view(index_iteration=int(iteration), test=5)

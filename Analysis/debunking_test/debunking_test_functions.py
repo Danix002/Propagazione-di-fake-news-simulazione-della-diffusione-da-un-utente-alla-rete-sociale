@@ -37,13 +37,13 @@ def print_test_results(name_test, iterations, initial_status_count):
         # add 'node_count' in the print of the iteration
         print("Iteration: ", i,"NewSusceptible:", node_delta_variation[0], "NewInfected: ", node_delta_variation[1], "NewRecovered: ", node_delta_variation[2], "node count: ", iterations[i]["node_count"])
         
-        """
+        
         # if status is the same of the previous iteration for 5 time, print "Stable status"
         if i > 5:
             if iterations[i]["status"] == iterations[i-1]["status"] == iterations[i-2]["status"] == iterations[i-3]["status"] == iterations[i-4]["status"]:
                 print("Stable status - end of the simulation at iteration ",i," of ", len(iterations))
                 break
-        """
+    print("\n\n<---------END TEST: ", name_test, "--------->\n")
                  
 def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration = False, initial_status = None):
     colors = ["blue"] * len(g.nodes)
@@ -159,7 +159,7 @@ def make_test_2_debunking(g, num_iterations, fake_news_credibility, num_bridging
     sorted_nodes = sorted(betweenness_centrality, key=betweenness_centrality.get, reverse=True)
     bridging_nodes = sorted_nodes[:num_bridging_nodes]
 
-    # Add the hub nodes to the initial seed
+    # Add the nodes to the initial seed
     for node in bridging_nodes:
         intial_seed.append(node)
 
@@ -192,7 +192,7 @@ def make_test_3_debunking(g, num_iterations, fake_news_credibility, num_initial_
     """
     random_nodes = random.sample(list(g.nodes()), num_initial_seed)
 
-    # Add the hub nodes to the initial seed
+    # Add the nodes to the initial seed
     for node in random_nodes:
         intial_seed.append(node)
 
@@ -223,7 +223,7 @@ def make_test_4_debunking(g, num_iterations, fake_news_credibility, num_highest_
     sorted_nodes = sorted(eigenvector_centrality, key=eigenvector_centrality.get, reverse=True)
     highest_eigenvector_nodes = sorted_nodes[:num_highest_eigenvector]
 
-    # Add the hub nodes to the initial seed
+    # Add the nodes to the initial seed
     for node in highest_eigenvector_nodes:
         intial_seed.append(node)
 
@@ -242,6 +242,37 @@ def make_test_4_debunking(g, num_iterations, fake_news_credibility, num_highest_
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test4/final_status_infection_and_debunking_test_4_hubs.graphml", iterations)
     
     build_trend_plot(model, iterations, 4)
+    return iterations
+
+def make_test_5_debunking(g, num_iterations, fake_news_credibility, num_highest_closeness):
+    #-- DEBUNKING TEST 5: setting the n  nodes with the highest closeness centrality nodes as initial seed
+    model, config = _build_test_model(g, fake_news_credibility)
+    intial_seed = []
+    
+    closeness_centrality = nx.closeness_centrality(g)
+
+    sorted_nodes = sorted(closeness_centrality, key=closeness_centrality.get, reverse=True)
+    highest_closeness_nodes = sorted_nodes[:num_highest_closeness]
+
+    # Add the nodes to the initial seed
+    for node in highest_closeness_nodes:
+        intial_seed.append(node)
+
+    config.add_model_initial_configuration("Recovered", intial_seed)
+    model.set_initial_status(config)
+
+    initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test5/inital_status_infection_and_debunking_test_5_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
+    
+    # Esecution of the simulation
+    iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
+
+    # Visualization of the simulation results
+    name_test = "Debunking test 5: setting as initial recovered seed the nodes with the highest closeness centrality"
+    print_test_results(name_test, iterations, initial_status_count)
+    
+    write_graph_to_file(g, "Analysis/debunking_test/test_results/test5/final_status_infection_and_debunking_test_5_hubs.graphml", iterations)
+    
+    build_trend_plot(model, iterations, 5)
     return iterations
     
 def build_trend_plot(model, iterations, test):
