@@ -1,8 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-
-
 # A function that takes two graphs as input, calculates various centralities, and then plots the comparison
 def plot_centralities(model_graph, real_graph):
     degree_centrality_model = nx.degree_centrality(model_graph)

@@ -1,8 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-
-
 # A function that takes two graphs as input, calculates the degree of each node, and plots degree distribution comparison
 def plot_degree_distribution(model_graph, real_graph):
     degree_model_net = dict(nx.degree(model_graph))
@@ -30,8 +28,7 @@ def plot_degree_distribution(model_graph, real_graph):
     plt.show()
     fig.savefig('degree_distribution.png')
     
-    
-    
+
     # Create two graphs
 g1 = nx.barabasi_albert_graph(11, 3)
 g2 = nx.barabasi_albert_graph(10, 1)

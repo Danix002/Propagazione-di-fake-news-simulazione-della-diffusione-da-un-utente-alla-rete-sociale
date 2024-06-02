@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-
 # Estrazione dei dati statistici 
 # Proprietà strtutturali
 def extract_statistic_data(artificial_graph, real_graph):
@@ -11,8 +10,6 @@ def extract_statistic_data(artificial_graph, real_graph):
     plot_degree_distribution(artificial_graph, real_graph)
     plot_centralities(artificial_graph, real_graph)
   
-   
-
 
 # A function that take two graph as input, calculate number of nodes, number of edges of each graph and plot the comparison in a subplots
 def plot_graph_comparison(model_graph, real_graph):
@@ -61,8 +58,6 @@ def plot_graph_comparison(model_graph, real_graph):
     plt.show()
     fig.savefig('Analysis/statistic_plot/graph_comparison.png')
     
-    
-  
     
 # A function that take two graph as input, calculate the degree of each node and plot degree distribution, the comparison between the two graphs
 def plot_degree_distribution(model_graph, real_graph):

@@ -1,9 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-
-
-
 # A function that takes two graphs as input, calculates number of nodes, number of edges of each graph, and plots the comparison in subplots
 def plot_graph_comparison(model_graph, real_graph):
     fig, axs = plt.subplots(3, 2, figsize=(10, 10))
@@ -44,8 +41,6 @@ def plot_graph_comparison(model_graph, real_graph):
     
     plt.show()
     fig.savefig('graph_comparison.png')
-
-
 
 # Create two graphs
 g1 = nx.barabasi_albert_graph(11, 3)

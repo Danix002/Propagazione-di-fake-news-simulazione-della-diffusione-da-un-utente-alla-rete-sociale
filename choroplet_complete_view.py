@@ -16,6 +16,7 @@ import matplotlib.colors as mcolors
 from shapely.geometry import Point
 from matplotlib.colorbar import Colorbar
 import matplotlib.patches as mpatches
+from IPython.display import display
 from copy import copy
 
 def get_legend_handles_labels(ax):
@@ -241,15 +242,6 @@ def create_complete_choroplet_view(index_iteration, test):
     ax3.set_title('Susceptible in test '+ str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
     
     plt.savefig("Visualization/img_output/choroplet_complete_view_"+ str(test) +".png")
-    #plt.show()
-
-    # Salva il grafico in un file HTML
-    html_str = mpld3.fig_to_html(plt.gcf(), template_type='general')
-
-    # Minifica l'HTML
-    minified_html = htmlmin.minify(html_str)
-
-    with open("Visualization/html_output/choroplet_complete_view_"+ str(test) +".html", "w") as f:
-        f.write(minified_html)
+    plt.show()
 
     
