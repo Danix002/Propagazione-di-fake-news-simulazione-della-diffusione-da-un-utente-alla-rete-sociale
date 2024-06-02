@@ -63,6 +63,13 @@ def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration 
                     
                     if initial_status[key] == 0:  # State suceptible
                         count_susceptible +=1
+                        
+        # Add the 'color' attribute to the nodes
+        for node, color in zip(g.nodes(), colors):
+            g.nodes[node]['color'] = color
+            
+        #write the graph to a file
+        nx.write_graphml(g, file_name)
         return {0: count_susceptible, 1: count_infected, 2: count_recovered}
                     
     for i in range(0, len(iterations)):
