@@ -79,6 +79,12 @@ def get_infected_node(index_iteration, test):
             for key in node_statuses.keys():
                 if node_statuses[key] == 1:  # State infected
                     infected_node.append(g.nodes()[key])
+    if(test == 4):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_four[i]["status"]
+            for key in node_statuses.keys():
+                if node_statuses[key] == 1:  # State infected
+                    infected_node.append(g.nodes()[key])
     return infected_node
 
 def get_recovered_node(index_iteration, test):
@@ -101,6 +107,12 @@ def get_recovered_node(index_iteration, test):
             for key in node_statuses.keys(): # State recovered
                 if node_statuses[key] == 2:
                     recovered_node.append(g.nodes()[key])
+    if(test == 4):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_four[i]["status"]
+            for key in node_statuses.keys(): # State recovered
+                if node_statuses[key] == 2:
+                    recovered_node.append(g.nodes()[key])
     return recovered_node           
 
 def get_susceptible_node(index_iteration, test):
@@ -120,6 +132,12 @@ def get_susceptible_node(index_iteration, test):
     if(test == 3):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_three[i]["status"]
+            for key in node_statuses.keys():  # State susceptible
+                if node_statuses[key] == 0:
+                    susceptible_node.append(g.nodes()[key])
+    if(test == 4):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_four[i]["status"]
             for key in node_statuses.keys():  # State susceptible
                 if node_statuses[key] == 0:
                     susceptible_node.append(g.nodes()[key])
