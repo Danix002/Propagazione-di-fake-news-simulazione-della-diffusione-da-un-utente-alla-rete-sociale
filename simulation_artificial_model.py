@@ -22,7 +22,6 @@ import geopandas as gpd
 import artificial_network_generate as ang
 import custom_iterations_bunch as cib
 from Analysis.debunking_test.debunking_test_functions import make_test_1_debunking, make_test_2_debunking, make_test_3_debunking
-
     
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
 n = 2000 # Numero totale di nodi
@@ -41,7 +40,7 @@ for node in g.nodes():
     city = cities.sample(n=1)
     g.nodes[node]['latitude'] = sc.get_spatial_coordinate_latitude(city)
     g.nodes[node]['longitude']  = sc.get_spatial_coordinate_longitude(city)
-   
+  
 # 2) Getting all necessary statistics of the graph
 
 # 3) Simulation of the diffusion process on the graph
@@ -58,33 +57,75 @@ iterations_test_two = make_test_2_debunking(g, 50, fake_news_credibility, 150)
 iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility, 150)
 
 
-def get_infected_node():
+def get_infected_node(index_iteration, test):
     infected_node = []
-    for i  in range(1, len(iterations_test_one)):
-        node_statuses = iterations_test_one[i]["status"]
-        for key in node_statuses.keys():
-            if node_statuses[key] == 1:  # State infected
-              infected_node.append(g.nodes()[key])
+    if(test == 1):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_one[i]["status"]
+            for key in node_statuses.keys():
+                if node_statuses[key] == 1:  # State infected
+                    infected_node.append(g.nodes()[key])
+    if(test == 2):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_two[i]["status"]
+            for key in node_statuses.keys():
+                if node_statuses[key] == 1:  # State infected
+                    infected_node.append(g.nodes()[key])
+    if(test == 3):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_three[i]["status"]
+            for key in node_statuses.keys():
+                if node_statuses[key] == 1:  # State infected
+                    infected_node.append(g.nodes()[key])
     return infected_node
 
-def get_recovered_node():
+def get_recovered_node(index_iteration, test):
     recovered_node = []
-    for i  in range(1, len(iterations_test_one)):
-        node_statuses = iterations_test_one[i]["status"]
-        for key in node_statuses.keys(): # State recovered
-            if node_statuses[key] == 2:
-                recovered_node.append(g.nodes()[key])
-    return recovered_node
+    if(test == 1):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_one[i]["status"]
+            for key in node_statuses.keys(): # State recovered
+                if node_statuses[key] == 2:
+                    recovered_node.append(g.nodes()[key])
+    if(test == 2):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_two[i]["status"]
+            for key in node_statuses.keys(): # State recovered
+                if node_statuses[key] == 2:
+                    recovered_node.append(g.nodes()[key])
+    if(test == 3):
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_three[i]["status"]
+            for key in node_statuses.keys(): # State recovered
+                if node_statuses[key] == 2:
+                    recovered_node.append(g.nodes()[key])
+    return recovered_node           
 
-def get_susceptible_node():
+def get_susceptible_node(index_iteration, test):
     susceptible_node = []
-    
-    for i  in range(1, len(iterations_test_one)):
-        node_statuses = iterations_test_one[i]["status"]
-        for key in node_statuses.keys():  # State recovered
-            if node_statuses[key] == 0:
-                susceptible_node.append(g.nodes()[key])
+    if(test == 1):
+        print("Sono nel test 1")
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_one[i]["status"]
+            for key in node_statuses.keys():  # State susceptible
+                if node_statuses[key] == 0:
+                    susceptible_node.append(g.nodes()[key])
+    if(test == 2):
+        print("Sono nel test 2")
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_two[i]["status"]
+            for key in node_statuses.keys():  # State susceptible
+                if node_statuses[key] == 0:
+                    susceptible_node.append(g.nodes()[key])
+    if(test == 3):
+        print("Sono nel test 3")
+        for i  in range(0, index_iteration):
+            node_statuses = iterations_test_three[i]["status"]
+            for key in node_statuses.keys():  # State susceptible
+                if node_statuses[key] == 0:
+                    susceptible_node.append(g.nodes()[key])
     return susceptible_node
 
 def get_number_of_nodes_in_simulation():
     return n
+
