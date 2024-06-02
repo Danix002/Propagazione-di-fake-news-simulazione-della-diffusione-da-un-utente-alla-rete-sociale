@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import mplcursors 
 from shapely.geometry import Point
 
-def italy_reference_map_with_cities(show_principal_cities_only):
+def italy_reference_map_with_cities(show_principal_cities_only, my_ax = None):
     file_path = 'italy_cities.csv'
     cities = gpd.read_file(file_path)
 
@@ -20,7 +20,10 @@ def italy_reference_map_with_cities(show_principal_cities_only):
             'lng': city['lng']
         }) 
 
-    italy_map = icv.italy_reference_map()
+    if my_ax:
+        italy_map = icv.italy_reference_map(my_ax)
+    else:
+        italy_map = icv.italy_reference_map()
 
     principal_city = {
         'city': ['L\'Aquila', 'Potenza', 'Catanzaro', 'Naples', 'Bologna', 'Trieste', 'Rome', 'Genoa', 'Milan', 'Ancona', 'Campobasso', 'Turin', 'Bari', 'Cagliari', 'Palermo', 'Florence', 'Trento', 'Perugia', 'Aosta', 'Venice'],
@@ -53,12 +56,9 @@ def italy_reference_map_with_cities(show_principal_cities_only):
             italy_map.annotate(label, xy=(x, y), xytext=(3, 3), textcoords="offset points")
 
     # Remove axis frames
-    italy_map.axis('off') 
-
+    #italy_map.axis('off') 
     # Aggiungi una legenda
-    italy_map.legend()
+    legend_for_cities = italy_map.legend(loc='upper left')
 
     #plt.show()
-    return italy_map
-
-#italy_reference_map_with_cities(show_principal_cities_only=True)
+    return legend_for_cities
