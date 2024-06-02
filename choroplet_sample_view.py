@@ -24,14 +24,14 @@ def _add_legend(ax, ticks, labels, my_title, max_count):
     ax.legend(handles=legend_handles, title=my_title, loc='lower right')
 
 
-def _count_nodes(lat, lng, status):
+def _count_nodes(lat, lng, status, index_iteration, test):
     nodes_status = []
     if(status == 'Infected'):
-        nodes_status = sam.get_infected_node()
+        nodes_status = sam.get_infected_node(index_iteration, test)
     if(status == 'Recovered'):
-        nodes_status = sam.get_recovered_node()
+        nodes_status = sam.get_recovered_node(index_iteration, test)
     if(status == 'Susceptible'):
-        nodes_status = sam.get_susceptible_node()
+        nodes_status = sam.get_susceptible_node(index_iteration, test)
     count = 0
     for el in nodes_status:
         if (el['latitude'] == lat and el['longitude'] == lng):
@@ -56,7 +56,7 @@ def _color_density(number, max_count, status):
     #hsv_color[1] *= number / number_of_nodes_in_simulation
     return hex_color
 
-def create_sample_choroplet_view(status, index_iteration):
+def create_sample_choroplet_view(status, index_iteration, test):
     file_path = 'italy_cities.csv'
     cities = gpd.read_file(file_path)
 
@@ -70,7 +70,7 @@ def create_sample_choroplet_view(status, index_iteration):
             'lat': city['lat'],
             'lng': city['lng'],
             'region' : city['admin_name'],
-            'count_nodes': _count_nodes(city['lat'], city['lng'], status)
+            'count_nodes': _count_nodes(city['lat'], city['lng'], status, index_iteration, test)
         }) 
 
     grigio_scuro = '#666666'
@@ -125,7 +125,7 @@ def create_sample_choroplet_view(status, index_iteration):
         specific_region = regioni[regioni["DEN_REG"] == reg['region']]
         if (not specific_region.empty):
             color_region = _color_density(reg['count'], max_count, status)
-            print("Regione: " + reg['region'] + ", " + status + ": " + str(reg['count']) + ", color: " + color_region)
+            """print("Regione: " + reg['region'] + ", " + status + ": " + str(reg['count']) + ", color: " + color_region)"""
             specific_region.plot(ax=ax, color=color_region, edgecolor=grigio_scuro, linewidth=1)  
         else:
             print("Regione: " + reg['region'] + " non trovata")
@@ -133,10 +133,12 @@ def create_sample_choroplet_view(status, index_iteration):
     ax.axis('off') 
 
     # Aggiungi la legenda
-    step = 50
+    if(max_count == 0):
+        max_count = 120
+    step = int(max_count / 4)
     ticks = list(range(0, max_count + 1, step))  # Ticks per la legenda
     labels = [str(i) for i in ticks]  # Etichette per la legenda
     _add_legend(plt.gca(), ticks, labels, status, max_count)
 
-    plt.savefig("Visualization/img_output/choroplet_sample_view.png")
+    plt.savefig("Visualization/img_output/choroplet_sample_view_"+ status + "_" + str(test) +".png")
     plt.show()   

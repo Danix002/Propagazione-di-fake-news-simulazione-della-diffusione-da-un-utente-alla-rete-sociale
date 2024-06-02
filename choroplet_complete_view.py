@@ -194,9 +194,9 @@ def create_complete_choroplet_view(index_iteration, test):
                 elif my_ax == ax3:
                     color_region = _color_density(reg['count_susceptible'], max_count_susceptible, status='Susceptible')
                 specific_region.plot(ax=my_ax, color=color_region, edgecolor=grigio_scuro, linewidth=1)
-                print("Regione: " + reg['region'] + ", infetti: " +  str(reg['count_infected']) +
+                """print("Regione: " + reg['region'] + ", infetti: " +  str(reg['count_infected']) +
                     ", ricoverati: " +  str(reg['count_recovered']) +
-                    ", suscettibili: " +  str(reg['count_susceptible']))
+                    ", suscettibili: " +  str(reg['count_susceptible']))"""
             else:
                 print("Regione: " + reg['region'] + " non trovata")
 
