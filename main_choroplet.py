@@ -24,7 +24,7 @@ if(int(choose_choroplet) == 0):
     if(int(choose_test) == 5):
         csv.create_sample_choroplet_view(status='Recovered', index_iteration=int(iteration), test=5)
         csv.create_sample_choroplet_view(status='Infected', index_iteration=int(iteration), test=5)
-        csv.create_sample_choroplet_view(status='Susceptible',index_iteration=int(iteration), test=5)
+        csv.create_sample_choroplet_view(status='Susceptible', index_iteration=int(iteration), test=5)
 elif(int(choose_choroplet) == 1):
     if(int(choose_test) == 1):
         ccv.create_complete_choroplet_view(index_iteration=int(iteration), test=1)

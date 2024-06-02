@@ -140,5 +140,7 @@ def create_sample_choroplet_view(status, index_iteration, test):
     labels = [str(i) for i in ticks]  # Etichette per la legenda
     _add_legend(plt.gca(), ticks, labels, status, max_count)
 
+    ax.set_title(status + " in test " + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
+
     plt.savefig("Visualization/img_output/choroplet_sample_view_"+ status + "_" + str(test) +".png")
     plt.show()   

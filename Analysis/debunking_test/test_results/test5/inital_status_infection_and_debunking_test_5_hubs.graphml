@@ -166,7 +166,7 @@
   <data key="d3">0.47</data>
   <data key="d4">40.9167</data>
   <data key="d5">14.2000</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="18">
   <data key="d0">university</data>
@@ -472,7 +472,7 @@
   <data key="d3">0.28</data>
   <data key="d4">40.2500</data>
   <data key="d5">18.2833</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="52">
   <data key="d0">post_graduate</data>
@@ -553,7 +553,7 @@
   <data key="d3">0.64</data>
   <data key="d4">37.6167</data>
   <data key="d5">15.1667</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="61">
   <data key="d0">post_graduate</data>
@@ -652,7 +652,7 @@
   <data key="d3">0.34</data>
   <data key="d4">39.0350</data>
   <data key="d5">8.4125</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="72">
   <data key="d0">post_graduate</data>
@@ -715,7 +715,7 @@
   <data key="d3">0.21</data>
   <data key="d4">44.6153</data>
   <data key="d5">11.8333</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="79">
   <data key="d0">university</data>
@@ -769,7 +769,7 @@
   <data key="d3">0.49</data>
   <data key="d4">44.3333</data>
   <data key="d5">9.2167</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="85">
   <data key="d0">post_graduate</data>
@@ -796,7 +796,7 @@
   <data key="d3">0.29</data>
   <data key="d4">42.3500</data>
   <data key="d5">13.4000</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="88">
   <data key="d0">post_graduate</data>
@@ -805,7 +805,7 @@
   <data key="d3">0.47</data>
   <data key="d4">37.5667</data>
   <data key="d5">15.1167</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="89">
   <data key="d0">high_school</data>
@@ -841,7 +841,7 @@
   <data key="d3">0.29</data>
   <data key="d4">45.5167</data>
   <data key="d5">11.3333</data>
-  <data key="d6">red</data>
+  <data key="d6">green</data>
 </node>
 <node id="93">
   <data key="d0">Unknown</data>
@@ -850,7 +850,7 @@
   <data key="d3">0.31</data>
   <data key="d4">40.9000</data>
   <data key="d5">14.1833</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="94">
   <data key="d0">post_graduate</data>
@@ -877,7 +877,7 @@
   <data key="d3">0.35</data>
   <data key="d4">45.5000</data>
   <data key="d5">11.9167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="97">
   <data key="d0">university</data>
@@ -895,7 +895,7 @@
   <data key="d3">0.36</data>
   <data key="d4">43.0667</data>
   <data key="d5">10.6167</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="99">
   <data key="d0">high_school</data>
@@ -967,7 +967,7 @@
   <data key="d3">0.23</data>
   <data key="d4">40.8725</data>
   <data key="d5">14.4369</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="107">
   <data key="d0">post_graduate</data>
@@ -976,7 +976,7 @@
   <data key="d3">0.47</data>
   <data key="d4">41.7250</data>
   <data key="d5">13.3417</data>
-  <data key="d6">red</data>
+  <data key="d6">green</data>
 </node>
 <node id="108">
   <data key="d0">Unknown</data>
@@ -1030,7 +1030,7 @@
   <data key="d3">0.38</data>
   <data key="d4">45.3000</data>
   <data key="d5">9.7667</data>
-  <data key="d6">red</data>
+  <data key="d6">green</data>
 </node>
 <node id="114">
   <data key="d0">Unknown</data>
@@ -1048,7 +1048,7 @@
   <data key="d3">0.37</data>
   <data key="d4">44.9333</data>
   <data key="d5">10.3833</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="116">
   <data key="d0">high_school</data>
@@ -1066,7 +1066,7 @@
   <data key="d3">0.27</data>
   <data key="d4">45.8833</data>
   <data key="d5">12.1667</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="118">
   <data key="d0">university</data>
@@ -1111,7 +1111,7 @@
   <data key="d3">0.56</data>
   <data key="d4">43.7833</data>
   <data key="d5">10.9167</data>
-  <data key="d6">red</data>
+  <data key="d6">green</data>
 </node>
 <node id="123">
   <data key="d0">high_school</data>
@@ -1129,7 +1129,7 @@
   <data key="d3">0.43</data>
   <data key="d4">43.9333</data>
   <data key="d5">10.9167</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="125">
   <data key="d0">high_school</data>
@@ -1138,7 +1138,7 @@
   <data key="d3">0.29</data>
   <data key="d4">46.2164</data>
   <data key="d5">10.1689</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="126">
   <data key="d0">university</data>
@@ -1165,7 +1165,7 @@
   <data key="d3">0.35</data>
   <data key="d4">45.6167</data>
   <data key="d5">8.7833</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="129">
   <data key="d0">post_graduate</data>
@@ -1183,7 +1183,7 @@
   <data key="d3">0.37</data>
   <data key="d4">43.9667</data>
   <data key="d5">10.2333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="131">
   <data key="d0">post_graduate</data>
@@ -1246,7 +1246,7 @@
   <data key="d3">0.29</data>
   <data key="d4">43.4833</data>
   <data key="d5">11.6167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="138">
   <data key="d0">post_graduate</data>
@@ -1300,7 +1300,7 @@
   <data key="d3">0.2</data>
   <data key="d4">44.1167</data>
   <data key="d5">8.2500</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="144">
   <data key="d0">university</data>
@@ -1318,7 +1318,7 @@
   <data key="d3">0.22</data>
   <data key="d4">40.6947</data>
   <data key="d5">14.4803</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="146">
   <data key="d0">Unknown</data>
@@ -1399,7 +1399,7 @@
   <data key="d3">0.25</data>
   <data key="d4">45.9333</data>
   <data key="d5">13.6167</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="155">
   <data key="d0">post_graduate</data>
@@ -1426,7 +1426,7 @@
   <data key="d3">0.49</data>
   <data key="d4">45.5333</data>
   <data key="d5">9.4000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="158">
   <data key="d0">post_graduate</data>
@@ -1444,7 +1444,7 @@
   <data key="d3">0.24</data>
   <data key="d4">45.5781</data>
   <data key="d5">8.9183</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="160">
   <data key="d0">post_graduate</data>
@@ -1453,7 +1453,7 @@
   <data key="d3">0.45</data>
   <data key="d4">38.0667</data>
   <data key="d5">14.6333</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="161">
   <data key="d0">post_graduate</data>
@@ -1480,7 +1480,7 @@
   <data key="d3">0.79</data>
   <data key="d4">44.0792</data>
   <data key="d5">10.1000</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="164">
   <data key="d0">university</data>
@@ -1498,7 +1498,7 @@
   <data key="d3">0.4</data>
   <data key="d4">43.7611</data>
   <data key="d5">10.4403</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="166">
   <data key="d0">high_school</data>
@@ -1507,7 +1507,7 @@
   <data key="d3">0.27</data>
   <data key="d4">44.9167</data>
   <data key="d5">8.6167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="167">
   <data key="d0">Unknown</data>
@@ -1552,7 +1552,7 @@
   <data key="d3">0.21</data>
   <data key="d4">44.9333</data>
   <data key="d5">9.9000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="172">
   <data key="d0">post_graduate</data>
@@ -1606,7 +1606,7 @@
   <data key="d3">0.42</data>
   <data key="d4">41.6833</data>
   <data key="d5">15.3833</data>
-  <data key="d6">red</data>
+  <data key="d6">green</data>
 </node>
 <node id="178">
   <data key="d0">post_graduate</data>
@@ -1678,7 +1678,7 @@
   <data key="d3">0.21</data>
   <data key="d4">37.9333</data>
   <data key="d5">15.3500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="186">
   <data key="d0">high_school</data>
@@ -1687,7 +1687,7 @@
   <data key="d3">0.29</data>
   <data key="d4">45.7500</data>
   <data key="d5">9.0333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="187">
   <data key="d0">post_graduate</data>
@@ -1705,7 +1705,7 @@
   <data key="d3">0.7</data>
   <data key="d4">43.0758</data>
   <data key="d5">12.6175</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="189">
   <data key="d0">high_school</data>
@@ -1714,7 +1714,7 @@
   <data key="d3">0.27</data>
   <data key="d4">40.7333</data>
   <data key="d5">13.8500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="190">
   <data key="d0">university</data>
@@ -1741,7 +1741,7 @@
   <data key="d3">0.5</data>
   <data key="d4">44.2333</data>
   <data key="d5">12.0500</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="193">
   <data key="d0">high_school</data>
@@ -1786,7 +1786,7 @@
   <data key="d3">0.29</data>
   <data key="d4">39.2500</data>
   <data key="d5">9.1500</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="198">
   <data key="d0">post_graduate</data>
@@ -1822,7 +1822,7 @@
   <data key="d3">0.29</data>
   <data key="d4">40.1167</data>
   <data key="d5">18.2000</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="202">
   <data key="d0">university</data>
@@ -1831,7 +1831,7 @@
   <data key="d3">0.21</data>
   <data key="d4">40.9667</data>
   <data key="d5">14.2333</data>
-  <data key="d6">green</data>
+  <data key="d6">red</data>
 </node>
 <node id="203">
   <data key="d0">post_graduate</data>
@@ -1840,7 +1840,7 @@
   <data key="d3">0.46</data>
   <data key="d4">43.7611</data>
   <data key="d5">10.4403</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="204">
   <data key="d0">post_graduate</data>
@@ -1903,7 +1903,7 @@
   <data key="d3">0.28</data>
   <data key="d4">41.7469</data>
   <data key="d5">12.6519</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="211">
   <data key="d0">university</data>
@@ -1957,7 +1957,7 @@
   <data key="d3">0.38</data>
   <data key="d4">45.6500</data>
   <data key="d5">11.8500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="217">
   <data key="d0">post_graduate</data>
@@ -2074,7 +2074,7 @@
   <data key="d3">0.42</data>
   <data key="d4">38.0833</data>
   <data key="d5">13.4500</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="230">
   <data key="d0">post_graduate</data>
@@ -2092,7 +2092,7 @@
   <data key="d3">0.45</data>
   <data key="d4">45.5167</data>
   <data key="d5">11.9667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="232">
   <data key="d0">post_graduate</data>
@@ -2101,7 +2101,7 @@
   <data key="d3">0.45</data>
   <data key="d4">39.3694</data>
   <data key="d5">17.1278</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="233">
   <data key="d0">university</data>
@@ -2110,7 +2110,7 @@
   <data key="d3">0.29</data>
   <data key="d4">40.5667</data>
   <data key="d5">17.2167</data>
-  <data key="d6">green</data>
+  <data key="d6">red</data>
 </node>
 <node id="234">
   <data key="d0">post_graduate</data>
@@ -2191,7 +2191,7 @@
   <data key="d3">0.29</data>
   <data key="d4">45.0833</data>
   <data key="d5">9.3000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="243">
   <data key="d0">university</data>
@@ -2236,7 +2236,7 @@
   <data key="d3">0.25</data>
   <data key="d4">43.2756</data>
   <data key="d5">11.9881</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="248">
   <data key="d0">university</data>
@@ -2272,7 +2272,7 @@
   <data key="d3">0.32</data>
   <data key="d4">46.1000</data>
   <data key="d5">13.4333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="252">
   <data key="d0">university</data>
@@ -2290,7 +2290,7 @@
   <data key="d3">0.27</data>
   <data key="d4">40.1333</data>
   <data key="d5">18.1333</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="254">
   <data key="d0">post_graduate</data>
@@ -2353,7 +2353,7 @@
   <data key="d3">0.26</data>
   <data key="d4">40.9167</data>
   <data key="d5">17.0167</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="261">
   <data key="d0">post_graduate</data>
@@ -2389,7 +2389,7 @@
   <data key="d3">0.38</data>
   <data key="d4">43.4633</data>
   <data key="d5">11.8783</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="265">
   <data key="d0">university</data>
@@ -2407,7 +2407,7 @@
   <data key="d3">0.34</data>
   <data key="d4">40.7462</data>
   <data key="d5">14.7705</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="267">
   <data key="d0">post_graduate</data>
@@ -2416,7 +2416,7 @@
   <data key="d3">0.35</data>
   <data key="d4">40.7000</data>
   <data key="d5">17.6667</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="268">
   <data key="d0">university</data>
@@ -2425,7 +2425,7 @@
   <data key="d3">0.35</data>
   <data key="d4">42.0500</data>
   <data key="d5">14.7167</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="269">
   <data key="d0">post_graduate</data>
@@ -2443,7 +2443,7 @@
   <data key="d3">0.4</data>
   <data key="d4">44.5167</data>
   <data key="d5">7.4667</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="271">
   <data key="d0">Unknown</data>
@@ -2470,7 +2470,7 @@
   <data key="d3">0.45</data>
   <data key="d4">45.5333</data>
   <data key="d5">9.1833</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="274">
   <data key="d0">post_graduate</data>
@@ -2524,7 +2524,7 @@
   <data key="d3">0.49</data>
   <data key="d4">40.9833</data>
   <data key="d5">14.1833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="280">
   <data key="d0">post_graduate</data>
@@ -2533,7 +2533,7 @@
   <data key="d3">0.44</data>
   <data key="d4">45.7317</data>
   <data key="d5">9.7286</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="281">
   <data key="d0">post_graduate</data>
@@ -2551,7 +2551,7 @@
   <data key="d3">0.59</data>
   <data key="d4">42.9897</data>
   <data key="d5">13.8658</data>
-  <data key="d6">green</data>
+  <data key="d6">red</data>
 </node>
 <node id="283">
   <data key="d0">Unknown</data>
@@ -2569,7 +2569,7 @@
   <data key="d3">0.69</data>
   <data key="d4">41.0833</data>
   <data key="d5">14.5000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="285">
   <data key="d0">post_graduate</data>
@@ -2623,7 +2623,7 @@
   <data key="d3">0.24</data>
   <data key="d4">42.5403</data>
   <data key="d5">12.0369</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="291">
   <data key="d0">Unknown</data>
@@ -2677,7 +2677,7 @@
   <data key="d3">0.32</data>
   <data key="d4">40.8000</data>
   <data key="d5">14.5500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="297">
   <data key="d0">Unknown</data>
@@ -2686,7 +2686,7 @@
   <data key="d3">0.31</data>
   <data key="d4">44.5967</data>
   <data key="d5">11.0528</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="298">
   <data key="d0">post_graduate</data>
@@ -2713,7 +2713,7 @@
   <data key="d3">0.42</data>
   <data key="d4">43.6833</data>
   <data key="d5">10.8500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="301">
   <data key="d0">high_school</data>
@@ -2731,7 +2731,7 @@
   <data key="d3">0.26</data>
   <data key="d4">40.3051</data>
   <data key="d5">18.2213</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="303">
   <data key="d0">Unknown</data>
@@ -2767,7 +2767,7 @@
   <data key="d3">0.49</data>
   <data key="d4">42.5619</data>
   <data key="d5">12.6414</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="307">
   <data key="d0">university</data>
@@ -2803,7 +2803,7 @@
   <data key="d3">0.5</data>
   <data key="d4">37.4019</data>
   <data key="d5">13.6183</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="311">
   <data key="d0">Unknown</data>
@@ -2812,7 +2812,7 @@
   <data key="d3">0.36</data>
   <data key="d4">38.1936</data>
   <data key="d5">15.5542</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="312">
   <data key="d0">Unknown</data>
@@ -2947,7 +2947,7 @@
   <data key="d3">0.3</data>
   <data key="d4">45.5500</data>
   <data key="d5">12.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="327">
   <data key="d0">post_graduate</data>
@@ -2983,7 +2983,7 @@
   <data key="d3">0.5</data>
   <data key="d4">45.5833</data>
   <data key="d5">8.6333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="331">
   <data key="d0">high_school</data>
@@ -3037,7 +3037,7 @@
   <data key="d3">0.48</data>
   <data key="d4">40.2833</data>
   <data key="d5">18.0833</data>
-  <data key="d6">blue</data>
+  <data key="d6">green</data>
 </node>
 <node id="337">
   <data key="d0">post_graduate</data>
@@ -3055,7 +3055,7 @@
   <data key="d3">0.29</data>
   <data key="d4">41.3500</data>
   <data key="d5">13.4167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="339">
   <data key="d0">post_graduate</data>
@@ -3064,7 +3064,7 @@
   <data key="d3">0.22</data>
   <data key="d4">41.9500</data>
   <data key="d5">12.0833</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="340">
   <data key="d0">university</data>
@@ -3073,7 +3073,7 @@
   <data key="d3">0.25</data>
   <data key="d4">45.1333</data>
   <data key="d5">7.7667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="341">
   <data key="d0">Unknown</data>
@@ -3082,7 +3082,7 @@
   <data key="d3">0.29</data>
   <data key="d4">45.2333</data>
   <data key="d5">11.4611</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="342">
   <data key="d0">Unknown</data>
@@ -3118,7 +3118,7 @@
   <data key="d3">0.23</data>
   <data key="d4">45.6000</data>
   <data key="d5">13.7667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="346">
   <data key="d0">post_graduate</data>
@@ -3208,7 +3208,7 @@
   <data key="d3">0.44</data>
   <data key="d4">40.8000</data>
   <data key="d5">14.3500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="356">
   <data key="d0">university</data>
@@ -3226,7 +3226,7 @@
   <data key="d3">0.32</data>
   <data key="d4">45.7606</data>
   <data key="d5">9.7969</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="358">
   <data key="d0">Unknown</data>
@@ -3271,7 +3271,7 @@
   <data key="d3">0.47</data>
   <data key="d4">40.7536</data>
   <data key="d5">14.5253</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="363">
   <data key="d0">university</data>
@@ -3289,7 +3289,7 @@
   <data key="d3">0.27</data>
   <data key="d4">41.0833</data>
   <data key="d5">14.2833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="365">
   <data key="d0">high_school</data>
@@ -3325,7 +3325,7 @@
   <data key="d3">0.45</data>
   <data key="d4">43.7167</data>
   <data key="d5">10.4000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="369">
   <data key="d0">post_graduate</data>
@@ -3334,7 +3334,7 @@
   <data key="d3">0.49</data>
   <data key="d4">40.9167</data>
   <data key="d5">15.6667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="370">
   <data key="d0">post_graduate</data>
@@ -3370,7 +3370,7 @@
   <data key="d3">0.46</data>
   <data key="d4">38.0450</data>
   <data key="d5">13.1208</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="374">
   <data key="d0">Unknown</data>
@@ -3379,7 +3379,7 @@
   <data key="d3">0.35</data>
   <data key="d4">44.1500</data>
   <data key="d5">12.1333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="375">
   <data key="d0">post_graduate</data>
@@ -3415,7 +3415,7 @@
   <data key="d3">0.46</data>
   <data key="d4">45.7500</data>
   <data key="d5">8.5500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="379">
   <data key="d0">post_graduate</data>
@@ -3487,7 +3487,7 @@
   <data key="d3">0.43</data>
   <data key="d4">40.8167</data>
   <data key="d5">16.4167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="387">
   <data key="d0">post_graduate</data>
@@ -3550,7 +3550,7 @@
   <data key="d3">0.44</data>
   <data key="d4">44.7000</data>
   <data key="d5">7.8500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="394">
   <data key="d0">university</data>
@@ -3613,7 +3613,7 @@
   <data key="d3">0.61</data>
   <data key="d4">45.0850</data>
   <data key="d5">11.6006</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="401">
   <data key="d0">Unknown</data>
@@ -3622,7 +3622,7 @@
   <data key="d3">0.31</data>
   <data key="d4">45.3500</data>
   <data key="d5">11.9667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="402">
   <data key="d0">high_school</data>
@@ -3649,7 +3649,7 @@
   <data key="d3">0.55</data>
   <data key="d4">37.7981</data>
   <data key="d5">12.4342</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="405">
   <data key="d0">university</data>
@@ -3685,7 +3685,7 @@
   <data key="d3">0.45</data>
   <data key="d4">45.0478</data>
   <data key="d5">9.7006</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="409">
   <data key="d0">university</data>
@@ -3703,7 +3703,7 @@
   <data key="d3">0.21</data>
   <data key="d4">43.3186</data>
   <data key="d5">11.3306</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="411">
   <data key="d0">high_school</data>
@@ -3730,7 +3730,7 @@
   <data key="d3">0.35</data>
   <data key="d4">42.4167</data>
   <data key="d5">12.1000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="414">
   <data key="d0">post_graduate</data>
@@ -3739,7 +3739,7 @@
   <data key="d3">0.47</data>
   <data key="d4">45.3500</data>
   <data key="d5">9.2167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="415">
   <data key="d0">university</data>
@@ -3784,7 +3784,7 @@
   <data key="d3">0.23</data>
   <data key="d4">40.2667</data>
   <data key="d5">8.7833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="420">
   <data key="d0">Unknown</data>
@@ -3874,7 +3874,7 @@
   <data key="d3">0.25</data>
   <data key="d4">45.5333</data>
   <data key="d5">9.4833</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="430">
   <data key="d0">university</data>
@@ -3901,7 +3901,7 @@
   <data key="d3">0.29</data>
   <data key="d4">37.8333</data>
   <data key="d5">15.2833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="433">
   <data key="d0">Unknown</data>
@@ -4081,7 +4081,7 @@
   <data key="d3">0.21</data>
   <data key="d4">43.8667</data>
   <data key="d5">7.8500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="453">
   <data key="d0">post_graduate</data>
@@ -4144,7 +4144,7 @@
   <data key="d3">0.47</data>
   <data key="d4">46.1281</data>
   <data key="d5">12.8850</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="460">
   <data key="d0">Unknown</data>
@@ -4162,7 +4162,7 @@
   <data key="d3">0.22</data>
   <data key="d4">45.8775</data>
   <data key="d5">8.4089</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="462">
   <data key="d0">Unknown</data>
@@ -4180,7 +4180,7 @@
   <data key="d3">0.3</data>
   <data key="d4">44.2167</data>
   <data key="d5">9.9667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="464">
   <data key="d0">post_graduate</data>
@@ -4234,7 +4234,7 @@
   <data key="d3">0.34</data>
   <data key="d4">45.4333</data>
   <data key="d5">11.7833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="470">
   <data key="d0">high_school</data>
@@ -4306,7 +4306,7 @@
   <data key="d3">0.32</data>
   <data key="d4">40.9167</data>
   <data key="d5">14.3500</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="478">
   <data key="d0">post_graduate</data>
@@ -4351,7 +4351,7 @@
   <data key="d3">0.43</data>
   <data key="d4">40.9618</data>
   <data key="d5">15.8148</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="483">
   <data key="d0">post_graduate</data>
@@ -4396,7 +4396,7 @@
   <data key="d3">0.26</data>
   <data key="d4">36.7833</data>
   <data key="d5">14.9000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="488">
   <data key="d0">university</data>
@@ -4432,7 +4432,7 @@
   <data key="d3">0.2</data>
   <data key="d4">44.5500</data>
   <data key="d5">11.5333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="492">
   <data key="d0">Unknown</data>
@@ -4459,7 +4459,7 @@
   <data key="d3">0.47</data>
   <data key="d4">43.3333</data>
   <data key="d5">11.7333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="495">
   <data key="d0">post_graduate</data>
@@ -4504,7 +4504,7 @@
   <data key="d3">0.36</data>
   <data key="d4">45.1333</data>
   <data key="d5">10.0247</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="500">
   <data key="d0">post_graduate</data>
@@ -4513,7 +4513,7 @@
   <data key="d3">0.47</data>
   <data key="d4">37.6167</data>
   <data key="d5">15.0833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="501">
   <data key="d0">post_graduate</data>
@@ -4540,7 +4540,7 @@
   <data key="d3">0.46</data>
   <data key="d4">44.8015</data>
   <data key="d5">10.3280</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="504">
   <data key="d0">high_school</data>
@@ -4603,7 +4603,7 @@
   <data key="d3">0.31</data>
   <data key="d4">45.7167</data>
   <data key="d5">8.6333</data>
-  <data key="d6">green</data>
+  <data key="d6">blue</data>
 </node>
 <node id="511">
   <data key="d0">post_graduate</data>
@@ -4666,7 +4666,7 @@
   <data key="d3">0.2</data>
   <data key="d4">42.5500</data>
   <data key="d5">12.4167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="518">
   <data key="d0">post_graduate</data>
@@ -4693,7 +4693,7 @@
   <data key="d3">0.42</data>
   <data key="d4">45.5333</data>
   <data key="d5">9.4833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="521">
   <data key="d0">Unknown</data>
@@ -4774,7 +4774,7 @@
   <data key="d3">0.42</data>
   <data key="d4">43.6333</data>
   <data key="d5">13.4000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="530">
   <data key="d0">university</data>
@@ -4801,7 +4801,7 @@
   <data key="d3">0.22</data>
   <data key="d4">41.6867</data>
   <data key="d5">12.7775</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="533">
   <data key="d0">post_graduate</data>
@@ -4828,7 +4828,7 @@
   <data key="d3">0.46</data>
   <data key="d4">42.0411</data>
   <data key="d5">13.4397</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="536">
   <data key="d0">Unknown</data>
@@ -4837,7 +4837,7 @@
   <data key="d3">0.49</data>
   <data key="d4">43.6000</data>
   <data key="d5">13.3333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="537">
   <data key="d0">post_graduate</data>
@@ -4891,7 +4891,7 @@
   <data key="d3">0.33</data>
   <data key="d4">45.4167</data>
   <data key="d5">11.2833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="543">
   <data key="d0">university</data>
@@ -4918,7 +4918,7 @@
   <data key="d3">0.5</data>
   <data key="d4">44.9167</data>
   <data key="d5">7.8500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="546">
   <data key="d0">Unknown</data>
@@ -4981,7 +4981,7 @@
   <data key="d3">0.24</data>
   <data key="d4">44.7000</data>
   <data key="d5">10.6333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="553">
   <data key="d0">university</data>
@@ -4990,7 +4990,7 @@
   <data key="d3">0.22</data>
   <data key="d4">38.0667</data>
   <data key="d5">14.6333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="554">
   <data key="d0">high_school</data>
@@ -5080,7 +5080,7 @@
   <data key="d3">0.47</data>
   <data key="d4">45.5833</data>
   <data key="d5">9.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="564">
   <data key="d0">post_graduate</data>
@@ -5107,7 +5107,7 @@
   <data key="d3">0.24</data>
   <data key="d4">36.9333</data>
   <data key="d5">14.7500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="567">
   <data key="d0">university</data>
@@ -5134,7 +5134,7 @@
   <data key="d3">0.21</data>
   <data key="d4">40.3167</data>
   <data key="d5">9.3333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="570">
   <data key="d0">university</data>
@@ -5188,7 +5188,7 @@
   <data key="d3">0.49</data>
   <data key="d4">44.9000</data>
   <data key="d5">7.6833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="576">
   <data key="d0">university</data>
@@ -5197,7 +5197,7 @@
   <data key="d3">0.31</data>
   <data key="d4">37.1667</data>
   <data key="d5">15.1833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="577">
   <data key="d0">high_school</data>
@@ -5224,7 +5224,7 @@
   <data key="d3">0.39</data>
   <data key="d4">45.5167</data>
   <data key="d5">9.3333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="580">
   <data key="d0">post_graduate</data>
@@ -5305,7 +5305,7 @@
   <data key="d3">0.32</data>
   <data key="d4">43.5644</data>
   <data key="d5">11.5328</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="589">
   <data key="d0">post_graduate</data>
@@ -5332,7 +5332,7 @@
   <data key="d3">0.58</data>
   <data key="d4">39.3000</data>
   <data key="d5">9.1000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="592">
   <data key="d0">Unknown</data>
@@ -5377,7 +5377,7 @@
   <data key="d3">0.29</data>
   <data key="d4">41.0167</data>
   <data key="d5">16.7000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="597">
   <data key="d0">university</data>
@@ -5458,7 +5458,7 @@
   <data key="d3">0.3</data>
   <data key="d4">45.5500</data>
   <data key="d5">8.9500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="606">
   <data key="d0">post_graduate</data>
@@ -5485,7 +5485,7 @@
   <data key="d3">0.45</data>
   <data key="d4">45.9833</data>
   <data key="d5">12.3000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="609">
   <data key="d0">Unknown</data>
@@ -5512,7 +5512,7 @@
   <data key="d3">0.3</data>
   <data key="d4">38.9833</data>
   <data key="d5">16.3167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="612">
   <data key="d0">post_graduate</data>
@@ -5548,7 +5548,7 @@
   <data key="d3">0.25</data>
   <data key="d4">43.7237</data>
   <data key="d5">11.4507</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="616">
   <data key="d0">post_graduate</data>
@@ -5593,7 +5593,7 @@
   <data key="d3">0.29</data>
   <data key="d4">40.7333</data>
   <data key="d5">17.5833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="621">
   <data key="d0">university</data>
@@ -5665,7 +5665,7 @@
   <data key="d3">0.42</data>
   <data key="d4">40.4500</data>
   <data key="d5">17.5000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="629">
   <data key="d0">university</data>
@@ -5746,7 +5746,7 @@
   <data key="d3">0.47</data>
   <data key="d4">37.6667</data>
   <data key="d5">14.8333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="638">
   <data key="d0">Unknown</data>
@@ -5755,7 +5755,7 @@
   <data key="d3">0.23</data>
   <data key="d4">39.1333</data>
   <data key="d5">16.0667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="639">
   <data key="d0">high_school</data>
@@ -5764,7 +5764,7 @@
   <data key="d3">0.44</data>
   <data key="d4">45.6167</data>
   <data key="d5">8.7833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="640">
   <data key="d0">post_graduate</data>
@@ -5854,7 +5854,7 @@
   <data key="d3">0.43</data>
   <data key="d4">46.5000</data>
   <data key="d5">11.3500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="650">
   <data key="d0">Unknown</data>
@@ -6007,7 +6007,7 @@
   <data key="d3">0.22</data>
   <data key="d4">41.6333</data>
   <data key="d5">13.3500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="667">
   <data key="d0">post_graduate</data>
@@ -6079,7 +6079,7 @@
   <data key="d3">0.46</data>
   <data key="d4">37.3186</data>
   <data key="d5">13.6631</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="675">
   <data key="d0">Unknown</data>
@@ -6097,7 +6097,7 @@
   <data key="d3">0.5</data>
   <data key="d4">40.6333</data>
   <data key="d5">17.0333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="677">
   <data key="d0">university</data>
@@ -6124,7 +6124,7 @@
   <data key="d3">0.23</data>
   <data key="d4">44.6500</data>
   <data key="d5">7.8667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="680">
   <data key="d0">post_graduate</data>
@@ -6160,7 +6160,7 @@
   <data key="d3">0.42</data>
   <data key="d4">45.5667</data>
   <data key="d5">9.7667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="684">
   <data key="d0">post_graduate</data>
@@ -6268,7 +6268,7 @@
   <data key="d3">0.48</data>
   <data key="d4">42.0333</data>
   <data key="d5">11.8500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="696">
   <data key="d0">university</data>
@@ -6277,7 +6277,7 @@
   <data key="d3">0.35</data>
   <data key="d4">40.4000</data>
   <data key="d5">17.5667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="697">
   <data key="d0">university</data>
@@ -6421,7 +6421,7 @@
   <data key="d3">0.49</data>
   <data key="d4">44.6781</data>
   <data key="d5">11.0422</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="713">
   <data key="d0">Unknown</data>
@@ -6466,7 +6466,7 @@
   <data key="d3">0.43</data>
   <data key="d4">43.8333</data>
   <data key="d5">10.6167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="718">
   <data key="d0">high_school</data>
@@ -6727,7 +6727,7 @@
   <data key="d3">0.5</data>
   <data key="d4">39.6000</data>
   <data key="d5">16.5167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="747">
   <data key="d0">post_graduate</data>
@@ -6772,7 +6772,7 @@
   <data key="d3">0.43</data>
   <data key="d4">40.7167</data>
   <data key="d5">13.9167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="752">
   <data key="d0">post_graduate</data>
@@ -6844,7 +6844,7 @@
   <data key="d3">0.39</data>
   <data key="d4">43.4167</data>
   <data key="d5">11.7167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="760">
   <data key="d0">university</data>
@@ -6871,7 +6871,7 @@
   <data key="d3">0.22</data>
   <data key="d4">38.0175</data>
   <data key="d5">12.5150</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="763">
   <data key="d0">university</data>
@@ -6880,7 +6880,7 @@
   <data key="d3">0.41</data>
   <data key="d4">43.1833</data>
   <data key="d5">13.8000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="764">
   <data key="d0">Unknown</data>
@@ -7042,7 +7042,7 @@
   <data key="d3">0.29</data>
   <data key="d4">37.3000</data>
   <data key="d5">13.5333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="782">
   <data key="d0">post_graduate</data>
@@ -7078,7 +7078,7 @@
   <data key="d3">0.3</data>
   <data key="d4">45.4386</data>
   <data key="d5">10.9928</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="786">
   <data key="d0">university</data>
@@ -7168,7 +7168,7 @@
   <data key="d3">0.3</data>
   <data key="d4">46.0667</data>
   <data key="d5">12.5833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="796">
   <data key="d0">post_graduate</data>
@@ -7267,7 +7267,7 @@
   <data key="d3">0.46</data>
   <data key="d4">44.9667</data>
   <data key="d5">7.6667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="807">
   <data key="d0">high_school</data>
@@ -7420,7 +7420,7 @@
   <data key="d3">0.37</data>
   <data key="d4">45.4833</data>
   <data key="d5">9.3000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="824">
   <data key="d0">Unknown</data>
@@ -7429,7 +7429,7 @@
   <data key="d3">0.29</data>
   <data key="d4">45.6833</data>
   <data key="d5">12.0167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="825">
   <data key="d0">post_graduate</data>
@@ -7438,7 +7438,7 @@
   <data key="d3">0.56</data>
   <data key="d4">45.7333</data>
   <data key="d5">11.8667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="826">
   <data key="d0">Unknown</data>
@@ -7447,7 +7447,7 @@
   <data key="d3">0.52</data>
   <data key="d4">44.5500</data>
   <data key="d5">11.5333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="827">
   <data key="d0">university</data>
@@ -7465,7 +7465,7 @@
   <data key="d3">0.35</data>
   <data key="d4">45.3167</data>
   <data key="d5">11.8667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="829">
   <data key="d0">high_school</data>
@@ -7483,7 +7483,7 @@
   <data key="d3">0.22</data>
   <data key="d4">45.7167</data>
   <data key="d5">8.7000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="831">
   <data key="d0">Unknown</data>
@@ -7600,7 +7600,7 @@
   <data key="d3">0.49</data>
   <data key="d4">43.6833</data>
   <data key="d5">10.6167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="844">
   <data key="d0">post_graduate</data>
@@ -7672,7 +7672,7 @@
   <data key="d3">0.69</data>
   <data key="d4">41.8167</data>
   <data key="d5">12.8000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="852">
   <data key="d0">Unknown</data>
@@ -7681,7 +7681,7 @@
   <data key="d3">0.34</data>
   <data key="d4">44.6500</data>
   <data key="d5">10.7833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="853">
   <data key="d0">university</data>
@@ -7699,7 +7699,7 @@
   <data key="d3">0.26</data>
   <data key="d4">43.2167</data>
   <data key="d5">11.7333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="855">
   <data key="d0">post_graduate</data>
@@ -7843,7 +7843,7 @@
   <data key="d3">0.24</data>
   <data key="d4">43.6833</data>
   <data key="d5">10.5500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="871">
   <data key="d0">high_school</data>
@@ -7915,7 +7915,7 @@
   <data key="d3">0.34</data>
   <data key="d4">41.0500</data>
   <data key="d5">13.9167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="879">
   <data key="d0">university</data>
@@ -7978,7 +7978,7 @@
   <data key="d3">0.31</data>
   <data key="d4">45.6333</data>
   <data key="d5">11.5500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="886">
   <data key="d0">post_graduate</data>
@@ -8005,7 +8005,7 @@
   <data key="d3">0.37</data>
   <data key="d4">45.8500</data>
   <data key="d5">12.2833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="889">
   <data key="d0">post_graduate</data>
@@ -8014,7 +8014,7 @@
   <data key="d3">0.25</data>
   <data key="d4">41.6833</data>
   <data key="d5">12.7000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="890">
   <data key="d0">university</data>
@@ -8032,7 +8032,7 @@
   <data key="d3">0.3</data>
   <data key="d4">45.4167</data>
   <data key="d5">9.4000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="892">
   <data key="d0">Unknown</data>
@@ -8050,7 +8050,7 @@
   <data key="d3">0.36</data>
   <data key="d4">37.6000</data>
   <data key="d5">15.1167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="894">
   <data key="d0">post_graduate</data>
@@ -8086,7 +8086,7 @@
   <data key="d3">0.69</data>
   <data key="d4">45.6000</data>
   <data key="d5">9.3333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="898">
   <data key="d0">university</data>
@@ -8122,7 +8122,7 @@
   <data key="d3">0.41</data>
   <data key="d4">39.0328</data>
   <data key="d5">16.9825</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="902">
   <data key="d0">post_graduate</data>
@@ -8158,7 +8158,7 @@
   <data key="d3">0.26</data>
   <data key="d4">45.7500</data>
   <data key="d5">11.6500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="906">
   <data key="d0">Unknown</data>
@@ -8176,7 +8176,7 @@
   <data key="d3">0.33</data>
   <data key="d4">40.2500</data>
   <data key="d5">18.2833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="908">
   <data key="d0">university</data>
@@ -8185,7 +8185,7 @@
   <data key="d3">0.29</data>
   <data key="d4">44.6361</data>
   <data key="d5">8.6417</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="909">
   <data key="d0">post_graduate</data>
@@ -8320,7 +8320,7 @@
   <data key="d3">0.39</data>
   <data key="d4">41.7833</data>
   <data key="d5">12.7667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="924">
   <data key="d0">university</data>
@@ -8383,7 +8383,7 @@
   <data key="d3">0.38</data>
   <data key="d4">40.2833</data>
   <data key="d5">18.0833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="931">
   <data key="d0">university</data>
@@ -8446,7 +8446,7 @@
   <data key="d3">0.22</data>
   <data key="d4">45.5000</data>
   <data key="d5">12.1500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="938">
   <data key="d0">university</data>
@@ -8491,7 +8491,7 @@
   <data key="d3">0.21</data>
   <data key="d4">45.6833</data>
   <data key="d5">11.7000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="943">
   <data key="d0">university</data>
@@ -8518,7 +8518,7 @@
   <data key="d3">0.38</data>
   <data key="d4">40.9500</data>
   <data key="d5">14.3667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="946">
   <data key="d0">post_graduate</data>
@@ -8527,7 +8527,7 @@
   <data key="d3">0.29</data>
   <data key="d4">41.7000</data>
   <data key="d5">15.7333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="947">
   <data key="d0">post_graduate</data>
@@ -8554,7 +8554,7 @@
   <data key="d3">0.68</data>
   <data key="d4">41.1056</data>
   <data key="d5">14.2139</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="950">
   <data key="d0">post_graduate</data>
@@ -8563,7 +8563,7 @@
   <data key="d3">0.45</data>
   <data key="d4">43.8167</data>
   <data key="d5">11.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="951">
   <data key="d0">post_graduate</data>
@@ -8617,7 +8617,7 @@
   <data key="d3">0.28</data>
   <data key="d4">40.5333</data>
   <data key="d5">17.5833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="957">
   <data key="d0">university</data>
@@ -8626,7 +8626,7 @@
   <data key="d3">0.23</data>
   <data key="d4">45.7000</data>
   <data key="d5">9.0833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="958">
   <data key="d0">university</data>
@@ -8635,7 +8635,7 @@
   <data key="d3">0.47</data>
   <data key="d4">45.8500</data>
   <data key="d5">12.2833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="959">
   <data key="d0">university</data>
@@ -8752,7 +8752,7 @@
   <data key="d3">0.36</data>
   <data key="d4">40.9500</data>
   <data key="d5">14.3000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="972">
   <data key="d0">post_graduate</data>
@@ -8869,7 +8869,7 @@
   <data key="d3">0.24</data>
   <data key="d4">40.7697</data>
   <data key="d5">14.5947</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="985">
   <data key="d0">university</data>
@@ -8959,7 +8959,7 @@
   <data key="d3">0.23</data>
   <data key="d4">42.2000</data>
   <data key="d5">12.4833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="995">
   <data key="d0">post_graduate</data>
@@ -9040,7 +9040,7 @@
   <data key="d3">0.34</data>
   <data key="d4">41.7333</data>
   <data key="d5">12.9167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1004">
   <data key="d0">university</data>
@@ -9049,7 +9049,7 @@
   <data key="d3">0.26</data>
   <data key="d4">45.4167</data>
   <data key="d5">11.1000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1005">
   <data key="d0">post_graduate</data>
@@ -9076,7 +9076,7 @@
   <data key="d3">0.3</data>
   <data key="d4">46.1667</data>
   <data key="d5">9.8667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1008">
   <data key="d0">post_graduate</data>
@@ -9085,7 +9085,7 @@
   <data key="d3">0.26</data>
   <data key="d4">43.2333</data>
   <data key="d5">13.6833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1009">
   <data key="d0">Unknown</data>
@@ -9094,7 +9094,7 @@
   <data key="d3">0.22</data>
   <data key="d4">43.2167</data>
   <data key="d5">13.3833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1010">
   <data key="d0">Unknown</data>
@@ -9139,7 +9139,7 @@
   <data key="d3">0.36</data>
   <data key="d4">41.8833</data>
   <data key="d5">16.1667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1015">
   <data key="d0">post_graduate</data>
@@ -9157,7 +9157,7 @@
   <data key="d3">0.42</data>
   <data key="d4">43.8833</data>
   <data key="d5">10.7333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1017">
   <data key="d0">post_graduate</data>
@@ -9184,7 +9184,7 @@
   <data key="d3">0.41</data>
   <data key="d4">45.0500</data>
   <data key="d5">10.7500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1020">
   <data key="d0">university</data>
@@ -9310,7 +9310,7 @@
   <data key="d3">0.32</data>
   <data key="d4">41.4667</data>
   <data key="d5">13.1833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1034">
   <data key="d0">post_graduate</data>
@@ -9337,7 +9337,7 @@
   <data key="d3">0.44</data>
   <data key="d4">45.0478</data>
   <data key="d5">9.7006</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1037">
   <data key="d0">university</data>
@@ -9373,7 +9373,7 @@
   <data key="d3">0.44</data>
   <data key="d4">45.7500</data>
   <data key="d5">8.5500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1041">
   <data key="d0">university</data>
@@ -9427,7 +9427,7 @@
   <data key="d3">0.48</data>
   <data key="d4">45.4386</data>
   <data key="d5">10.9928</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1047">
   <data key="d0">post_graduate</data>
@@ -9463,7 +9463,7 @@
   <data key="d3">0.26</data>
   <data key="d4">44.4167</data>
   <data key="d5">11.9833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1051">
   <data key="d0">post_graduate</data>
@@ -9490,7 +9490,7 @@
   <data key="d3">0.22</data>
   <data key="d4">40.7333</data>
   <data key="d5">17.5833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1054">
   <data key="d0">post_graduate</data>
@@ -9535,7 +9535,7 @@
   <data key="d3">0.4</data>
   <data key="d4">40.7536</data>
   <data key="d5">14.5253</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1059">
   <data key="d0">post_graduate</data>
@@ -9589,7 +9589,7 @@
   <data key="d3">0.4</data>
   <data key="d4">40.8167</data>
   <data key="d5">14.5667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1065">
   <data key="d0">university</data>
@@ -9679,7 +9679,7 @@
   <data key="d3">0.49</data>
   <data key="d4">45.1333</data>
   <data key="d5">7.7667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1075">
   <data key="d0">university</data>
@@ -9706,7 +9706,7 @@
   <data key="d3">0.21</data>
   <data key="d4">41.2167</data>
   <data key="d5">16.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1078">
   <data key="d0">university</data>
@@ -9751,7 +9751,7 @@
   <data key="d3">0.28</data>
   <data key="d4">43.6000</data>
   <data key="d5">13.3333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1083">
   <data key="d0">post_graduate</data>
@@ -9796,7 +9796,7 @@
   <data key="d3">0.36</data>
   <data key="d4">43.3167</data>
   <data key="d5">13.5833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1088">
   <data key="d0">high_school</data>
@@ -9805,7 +9805,7 @@
   <data key="d3">0.5</data>
   <data key="d4">45.5167</data>
   <data key="d5">10.0833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1089">
   <data key="d0">Unknown</data>
@@ -9850,7 +9850,7 @@
   <data key="d3">0.21</data>
   <data key="d4">44.4833</data>
   <data key="d5">11.6333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1094">
   <data key="d0">university</data>
@@ -9868,7 +9868,7 @@
   <data key="d3">0.52</data>
   <data key="d4">38.0175</data>
   <data key="d5">12.5150</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1096">
   <data key="d0">post_graduate</data>
@@ -9922,7 +9922,7 @@
   <data key="d3">0.34</data>
   <data key="d4">45.5167</data>
   <data key="d5">11.4500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1102">
   <data key="d0">university</data>
@@ -9958,7 +9958,7 @@
   <data key="d3">0.24</data>
   <data key="d4">45.7333</data>
   <data key="d5">9.6667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1106">
   <data key="d0">high_school</data>
@@ -9967,7 +9967,7 @@
   <data key="d3">0.29</data>
   <data key="d4">43.9500</data>
   <data key="d5">11.3833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1107">
   <data key="d0">Unknown</data>
@@ -9994,7 +9994,7 @@
   <data key="d3">0.44</data>
   <data key="d4">45.5500</data>
   <data key="d5">9.1833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1110">
   <data key="d0">post_graduate</data>
@@ -10021,7 +10021,7 @@
   <data key="d3">0.28</data>
   <data key="d4">45.1564</data>
   <data key="d5">10.7917</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1113">
   <data key="d0">high_school</data>
@@ -10075,7 +10075,7 @@
   <data key="d3">0.51</data>
   <data key="d4">44.4833</data>
   <data key="d5">11.0333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1119">
   <data key="d0">post_graduate</data>
@@ -10102,7 +10102,7 @@
   <data key="d3">0.48</data>
   <data key="d4">45.4167</data>
   <data key="d5">10.4000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1122">
   <data key="d0">Unknown</data>
@@ -10138,7 +10138,7 @@
   <data key="d3">0.21</data>
   <data key="d4">43.8667</data>
   <data key="d5">11.1667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1126">
   <data key="d0">high_school</data>
@@ -10318,7 +10318,7 @@
   <data key="d3">0.25</data>
   <data key="d4">45.5833</data>
   <data key="d5">8.8000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1146">
   <data key="d0">university</data>
@@ -10417,7 +10417,7 @@
   <data key="d3">0.28</data>
   <data key="d4">40.5833</data>
   <data key="d5">9.7000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1157">
   <data key="d0">post_graduate</data>
@@ -10435,7 +10435,7 @@
   <data key="d3">0.66</data>
   <data key="d4">38.3667</data>
   <data key="d5">15.8500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1159">
   <data key="d0">post_graduate</data>
@@ -10507,7 +10507,7 @@
   <data key="d3">0.4</data>
   <data key="d4">45.5167</data>
   <data key="d5">11.4500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1167">
   <data key="d0">post_graduate</data>
@@ -10543,7 +10543,7 @@
   <data key="d3">0.61</data>
   <data key="d4">45.6500</data>
   <data key="d5">11.3000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1171">
   <data key="d0">university</data>
@@ -10552,7 +10552,7 @@
   <data key="d3">0.43</data>
   <data key="d4">41.3000</data>
   <data key="d5">13.0167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1172">
   <data key="d0">high_school</data>
@@ -10642,7 +10642,7 @@
   <data key="d3">0.22</data>
   <data key="d4">45.2000</data>
   <data key="d5">8.9167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1182">
   <data key="d0">post_graduate</data>
@@ -10669,7 +10669,7 @@
   <data key="d3">0.24</data>
   <data key="d4">45.9667</data>
   <data key="d5">12.6167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1185">
   <data key="d0">university</data>
@@ -10687,7 +10687,7 @@
   <data key="d3">0.31</data>
   <data key="d4">37.6167</data>
   <data key="d5">15.1667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1187">
   <data key="d0">Unknown</data>
@@ -10759,7 +10759,7 @@
   <data key="d3">0.41</data>
   <data key="d4">45.6500</data>
   <data key="d5">9.3500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1195">
   <data key="d0">Unknown</data>
@@ -10813,7 +10813,7 @@
   <data key="d3">0.48</data>
   <data key="d4">43.7667</data>
   <data key="d5">11.1000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1201">
   <data key="d0">high_school</data>
@@ -10885,7 +10885,7 @@
   <data key="d3">0.42</data>
   <data key="d4">43.9667</data>
   <data key="d5">12.7333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1209">
   <data key="d0">post_graduate</data>
@@ -10948,7 +10948,7 @@
   <data key="d3">0.22</data>
   <data key="d4">39.1333</data>
   <data key="d5">16.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1216">
   <data key="d0">university</data>
@@ -10957,7 +10957,7 @@
   <data key="d3">0.31</data>
   <data key="d4">45.8833</data>
   <data key="d5">12.7167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1217">
   <data key="d0">post_graduate</data>
@@ -11002,7 +11002,7 @@
   <data key="d3">0.42</data>
   <data key="d4">41.0333</data>
   <data key="d5">16.9833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1222">
   <data key="d0">Unknown</data>
@@ -11020,7 +11020,7 @@
   <data key="d3">0.24</data>
   <data key="d4">45.7333</data>
   <data key="d5">9.2167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1224">
   <data key="d0">university</data>
@@ -11056,7 +11056,7 @@
   <data key="d3">0.35</data>
   <data key="d4">45.5333</data>
   <data key="d5">9.1333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1228">
   <data key="d0">post_graduate</data>
@@ -11065,7 +11065,7 @@
   <data key="d3">0.37</data>
   <data key="d4">42.9189</data>
   <data key="d5">10.7614</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1229">
   <data key="d0">post_graduate</data>
@@ -11119,7 +11119,7 @@
   <data key="d3">0.24</data>
   <data key="d4">40.9000</data>
   <data key="d5">16.8500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1235">
   <data key="d0">post_graduate</data>
@@ -11155,7 +11155,7 @@
   <data key="d3">0.34</data>
   <data key="d4">41.8333</data>
   <data key="d5">15.5667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1239">
   <data key="d0">post_graduate</data>
@@ -11191,7 +11191,7 @@
   <data key="d3">0.36</data>
   <data key="d4">44.9000</data>
   <data key="d5">8.2069</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1243">
   <data key="d0">high_school</data>
@@ -11200,7 +11200,7 @@
   <data key="d3">0.47</data>
   <data key="d4">44.9167</data>
   <data key="d5">7.8500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1244">
   <data key="d0">Unknown</data>
@@ -11218,7 +11218,7 @@
   <data key="d3">0.26</data>
   <data key="d4">44.0000</data>
   <data key="d5">12.6500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1246">
   <data key="d0">post_graduate</data>
@@ -11281,7 +11281,7 @@
   <data key="d3">0.35</data>
   <data key="d4">37.6000</data>
   <data key="d5">12.9667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1253">
   <data key="d0">Unknown</data>
@@ -11344,7 +11344,7 @@
   <data key="d3">0.28</data>
   <data key="d4">45.0850</data>
   <data key="d5">11.6006</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1260">
   <data key="d0">post_graduate</data>
@@ -11380,7 +11380,7 @@
   <data key="d3">0.45</data>
   <data key="d4">37.4019</data>
   <data key="d5">13.6183</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1264">
   <data key="d0">post_graduate</data>
@@ -11398,7 +11398,7 @@
   <data key="d3">0.48</data>
   <data key="d4">45.6833</data>
   <data key="d5">9.5667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1266">
   <data key="d0">post_graduate</data>
@@ -11407,7 +11407,7 @@
   <data key="d3">0.69</data>
   <data key="d4">39.8167</data>
   <data key="d5">16.2000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1267">
   <data key="d0">high_school</data>
@@ -11443,7 +11443,7 @@
   <data key="d3">0.23</data>
   <data key="d4">40.5667</data>
   <data key="d5">17.8000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1271">
   <data key="d0">post_graduate</data>
@@ -11470,7 +11470,7 @@
   <data key="d3">0.35</data>
   <data key="d4">44.7667</data>
   <data key="d5">10.4500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1274">
   <data key="d0">post_graduate</data>
@@ -11596,7 +11596,7 @@
   <data key="d3">0.31</data>
   <data key="d4">45.4333</data>
   <data key="d5">9.0667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1288">
   <data key="d0">post_graduate</data>
@@ -11668,7 +11668,7 @@
   <data key="d3">0.56</data>
   <data key="d4">40.9500</data>
   <data key="d5">14.3000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1296">
   <data key="d0">high_school</data>
@@ -11749,7 +11749,7 @@
   <data key="d3">0.42</data>
   <data key="d4">45.5167</data>
   <data key="d5">9.3667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1305">
   <data key="d0">post_graduate</data>
@@ -11758,7 +11758,7 @@
   <data key="d3">0.27</data>
   <data key="d4">39.1744</data>
   <data key="d5">8.9711</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1306">
   <data key="d0">post_graduate</data>
@@ -11776,7 +11776,7 @@
   <data key="d3">0.31</data>
   <data key="d4">46.1667</data>
   <data key="d5">12.7167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1308">
   <data key="d0">Unknown</data>
@@ -11785,7 +11785,7 @@
   <data key="d3">0.29</data>
   <data key="d4">42.0333</data>
   <data key="d5">11.8500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1309">
   <data key="d0">post_graduate</data>
@@ -11839,7 +11839,7 @@
   <data key="d3">0.28</data>
   <data key="d4">45.6833</data>
   <data key="d5">9.7167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1315">
   <data key="d0">university</data>
@@ -11848,7 +11848,7 @@
   <data key="d3">0.32</data>
   <data key="d4">45.9000</data>
   <data key="d5">11.9167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1316">
   <data key="d0">Unknown</data>
@@ -11857,7 +11857,7 @@
   <data key="d3">0.34</data>
   <data key="d4">43.7833</data>
   <data key="d5">10.3833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1317">
   <data key="d0">post_graduate</data>
@@ -11866,7 +11866,7 @@
   <data key="d3">0.21</data>
   <data key="d4">44.7667</data>
   <data key="d5">7.6833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1318">
   <data key="d0">Unknown</data>
@@ -11884,7 +11884,7 @@
   <data key="d3">0.37</data>
   <data key="d4">41.8167</data>
   <data key="d5">12.8000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1320">
   <data key="d0">post_graduate</data>
@@ -11947,7 +11947,7 @@
   <data key="d3">0.31</data>
   <data key="d4">45.5667</data>
   <data key="d5">9.7667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1327">
   <data key="d0">high_school</data>
@@ -12118,7 +12118,7 @@
   <data key="d3">0.43</data>
   <data key="d4">45.5500</data>
   <data key="d5">8.7667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1346">
   <data key="d0">Unknown</data>
@@ -12136,7 +12136,7 @@
   <data key="d3">0.35</data>
   <data key="d4">40.9000</data>
   <data key="d5">14.3000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1348">
   <data key="d0">post_graduate</data>
@@ -12163,7 +12163,7 @@
   <data key="d3">0.46</data>
   <data key="d4">42.4167</data>
   <data key="d5">14.3000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1351">
   <data key="d0">Unknown</data>
@@ -12172,7 +12172,7 @@
   <data key="d3">0.46</data>
   <data key="d4">44.2333</data>
   <data key="d5">12.0500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1352">
   <data key="d0">post_graduate</data>
@@ -12190,7 +12190,7 @@
   <data key="d3">0.3</data>
   <data key="d4">43.0667</data>
   <data key="d5">10.6167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1354">
   <data key="d0">high_school</data>
@@ -12199,7 +12199,7 @@
   <data key="d3">0.44</data>
   <data key="d4">37.7833</data>
   <data key="d5">14.6000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1355">
   <data key="d0">post_graduate</data>
@@ -12280,7 +12280,7 @@
   <data key="d3">0.27</data>
   <data key="d4">44.3167</data>
   <data key="d5">11.8000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1364">
   <data key="d0">high_school</data>
@@ -12316,7 +12316,7 @@
   <data key="d3">0.33</data>
   <data key="d4">37.6333</data>
   <data key="d5">12.7500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1368">
   <data key="d0">post_graduate</data>
@@ -12334,7 +12334,7 @@
   <data key="d3">0.47</data>
   <data key="d4">45.3833</data>
   <data key="d5">9.1500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1370">
   <data key="d0">post_graduate</data>
@@ -12352,7 +12352,7 @@
   <data key="d3">0.25</data>
   <data key="d4">43.7833</data>
   <data key="d5">10.3833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1372">
   <data key="d0">post_graduate</data>
@@ -12361,7 +12361,7 @@
   <data key="d3">0.43</data>
   <data key="d4">45.6000</data>
   <data key="d5">9.2333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1373">
   <data key="d0">post_graduate</data>
@@ -12469,7 +12469,7 @@
   <data key="d3">0.41</data>
   <data key="d4">45.3500</data>
   <data key="d5">11.9667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1385">
   <data key="d0">Unknown</data>
@@ -12568,7 +12568,7 @@
   <data key="d3">0.47</data>
   <data key="d4">37.6167</data>
   <data key="d5">15.1000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1396">
   <data key="d0">university</data>
@@ -12613,7 +12613,7 @@
   <data key="d3">0.33</data>
   <data key="d4">45.0000</data>
   <data key="d5">7.5333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1401">
   <data key="d0">post_graduate</data>
@@ -12739,7 +12739,7 @@
   <data key="d3">0.39</data>
   <data key="d4">41.0500</data>
   <data key="d5">15.8000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1415">
   <data key="d0">Unknown</data>
@@ -12757,7 +12757,7 @@
   <data key="d3">0.36</data>
   <data key="d4">45.2667</data>
   <data key="d5">11.1333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1417">
   <data key="d0">post_graduate</data>
@@ -12766,7 +12766,7 @@
   <data key="d3">0.39</data>
   <data key="d4">41.3500</data>
   <data key="d5">16.1000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1418">
   <data key="d0">post_graduate</data>
@@ -12784,7 +12784,7 @@
   <data key="d3">0.45</data>
   <data key="d4">44.0000</data>
   <data key="d5">8.1667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1420">
   <data key="d0">post_graduate</data>
@@ -12820,7 +12820,7 @@
   <data key="d3">0.21</data>
   <data key="d4">41.7000</data>
   <data key="d5">15.7333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1424">
   <data key="d0">university</data>
@@ -12829,7 +12829,7 @@
   <data key="d3">0.32</data>
   <data key="d4">44.6833</data>
   <data key="d5">10.8500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1425">
   <data key="d0">post_graduate</data>
@@ -12856,7 +12856,7 @@
   <data key="d3">0.48</data>
   <data key="d4">40.7167</data>
   <data key="d5">13.9167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1428">
   <data key="d0">post_graduate</data>
@@ -12892,7 +12892,7 @@
   <data key="d3">0.34</data>
   <data key="d4">41.3000</data>
   <data key="d5">16.0667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1432">
   <data key="d0">post_graduate</data>
@@ -12919,7 +12919,7 @@
   <data key="d3">0.25</data>
   <data key="d4">44.3531</data>
   <data key="d5">11.7147</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1435">
   <data key="d0">post_graduate</data>
@@ -12937,7 +12937,7 @@
   <data key="d3">0.49</data>
   <data key="d4">40.3919</data>
   <data key="d5">17.4483</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1437">
   <data key="d0">post_graduate</data>
@@ -13045,7 +13045,7 @@
   <data key="d3">0.28</data>
   <data key="d4">42.7565</data>
   <data key="d5">12.6855</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1449">
   <data key="d0">Unknown</data>
@@ -13108,7 +13108,7 @@
   <data key="d3">0.38</data>
   <data key="d4">43.3167</data>
   <data key="d5">10.5167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1456">
   <data key="d0">high_school</data>
@@ -13171,7 +13171,7 @@
   <data key="d3">0.39</data>
   <data key="d4">41.0500</data>
   <data key="d5">15.8000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1463">
   <data key="d0">post_graduate</data>
@@ -13189,7 +13189,7 @@
   <data key="d3">0.3</data>
   <data key="d4">45.6000</data>
   <data key="d5">9.3000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1465">
   <data key="d0">post_graduate</data>
@@ -13216,7 +13216,7 @@
   <data key="d3">0.32</data>
   <data key="d4">45.5786</data>
   <data key="d5">12.2364</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1468">
   <data key="d0">high_school</data>
@@ -13225,7 +13225,7 @@
   <data key="d3">0.45</data>
   <data key="d4">45.7000</data>
   <data key="d5">9.5833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1469">
   <data key="d0">high_school</data>
@@ -13306,7 +13306,7 @@
   <data key="d3">0.24</data>
   <data key="d4">43.2566</data>
   <data key="d5">13.0096</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1478">
   <data key="d0">Unknown</data>
@@ -13324,7 +13324,7 @@
   <data key="d3">0.29</data>
   <data key="d4">39.5333</data>
   <data key="d5">8.6333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1480">
   <data key="d0">Unknown</data>
@@ -13342,7 +13342,7 @@
   <data key="d3">0.51</data>
   <data key="d4">41.5000</data>
   <data key="d5">13.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1482">
   <data key="d0">post_graduate</data>
@@ -13369,7 +13369,7 @@
   <data key="d3">0.28</data>
   <data key="d4">42.2333</data>
   <data key="d5">14.3833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1485">
   <data key="d0">university</data>
@@ -13621,7 +13621,7 @@
   <data key="d3">0.38</data>
   <data key="d4">43.9017</data>
   <data key="d5">10.6898</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1513">
   <data key="d0">university</data>
@@ -13639,7 +13639,7 @@
   <data key="d3">0.44</data>
   <data key="d4">40.3167</data>
   <data key="d5">18.2000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1515">
   <data key="d0">university</data>
@@ -13648,7 +13648,7 @@
   <data key="d3">0.44</data>
   <data key="d4">41.5000</data>
   <data key="d5">15.3333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1516">
   <data key="d0">Unknown</data>
@@ -13666,7 +13666,7 @@
   <data key="d3">0.45</data>
   <data key="d4">40.8500</data>
   <data key="d5">17.1167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1518">
   <data key="d0">post_graduate</data>
@@ -13684,7 +13684,7 @@
   <data key="d3">0.24</data>
   <data key="d4">41.0833</data>
   <data key="d5">14.5000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1520">
   <data key="d0">high_school</data>
@@ -13711,7 +13711,7 @@
   <data key="d3">0.24</data>
   <data key="d4">39.2667</data>
   <data key="d5">16.7000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1523">
   <data key="d0">post_graduate</data>
@@ -13729,7 +13729,7 @@
   <data key="d3">0.33</data>
   <data key="d4">40.9000</data>
   <data key="d5">14.1833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1525">
   <data key="d0">Unknown</data>
@@ -13756,7 +13756,7 @@
   <data key="d3">0.47</data>
   <data key="d4">42.0667</data>
   <data key="d5">12.7667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1528">
   <data key="d0">university</data>
@@ -13801,7 +13801,7 @@
   <data key="d3">0.22</data>
   <data key="d4">45.5833</data>
   <data key="d5">9.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1533">
   <data key="d0">Unknown</data>
@@ -13864,7 +13864,7 @@
   <data key="d3">0.44</data>
   <data key="d4">42.1000</data>
   <data key="d5">11.8000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1540">
   <data key="d0">post_graduate</data>
@@ -13873,7 +13873,7 @@
   <data key="d3">0.37</data>
   <data key="d4">45.5417</data>
   <data key="d5">10.2167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1541">
   <data key="d0">post_graduate</data>
@@ -13963,7 +13963,7 @@
   <data key="d3">0.28</data>
   <data key="d4">44.4167</data>
   <data key="d5">11.9167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1551">
   <data key="d0">post_graduate</data>
@@ -13990,7 +13990,7 @@
   <data key="d3">0.37</data>
   <data key="d4">43.9017</data>
   <data key="d5">10.6898</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1554">
   <data key="d0">post_graduate</data>
@@ -14035,7 +14035,7 @@
   <data key="d3">0.29</data>
   <data key="d4">37.3333</data>
   <data key="d5">14.7500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1559">
   <data key="d0">post_graduate</data>
@@ -14053,7 +14053,7 @@
   <data key="d3">0.36</data>
   <data key="d4">45.5667</data>
   <data key="d5">9.9833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1561">
   <data key="d0">post_graduate</data>
@@ -14080,7 +14080,7 @@
   <data key="d3">0.43</data>
   <data key="d4">45.8775</data>
   <data key="d5">8.4089</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1564">
   <data key="d0">Unknown</data>
@@ -14098,7 +14098,7 @@
   <data key="d3">0.22</data>
   <data key="d4">39.3667</data>
   <data key="d5">16.0333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1566">
   <data key="d0">post_graduate</data>
@@ -14152,7 +14152,7 @@
   <data key="d3">0.38</data>
   <data key="d4">41.4500</data>
   <data key="d5">13.6667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1572">
   <data key="d0">post_graduate</data>
@@ -14233,7 +14233,7 @@
   <data key="d3">0.37</data>
   <data key="d4">45.6500</data>
   <data key="d5">11.8500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1581">
   <data key="d0">university</data>
@@ -14242,7 +14242,7 @@
   <data key="d3">0.47</data>
   <data key="d4">41.6833</data>
   <data key="d5">13.2500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1582">
   <data key="d0">university</data>
@@ -14269,7 +14269,7 @@
   <data key="d3">0.44</data>
   <data key="d4">37.7333</data>
   <data key="d5">15.1833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1585">
   <data key="d0">university</data>
@@ -14278,7 +14278,7 @@
   <data key="d3">0.21</data>
   <data key="d4">44.7000</data>
   <data key="d5">11.4000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1586">
   <data key="d0">post_graduate</data>
@@ -14332,7 +14332,7 @@
   <data key="d3">0.32</data>
   <data key="d4">45.6503</data>
   <data key="d5">13.7703</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1592">
   <data key="d0">post_graduate</data>
@@ -14350,7 +14350,7 @@
   <data key="d3">0.33</data>
   <data key="d4">45.9625</data>
   <data key="d5">12.9792</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1594">
   <data key="d0">post_graduate</data>
@@ -14395,7 +14395,7 @@
   <data key="d3">0.38</data>
   <data key="d4">45.4167</data>
   <data key="d5">9.4000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1599">
   <data key="d0">university</data>
@@ -14413,7 +14413,7 @@
   <data key="d3">0.44</data>
   <data key="d4">39.9333</data>
   <data key="d5">18.3667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1601">
   <data key="d0">university</data>
@@ -14449,7 +14449,7 @@
   <data key="d3">0.37</data>
   <data key="d4">45.0000</data>
   <data key="d5">10.7500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1605">
   <data key="d0">Unknown</data>
@@ -14476,7 +14476,7 @@
   <data key="d3">0.41</data>
   <data key="d4">45.5833</data>
   <data key="d5">12.0500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1608">
   <data key="d0">post_graduate</data>
@@ -14503,7 +14503,7 @@
   <data key="d3">0.38</data>
   <data key="d4">36.9500</data>
   <data key="d5">14.6000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1611">
   <data key="d0">university</data>
@@ -14539,7 +14539,7 @@
   <data key="d3">0.36</data>
   <data key="d4">40.3500</data>
   <data key="d5">14.9833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1615">
   <data key="d0">Unknown</data>
@@ -14557,7 +14557,7 @@
   <data key="d3">0.24</data>
   <data key="d4">46.2164</data>
   <data key="d5">10.1689</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1617">
   <data key="d0">post_graduate</data>
@@ -14575,7 +14575,7 @@
   <data key="d3">0.39</data>
   <data key="d4">45.7333</data>
   <data key="d5">7.3167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1619">
   <data key="d0">Unknown</data>
@@ -14665,7 +14665,7 @@
   <data key="d3">0.56</data>
   <data key="d4">44.9000</data>
   <data key="d5">7.6833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1629">
   <data key="d0">post_graduate</data>
@@ -14800,7 +14800,7 @@
   <data key="d3">0.31</data>
   <data key="d4">42.0911</data>
   <data key="d5">12.5228</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1644">
   <data key="d0">Unknown</data>
@@ -14818,7 +14818,7 @@
   <data key="d3">0.29</data>
   <data key="d4">37.0339</data>
   <data key="d5">14.4942</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1646">
   <data key="d0">post_graduate</data>
@@ -14863,7 +14863,7 @@
   <data key="d3">0.28</data>
   <data key="d4">41.0667</data>
   <data key="d5">16.9167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1651">
   <data key="d0">high_school</data>
@@ -14872,7 +14872,7 @@
   <data key="d3">0.23</data>
   <data key="d4">43.9167</data>
   <data key="d5">12.9000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1652">
   <data key="d0">post_graduate</data>
@@ -14899,7 +14899,7 @@
   <data key="d3">0.49</data>
   <data key="d4">40.9000</data>
   <data key="d5">14.3000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1655">
   <data key="d0">post_graduate</data>
@@ -14971,7 +14971,7 @@
   <data key="d3">0.21</data>
   <data key="d4">40.6169</data>
   <data key="d5">15.0564</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1663">
   <data key="d0">Unknown</data>
@@ -14989,7 +14989,7 @@
   <data key="d3">0.35</data>
   <data key="d4">45.4333</data>
   <data key="d5">11.7833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1665">
   <data key="d0">post_graduate</data>
@@ -14998,7 +14998,7 @@
   <data key="d3">0.21</data>
   <data key="d4">45.4500</data>
   <data key="d5">11.9333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1666">
   <data key="d0">university</data>
@@ -15025,7 +15025,7 @@
   <data key="d3">0.27</data>
   <data key="d4">45.4167</data>
   <data key="d5">11.1000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1669">
   <data key="d0">Unknown</data>
@@ -15088,7 +15088,7 @@
   <data key="d3">0.37</data>
   <data key="d4">40.9167</data>
   <data key="d5">14.3500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1676">
   <data key="d0">post_graduate</data>
@@ -15106,7 +15106,7 @@
   <data key="d3">0.31</data>
   <data key="d4">43.7697</data>
   <data key="d5">13.1369</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1678">
   <data key="d0">university</data>
@@ -15115,7 +15115,7 @@
   <data key="d3">0.27</data>
   <data key="d4">43.7500</data>
   <data key="d5">11.3167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1679">
   <data key="d0">university</data>
@@ -15214,7 +15214,7 @@
   <data key="d3">0.45</data>
   <data key="d4">38.1500</data>
   <data key="d5">14.7333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1690">
   <data key="d0">post_graduate</data>
@@ -15331,7 +15331,7 @@
   <data key="d3">0.22</data>
   <data key="d4">44.3875</data>
   <data key="d5">11.3444</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1703">
   <data key="d0">Unknown</data>
@@ -15349,7 +15349,7 @@
   <data key="d3">0.88</data>
   <data key="d4">41.0000</data>
   <data key="d5">16.8000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1705">
   <data key="d0">post_graduate</data>
@@ -15367,7 +15367,7 @@
   <data key="d3">0.45</data>
   <data key="d4">38.9589</data>
   <data key="d5">17.0956</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1707">
   <data key="d0">post_graduate</data>
@@ -15385,7 +15385,7 @@
   <data key="d3">0.25</data>
   <data key="d4">43.3500</data>
   <data key="d5">12.5667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1709">
   <data key="d0">university</data>
@@ -15403,7 +15403,7 @@
   <data key="d3">0.35</data>
   <data key="d4">45.6000</data>
   <data key="d5">13.7667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1711">
   <data key="d0">Unknown</data>
@@ -15484,7 +15484,7 @@
   <data key="d3">0.27</data>
   <data key="d4">41.1167</data>
   <data key="d5">16.4833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1720">
   <data key="d0">university</data>
@@ -15511,7 +15511,7 @@
   <data key="d3">0.42</data>
   <data key="d4">45.4833</data>
   <data key="d5">9.3000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1723">
   <data key="d0">post_graduate</data>
@@ -15592,7 +15592,7 @@
   <data key="d3">0.49</data>
   <data key="d4">40.7417</data>
   <data key="d5">14.6167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1732">
   <data key="d0">post_graduate</data>
@@ -15745,7 +15745,7 @@
   <data key="d3">0.42</data>
   <data key="d4">41.0000</data>
   <data key="d5">16.8000</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1749">
   <data key="d0">university</data>
@@ -15754,7 +15754,7 @@
   <data key="d3">0.28</data>
   <data key="d4">45.1564</data>
   <data key="d5">10.7917</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1750">
   <data key="d0">high_school</data>
@@ -15790,7 +15790,7 @@
   <data key="d3">0.33</data>
   <data key="d4">42.8833</data>
   <data key="d5">13.9167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1754">
   <data key="d0">post_graduate</data>
@@ -15835,7 +15835,7 @@
   <data key="d3">0.4</data>
   <data key="d4">45.5167</data>
   <data key="d5">10.0833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1759">
   <data key="d0">high_school</data>
@@ -15907,7 +15907,7 @@
   <data key="d3">0.39</data>
   <data key="d4">45.3667</data>
   <data key="d5">10.1333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1767">
   <data key="d0">high_school</data>
@@ -16015,7 +16015,7 @@
   <data key="d3">0.5</data>
   <data key="d4">45.3167</data>
   <data key="d5">9.0167</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1779">
   <data key="d0">post_graduate</data>
@@ -16051,7 +16051,7 @@
   <data key="d3">0.28</data>
   <data key="d4">40.5600</data>
   <data key="d5">8.3150</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1783">
   <data key="d0">university</data>
@@ -16105,7 +16105,7 @@
   <data key="d3">0.22</data>
   <data key="d4">45.7333</data>
   <data key="d5">9.1333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1789">
   <data key="d0">university</data>
@@ -16141,7 +16141,7 @@
   <data key="d3">0.49</data>
   <data key="d4">45.4333</data>
   <data key="d5">12.1333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1793">
   <data key="d0">post_graduate</data>
@@ -16222,7 +16222,7 @@
   <data key="d3">0.4</data>
   <data key="d4">45.4667</data>
   <data key="d5">8.8833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1802">
   <data key="d0">Unknown</data>
@@ -16240,7 +16240,7 @@
   <data key="d3">0.25</data>
   <data key="d4">44.9500</data>
   <data key="d5">12.3167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1804">
   <data key="d0">high_school</data>
@@ -16258,7 +16258,7 @@
   <data key="d3">0.48</data>
   <data key="d4">44.5500</data>
   <data key="d5">7.7333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1806">
   <data key="d0">post_graduate</data>
@@ -16267,7 +16267,7 @@
   <data key="d3">0.23</data>
   <data key="d4">44.5333</data>
   <data key="d5">10.8167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1807">
   <data key="d0">post_graduate</data>
@@ -16276,7 +16276,7 @@
   <data key="d3">0.28</data>
   <data key="d4">43.9000</data>
   <data key="d5">10.8333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1808">
   <data key="d0">post_graduate</data>
@@ -16312,7 +16312,7 @@
   <data key="d3">0.32</data>
   <data key="d4">38.1667</data>
   <data key="d5">13.1000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1812">
   <data key="d0">post_graduate</data>
@@ -16465,7 +16465,7 @@
   <data key="d3">0.46</data>
   <data key="d4">41.0833</data>
   <data key="d5">16.7833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1829">
   <data key="d0">university</data>
@@ -16519,7 +16519,7 @@
   <data key="d3">0.56</data>
   <data key="d4">37.6500</data>
   <data key="d5">14.8667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1835">
   <data key="d0">high_school</data>
@@ -16582,7 +16582,7 @@
   <data key="d3">0.26</data>
   <data key="d4">41.1333</data>
   <data key="d5">16.5500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1842">
   <data key="d0">university</data>
@@ -16663,7 +16663,7 @@
   <data key="d3">0.66</data>
   <data key="d4">38.4000</data>
   <data key="d5">16.0667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1851">
   <data key="d0">high_school</data>
@@ -16690,7 +16690,7 @@
   <data key="d3">0.2</data>
   <data key="d4">45.0500</data>
   <data key="d5">12.0500</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1854">
   <data key="d0">high_school</data>
@@ -16843,7 +16843,7 @@
   <data key="d3">0.34</data>
   <data key="d4">46.1333</data>
   <data key="d5">11.1167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1871">
   <data key="d0">post_graduate</data>
@@ -17005,7 +17005,7 @@
   <data key="d3">0.23</data>
   <data key="d4">43.9333</data>
   <data key="d5">12.7167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1889">
   <data key="d0">post_graduate</data>
@@ -17122,7 +17122,7 @@
   <data key="d3">0.65</data>
   <data key="d4">43.7333</data>
   <data key="d5">10.8000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1902">
   <data key="d0">Unknown</data>
@@ -17131,7 +17131,7 @@
   <data key="d3">0.44</data>
   <data key="d4">43.8167</data>
   <data key="d5">10.6833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1903">
   <data key="d0">Unknown</data>
@@ -17140,7 +17140,7 @@
   <data key="d3">0.41</data>
   <data key="d4">38.0347</data>
   <data key="d5">13.4514</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1904">
   <data key="d0">Unknown</data>
@@ -17149,7 +17149,7 @@
   <data key="d3">0.42</data>
   <data key="d4">45.6000</data>
   <data key="d5">9.1667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1905">
   <data key="d0">post_graduate</data>
@@ -17230,7 +17230,7 @@
   <data key="d3">0.32</data>
   <data key="d4">45.7833</data>
   <data key="d5">13.1167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1914">
   <data key="d0">post_graduate</data>
@@ -17239,7 +17239,7 @@
   <data key="d3">0.47</data>
   <data key="d4">44.7500</data>
   <data key="d5">10.1333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1915">
   <data key="d0">high_school</data>
@@ -17248,7 +17248,7 @@
   <data key="d3">0.34</data>
   <data key="d4">45.4500</data>
   <data key="d5">11.7667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1916">
   <data key="d0">Unknown</data>
@@ -17320,7 +17320,7 @@
   <data key="d3">0.49</data>
   <data key="d4">40.8667</data>
   <data key="d5">14.4000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1924">
   <data key="d0">post_graduate</data>
@@ -17338,7 +17338,7 @@
   <data key="d3">0.22</data>
   <data key="d4">44.4000</data>
   <data key="d5">8.2667</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1926">
   <data key="d0">Unknown</data>
@@ -17365,7 +17365,7 @@
   <data key="d3">0.4</data>
   <data key="d4">44.6936</data>
   <data key="d5">10.2420</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1929">
   <data key="d0">university</data>
@@ -17401,7 +17401,7 @@
   <data key="d3">0.46</data>
   <data key="d4">43.9667</data>
   <data key="d5">11.1167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1933">
   <data key="d0">Unknown</data>
@@ -17428,7 +17428,7 @@
   <data key="d3">0.24</data>
   <data key="d4">45.6333</data>
   <data key="d5">11.5500</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1936">
   <data key="d0">Unknown</data>
@@ -17608,7 +17608,7 @@
   <data key="d3">0.28</data>
   <data key="d4">45.5478</data>
   <data key="d5">8.8867</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1956">
   <data key="d0">Unknown</data>
@@ -17635,7 +17635,7 @@
   <data key="d3">0.38</data>
   <data key="d4">37.4047</data>
   <data key="d5">13.5339</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1959">
   <data key="d0">university</data>
@@ -17644,7 +17644,7 @@
   <data key="d3">0.31</data>
   <data key="d4">44.3500</data>
   <data key="d5">9.2333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1960">
   <data key="d0">high_school</data>
@@ -17662,7 +17662,7 @@
   <data key="d3">0.34</data>
   <data key="d4">42.4000</data>
   <data key="d5">12.8667</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1962">
   <data key="d0">Unknown</data>
@@ -17716,7 +17716,7 @@
   <data key="d3">0.35</data>
   <data key="d4">45.7000</data>
   <data key="d5">9.3333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1968">
   <data key="d0">university</data>
@@ -17734,7 +17734,7 @@
   <data key="d3">0.43</data>
   <data key="d4">42.2167</data>
   <data key="d5">12.7333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1970">
   <data key="d0">university</data>
@@ -17752,7 +17752,7 @@
   <data key="d3">0.33</data>
   <data key="d4">45.0167</data>
   <data key="d5">7.5833</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1972">
   <data key="d0">post_graduate</data>
@@ -17761,7 +17761,7 @@
   <data key="d3">0.2</data>
   <data key="d4">45.5833</data>
   <data key="d5">12.6833</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1973">
   <data key="d0">post_graduate</data>
@@ -17860,7 +17860,7 @@
   <data key="d3">0.24</data>
   <data key="d4">45.0500</data>
   <data key="d5">9.4333</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1984">
   <data key="d0">Unknown</data>
@@ -17869,7 +17869,7 @@
   <data key="d3">0.47</data>
   <data key="d4">44.5333</data>
   <data key="d5">11.0167</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1985">
   <data key="d0">Unknown</data>
@@ -17896,7 +17896,7 @@
   <data key="d3">0.58</data>
   <data key="d4">40.6333</data>
   <data key="d5">17.9333</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1988">
   <data key="d0">university</data>
@@ -17923,7 +17923,7 @@
   <data key="d3">0.33</data>
   <data key="d4">41.4575</data>
   <data key="d5">12.6611</data>
-  <data key="d6">blue</data>
+  <data key="d6">red</data>
 </node>
 <node id="1991">
   <data key="d0">university</data>
@@ -17959,7 +17959,7 @@
   <data key="d3">0.42</data>
   <data key="d4">44.7667</data>
   <data key="d5">10.6000</data>
-  <data key="d6">red</data>
+  <data key="d6">blue</data>
 </node>
 <node id="1995">
   <data key="d0">Unknown</data>

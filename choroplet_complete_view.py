@@ -1,9 +1,12 @@
 import simulation_artificial_model as sam
 import sys
 import os
+import mpld3
+from mpld3 import plugins
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'Visualization')))
 from Visualization import italy_complete_view_with_cities as icvc
 import geopandas as gpd
+import htmlmin
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
@@ -25,7 +28,6 @@ def get_legend_handles_labels(ax):
         if isinstance(handle, matplotlib.patches.Patch):
             legend_handles.append(handle)
     return legend_handles, labels
-
 
 def _add_legend_for_infected(ax, ticks, labels, max_count_infected):
     legend_handles = [
@@ -234,10 +236,20 @@ def create_complete_choroplet_view(index_iteration, test):
     ax1.legend(all_handles, all_labels, loc='lower left')
 
     # Imposta il titolo 
-    ax1.set_title('Infected', loc='center')
-    ax2.set_title('Recovered', loc='center')
-    ax3.set_title('Susceptible', loc='center')
-
+    ax1.set_title('Infected in test ' + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
+    ax2.set_title('Recovered in test ' + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
+    ax3.set_title('Susceptible in test '+ str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
+    
     plt.savefig("Visualization/img_output/choroplet_complete_view_"+ str(test) +".png")
+    #plt.show()
 
-    plt.show()    
+    # Salva il grafico in un file HTML
+    html_str = mpld3.fig_to_html(plt.gcf(), template_type='general')
+
+    # Minifica l'HTML
+    minified_html = htmlmin.minify(html_str)
+
+    with open("Visualization/html_output/choroplet_complete_view_"+ str(test) +".html", "w") as f:
+        f.write(minified_html)
+
+    
