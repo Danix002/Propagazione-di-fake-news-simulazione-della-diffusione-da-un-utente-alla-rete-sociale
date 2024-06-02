@@ -34,7 +34,7 @@ def print_test_results(name_test, iterations, initial_status_count):
             node_delta_variation[1] = iterations[i]["node_count"][1] - initial_status_count[1]
             node_delta_variation[2] = iterations[i]["node_count"][2] - initial_status_count[2]
             
-        # add 'node_count' in the print of the iteration
+        # add 'node_count' in the print of the iteration with a cute format
         print("Iteration: ", i,"NewSusceptible:", node_delta_variation[0], "NewInfected: ", node_delta_variation[1], "NewRecovered: ", node_delta_variation[2], "node count: ", iterations[i]["node_count"])
         
         
