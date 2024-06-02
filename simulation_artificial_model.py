@@ -49,13 +49,13 @@ for node in g.nodes():
 fake_news_credibility = 0.7
 
 #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
-iterations_test_one = make_test_1_debunking(g, 50, fake_news_credibility)
+iterations_test_one = make_test_1_debunking(g, 50, fake_news_credibility,  150)
 
 #-- DEBUNKING TEST 2: setting the 20% with the highes betweennes centrality as initial seed
-iterations_test_two = make_test_2_debunking(g, 50, fake_news_credibility)
+iterations_test_two = make_test_2_debunking(g, 50, fake_news_credibility, 150)
 
 #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
-iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility)
+iterations_test_three = make_test_3_debunking(g, 50, fake_news_credibility, 150)
 
 
 def get_infected_node():

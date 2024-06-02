@@ -113,7 +113,7 @@ def _build_test_model(g, fake_news_credibility):
 
     return model, config
 
-def make_test_1_debunking(g, num_iterations, fake_news_credibility):
+def make_test_1_debunking(g, num_iterations, fake_news_credibility, num_hub):
     #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
     
     model, config = _build_test_model(g, fake_news_credibility)
@@ -122,12 +122,8 @@ def make_test_1_debunking(g, num_iterations, fake_news_credibility):
     # Get the degree centrality of the nodes
     degree_centrality = nx.degree_centrality(g)
 
-    # Get the nodes (10%) with the highest degree centrality
-    num_nodes = g.number_of_nodes()
-    num_hub_nodes = math.ceil(num_nodes * 0.1)
-
     hub_nodes = sorted(degree_centrality, key=degree_centrality.get, reverse=True)
-    sorted_hubs = hub_nodes[:num_hub_nodes]
+    sorted_hubs = hub_nodes[:num_hub]
 
     # Add the hub nodes to the initial seed
     for node in sorted_hubs:
@@ -148,14 +144,17 @@ def make_test_1_debunking(g, num_iterations, fake_news_credibility):
     build_trend_plot(model, iterations, 1)
     return iterations
 
-def make_test_2_debunking(g, num_iterations, fake_news_credibility):
+def make_test_2_debunking(g, num_iterations, fake_news_credibility, num_bridging_nodes):
     #-- DEBUNKING TEST 2: setting the 20% with the highest betweennes centrality as initial seed
     model, config = _build_test_model(g, fake_news_credibility)
     intial_seed = []
     betweenness_centrality = nx.betweenness_centrality(g, normalized=True)
 
+    """
     num_nodes = g.number_of_nodes()
     num_bridging_nodes = math.ceil(num_nodes * 0.1)
+    """
+
 
     sorted_nodes = sorted(betweenness_centrality, key=betweenness_centrality.get, reverse=True)
     bridging_nodes = sorted_nodes[:num_bridging_nodes]
@@ -182,13 +181,16 @@ def make_test_2_debunking(g, num_iterations, fake_news_credibility):
     
     return iterations
 
-def make_test_3_debunking(g, num_iterations, fake_news_credibility):
+def make_test_3_debunking(g, num_iterations, fake_news_credibility, num_initial_seed):
     #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
     model, config = _build_test_model(g, fake_news_credibility)
     intial_seed = []
+    
+    """
     num_nodes = g.number_of_nodes()
     num_random_nodes = math.ceil(num_nodes * 0.1)
-    random_nodes = random.sample(list(g.nodes()), num_random_nodes)
+    """
+    random_nodes = random.sample(list(g.nodes()), num_initial_seed)
 
     # Add the hub nodes to the initial seed
     for node in random_nodes:
