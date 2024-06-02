@@ -22,7 +22,6 @@ def _custom_iteration(model, graph, fake_news_credibility):
     #add dict_new status to the current iteration status
     for key in dict_new_status.keys():
         current_iteration_results["status"][key] = dict_new_status[key]
-    current_iteration_results["status_delta"][0] = count_new_infected
     return current_iteration_results
 
 def custom_iteration_bunch(model, g, num_iterations, fake_news_credibility ): 

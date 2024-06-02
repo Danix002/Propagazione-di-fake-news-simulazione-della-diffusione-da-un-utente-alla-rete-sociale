@@ -22,19 +22,20 @@ def print_test_results(name_test, iterations, initial_status_count):
     
     print("\nINITIAL STATUS ", initial_status_count)
     for i  in range(0, len(iterations)):
-        node_statuses = iterations[i]["status"]
-        count_susceptible = 0
-        count_infected = 0
-        count_recovered = 0
-        for key in node_statuses.keys():
-            if node_statuses[key] == 1:
-                count_infected += 1
-            elif node_statuses[key] == 2:
-                count_recovered += 1
-            else:
-                count_susceptible += 1
+        node_delta_variation = [0, 0, 0]
+        
+        if i > 0:
+            node_delta_variation[0] = iterations[i]["node_count"][0] - iterations[i-1]["node_count"][0]
+            node_delta_variation[1] = iterations[i]["node_count"][1] - iterations[i-1]["node_count"][1]
+            node_delta_variation[2] = iterations[i]["node_count"][2] - iterations[i-1]["node_count"][2]
+            
+        if i==0:
+            node_delta_variation[0] = iterations[i]["node_count"][0] - initial_status_count[0]
+            node_delta_variation[1] = iterations[i]["node_count"][1] - initial_status_count[1]
+            node_delta_variation[2] = iterations[i]["node_count"][2] - initial_status_count[2]
+            
         # add 'node_count' in the print of the iteration
-        print("Iteration: ", i, "newInfected: ", count_infected, "newRecovered: ", count_recovered, "node count: ", iterations[i]["node_count"])
+        print("Iteration: ", i,"NewSusceptible:", node_delta_variation[0], "NewInfected: ", node_delta_variation[1], "NewRecovered: ", node_delta_variation[2], "node count: ", iterations[i]["node_count"])
         
         """
         # if status is the same of the previous iteration for 5 time, print "Stable status"
@@ -62,7 +63,7 @@ def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration 
                     
                     if initial_status[key] == 0:  # State suceptible
                         count_susceptible +=1
-        return {0: count_infected, 1: count_recovered, 2: count_susceptible}
+        return {0: count_susceptible, 1: count_infected, 2: count_recovered}
                     
     for i in range(0, len(iterations)):
         node_statuses = iterations[i]["status"]
