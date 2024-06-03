@@ -78,15 +78,15 @@ def _snowball_sampling(G, start_node, num_nodes):
 def _create_real_network():
     #check if a file graphml file called "real_network_graph" exist in the current folder
     try:
-        real_network = nx.read_graphml('Network/real_network_graph.graphml')
+        real_network = nx.read_graphml('Networks/real_network_graph.graphml')
     except:
         print("Real network not found, creating it from edgelist")
-        real_network = _create_graph_from_edgelist('Network/higgs-retweet_network/higgs-retweet_network.edgelist')       
+        real_network = _create_graph_from_edgelist('Networks/higgs-retweet_network/higgs-retweet_network.edgelist')       
         #create a sampling of 10.000 nodes from the network
         #get node with the highest degree 
         start_node = max(dict(real_network.degree()).items(), key=lambda x: x[1])[0]     
         real_network = _snowball_sampling(real_network, start_node, 10)    
-        nx.write_graphml(real_network, 'real_network_graph.graphml')
+        nx.write_graphml(real_network, 'Networks/real_network_graph.graphml')
     return real_network
 
 
@@ -94,11 +94,11 @@ def _create_artificial_network(number_of_nodes, m=5):
     
     #check if a file graphml file called "artificial_network_graph" exist in the current folder
     try:
-        artificial_network = nx.read_graphml('Network/artificial_network_graph.graphml')  
+        artificial_network = nx.read_graphml('Networks/artificial_network_graph.graphml')  
     except:
         print("Artificial network not found, creating it from edgelist")
         artificial_network = _rank_model_graph_generate(number_of_nodes, m)  
-        nx.write_graphml(artificial_network, 'Network/artificial_network_graph.graphml')  
+        nx.write_graphml(artificial_network, 'Networks/artificial_network_graph.graphml')  
     return artificial_network
 
 def get_simulation_network(getModel = True):
@@ -109,5 +109,3 @@ def get_simulation_network(getModel = True):
     if(getModel):
         return artificial_network
     return real_network
-
-get_simulation_network()
