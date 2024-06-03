@@ -64,4 +64,4 @@ def italy_reference_map_with_cities(show_principal_cities_only, my_ax = None):
 
     #plt.show()
 
-#italy_reference_map_with_cities()
+#italy_reference_map_with_cities(True)
