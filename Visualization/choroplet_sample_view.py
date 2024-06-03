@@ -151,6 +151,7 @@ def create_sample_choroplet_view(status, index_iteration, test):
     ax.set_title(f"{status} in test {test} (iterations n°: {index_iteration})", loc='center')
 
     plt.savefig(f"Visualization/img_output/choroplet_sample_view_{status}_{test}.png")
+    #plt.savefig(f"Visualization/svg_output/choroplet_sample_view_{status}_{test}.svg", format = "svg")
 
     plt.show()
 
