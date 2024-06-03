@@ -24,7 +24,7 @@ import Networks.artificial_real_newtworks_creation as atr
 
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
 #artificial_network = atr.get_simulation_network(getModel = False)
-artificial_network = nx.barabasi_albert_graph(2000, 3)
+artificial_network = nx.barabasi_albert_graph(20000, 3)
 artificial_network, artificial_network = atr._set_all_nodes_attribute(artificial_network, artificial_network)
 
 file_path = 'italy_cities.csv'
@@ -36,19 +36,19 @@ cities = gpd.read_file(file_path)
 fake_news_credibility = 0.7
 
 #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
-iterations_test_one = make_test_1_debunking(artificial_network, 50, fake_news_credibility,  3)
+iterations_test_one = make_test_1_debunking(artificial_network, 50, fake_news_credibility,  150)
 
 #-- DEBUNKING TEST 2: setting the n nodes with the highes betweennes centrality as initial seed
-iterations_test_two = make_test_2_debunking(artificial_network, 50, fake_news_credibility, 3)
+iterations_test_two = make_test_2_debunking(artificial_network, 50, fake_news_credibility, 150)
 
 #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
-iterations_test_three = make_test_3_debunking(artificial_network, 50, fake_news_credibility, 5)
+iterations_test_three = make_test_3_debunking(artificial_network, 50, fake_news_credibility, 150)
 
 #-- DEBUNKING TEST 4: setting the n nodes with the highest eigenvector centrality nodes as initial seed
-iterations_test_four = make_test_4_debunking(artificial_network, 50, fake_news_credibility, 2)
+iterations_test_four = make_test_4_debunking(artificial_network, 50, fake_news_credibility, 150)
 
 #-- DEBUNKING TEST 5: setting the n  nodes with the highest closeness centrality nodes as initial seed
-iterations_test_five = make_test_5_debunking(artificial_network, 50, fake_news_credibility, 3)
+iterations_test_five = make_test_5_debunking(artificial_network, 50, fake_news_credibility, 150)
 
 def get_infected_node(index_iteration, test):
     infected_node = []

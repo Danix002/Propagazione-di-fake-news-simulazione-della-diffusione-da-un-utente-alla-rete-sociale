@@ -145,8 +145,9 @@ def create_complete_choroplet_view(status, index_iteration, test):
     # Aggiungi la legenda
     handles_cities, labels_cities = ax.get_legend_handles_labels()
 
-    if(max_count == 0):
+    if max_count <= 4:
         max_count = 120
+
     step = int(max_count / 4)
     ticks = list(range(0, max_count + 1, step))  # Ticks per la legenda
     labels = [str(i) for i in ticks]  # Etichette per la legenda
@@ -163,6 +164,8 @@ def create_complete_choroplet_view(status, index_iteration, test):
     ax.set_title(status + " in test " + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
 
     plt.savefig("Visualization/img_output/choroplet_complete_view_"+ status + "_" + str(test) +".png")
+    plt.savefig(f"Visualization/svg_output/choroplet_complete_view_{status}_{test}.svg", format = "svg")
+
     plt.show()
 
 

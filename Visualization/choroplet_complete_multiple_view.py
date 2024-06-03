@@ -215,21 +215,21 @@ def create_complete_multiple_choroplet_view(index_iteration, test, cities_flag):
     if(cities_flag == 'Si'):
         handles_cities, labels_cities = ax1.get_legend_handles_labels()
 
-    if(max_count_infected == 0):
+    if(max_count_infected <= 4):
         max_count_infected = 120
     step_for_infected = int(max_count_infected / 4)
     ticks_for_infected = list(range(0, max_count_infected + 1, step_for_infected))  # Ticks per la legenda
     labels_for_infected = [str(i) for i in ticks_for_infected]  # Etichette per la legenda
     legenda_infetti = _add_legend_for_infected(ax1, ticks_for_infected, labels_for_infected, max_count_infected)
 
-    if(max_count_recovered == 0):
+    if(max_count_recovered <= 4):
         max_count_recovered = 120
     step_for_recovered = int(max_count_recovered / 4)
     ticks_for_recovered = list(range(0, max_count_recovered + 1, step_for_recovered))  # Ticks per la legenda
     labels_for_recovered = [str(i) for i in ticks_for_recovered]  # Etichette per la legenda
     _add_legend_for_recovered(ax2, ticks_for_recovered, labels_for_recovered, max_count_recovered, cities_flag)
 
-    if(max_count_susceptible == 0):
+    if(max_count_susceptible <= 4):
         max_count_susceptible = 120
     step_for_susceptible = int(max_count_susceptible / 4)
     ticks_for_susceptible = list(range(0, max_count_susceptible + 1, step_for_susceptible))  # Ticks per la legenda
@@ -256,4 +256,6 @@ def create_complete_multiple_choroplet_view(index_iteration, test, cities_flag):
     ax3.set_title('Susceptible in test '+ str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
     
     plt.savefig("Visualization/img_output/choroplet_complete_multiple_view_"+ str(test) +".png")
+    plt.savefig("Visualization/img_output/choroplet_complete_multiple_view_"+ str(test) +".svg", format = "svg")
+    
     plt.show()

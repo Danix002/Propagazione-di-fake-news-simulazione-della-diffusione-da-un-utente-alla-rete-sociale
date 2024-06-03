@@ -141,8 +141,9 @@ def create_sample_choroplet_view(status, index_iteration, test):
 
     ax.axis('off')
 
-    if max_count == 0:
+    if max_count <= 4:
         max_count = 120
+
     step = int(max_count / 4)
     ticks = list(range(0, max_count + 1, step))
     labels = [str(i) for i in ticks]
@@ -151,9 +152,10 @@ def create_sample_choroplet_view(status, index_iteration, test):
     ax.set_title(f"{status} in test {test} (iterations n°: {index_iteration})", loc='center')
 
     plt.savefig(f"Visualization/img_output/choroplet_sample_view_{status}_{test}.png")
-    #plt.savefig(f"Visualization/svg_output/choroplet_sample_view_{status}_{test}.svg", format = "svg")
+    plt.savefig(f"Visualization/svg_output/choroplet_sample_view_{status}_{test}.svg", format = "svg")
 
     plt.show()
 
 # Run in Jupyter Notebook
 create_sample_choroplet_view(str(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
+
