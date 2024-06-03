@@ -23,7 +23,8 @@ import Networks.artificial_real_newtworks_creation as atr
     
 
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
-artificial_network = atr.get_simulation_network(getModel = False)
+#artificial_network = atr.get_simulation_network(getModel = False)
+artificial_network = atr.get_simulation_network()
 
 file_path = 'italy_cities.csv'
 cities = gpd.read_file(file_path)
