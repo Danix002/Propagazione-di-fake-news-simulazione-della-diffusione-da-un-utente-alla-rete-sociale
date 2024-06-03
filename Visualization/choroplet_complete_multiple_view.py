@@ -42,7 +42,7 @@ def _add_legend_for_infected(ax, ticks, labels, max_count_infected):
     ]
     return ax.legend(handles=legend_handles, title='Infetti', loc='lower right')
 
-def _add_legend_for_recovered(ax, ticks, labels, max_count_recovered):
+def _add_legend_for_recovered(ax, ticks, labels, max_count_recovered, cities_flag):
     legend_handles = [
         mpatches.Patch(
             facecolor=_color_density(tick, max_count_recovered, status='Recovered'),
@@ -52,9 +52,12 @@ def _add_legend_for_recovered(ax, ticks, labels, max_count_recovered):
         )
         for tick, label in zip(ticks, labels)
     ]
-    ax.legend(handles=legend_handles, loc='lower right')
+    if(cities_flag == 'Si'):
+        ax.legend(handles=legend_handles, loc='lower right')
+    if(cities_flag == 'No'):
+        ax.legend(handles=legend_handles, title='Recovered', loc='lower right')
 
-def _add_legend_for_susceptible(ax, ticks, labels,max_count_susceptible):
+def _add_legend_for_susceptible(ax, ticks, labels,max_count_susceptible, cities_flag):
     legend_handles = [
         mpatches.Patch(
             facecolor=_color_density(tick, max_count_susceptible, status='Susceptible'),
@@ -64,7 +67,10 @@ def _add_legend_for_susceptible(ax, ticks, labels,max_count_susceptible):
         )
         for tick, label in zip(ticks, labels)
     ]
-    ax.legend(handles=legend_handles, loc='lower right')
+    if(cities_flag == 'Si'):
+        ax.legend(handles=legend_handles, loc='lower right')
+    if(cities_flag == 'No'):
+        ax.legend(handles=legend_handles, title='Susceptible', loc='lower right')
 
 def _count_infected(lat, lng, i, test):
     infected_node = sam.get_infected_node(i, test)
@@ -108,7 +114,7 @@ def _color_density(number, max_count, status):
     #hsv_color[1] *= number / number_of_nodes_in_simulation
     return hex_color
 
-def create_complete_multiple_choroplet_view(index_iteration, test):
+def create_complete_multiple_choroplet_view(index_iteration, test, cities_flag):
     file_path = 'italy_cities.csv'
     cities = gpd.read_file(file_path)
 
@@ -186,7 +192,8 @@ def create_complete_multiple_choroplet_view(index_iteration, test):
 
     grigio_scuro = '#666666'
     for my_ax in [ax1, ax2, ax3]:
-        icvc.italy_reference_map_with_cities(show_principal_cities_only=True, my_ax = my_ax)
+        if(cities_flag == 'Si'):
+            icvc.italy_reference_map_with_cities(show_principal_cities_only=True, my_ax = my_ax)
         for reg in regions_counts:
             specific_region = regioni[regioni["DEN_REG"] == reg['region']]
             if (not specific_region.empty):
@@ -205,7 +212,8 @@ def create_complete_multiple_choroplet_view(index_iteration, test):
 
     # Aggiungi la legenda
     # Ottieni gli handles e le labels dalla legenda delle città
-    handles_cities, labels_cities = ax1.get_legend_handles_labels()
+    if(cities_flag == 'Si'):
+        handles_cities, labels_cities = ax1.get_legend_handles_labels()
 
     if(max_count_infected == 0):
         max_count_infected = 120
@@ -219,22 +227,28 @@ def create_complete_multiple_choroplet_view(index_iteration, test):
     step_for_recovered = int(max_count_recovered / 4)
     ticks_for_recovered = list(range(0, max_count_recovered + 1, step_for_recovered))  # Ticks per la legenda
     labels_for_recovered = [str(i) for i in ticks_for_recovered]  # Etichette per la legenda
-    _add_legend_for_recovered(ax2, ticks_for_recovered, labels_for_recovered, max_count_recovered)
+    _add_legend_for_recovered(ax2, ticks_for_recovered, labels_for_recovered, max_count_recovered, cities_flag)
 
     if(max_count_susceptible == 0):
         max_count_susceptible = 120
     step_for_susceptible = int(max_count_susceptible / 4)
     ticks_for_susceptible = list(range(0, max_count_susceptible + 1, step_for_susceptible))  # Ticks per la legenda
     labels_for_susceptible = [str(i) for i in ticks_for_susceptible]  # Etichette per la legenda
-    _add_legend_for_susceptible(ax3, ticks_for_susceptible, labels_for_susceptible, max_count_susceptible)
+    _add_legend_for_susceptible(ax3, ticks_for_susceptible, labels_for_susceptible, max_count_susceptible, cities_flag)
 
-    # Ottieni gli handles e le labels dalla legenda degli infetti
-    handles_infetti, labels_infetti = legenda_infetti.legend_handles, [t.get_text() for t in legenda_infetti.get_texts()]
-    # Combina handles ed etichette
-    all_handles = handles_cities + handles_infetti
-    all_labels = labels_cities + labels_infetti
-    # Aggiungi la legenda combinata all'asse ax1
-    ax1.legend(all_handles, all_labels, loc='lower left')
+    if(cities_flag == 'Si'):
+        # Ottieni gli handles e le labels dalla legenda degli infetti
+        handles_infetti, labels_infetti = legenda_infetti.legend_handles, [t.get_text() for t in legenda_infetti.get_texts()]
+        # Combina handles ed etichette
+        all_handles = handles_cities + handles_infetti
+        all_labels = labels_cities + labels_infetti
+        # Aggiungi la legenda combinata all'asse ax1
+        ax1.legend(all_handles, all_labels, loc='lower left')
+
+    if(cities_flag == 'No'):
+        ax1.axis('off')
+        ax2.axis('off')
+        ax3.axis('off')
 
     # Imposta il titolo 
     ax1.set_title('Infected in test ' + str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
