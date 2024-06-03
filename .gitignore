@@ -166,3 +166,5 @@ Analysis/debunking_test/test_results/test3/
 Analysis/debunking_test/test_results/test4/
 Analysis/debunking_test/test_results/test5/
 Visualization/img_output/
+Networks/artificial_network_graph.graphml
+Networks/real_network_graph.graphml

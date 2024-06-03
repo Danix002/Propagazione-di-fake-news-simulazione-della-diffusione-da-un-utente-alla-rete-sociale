@@ -21,15 +21,12 @@ import custom_iterations_bunch as cib
 from Analysis.debunking_test.debunking_test_functions import make_test_1_debunking, make_test_2_debunking, make_test_3_debunking, make_test_4_debunking, make_test_5_debunking
 import Networks.artificial_real_newtworks_creation as atr
     
-    
 
 # 1) Creation of a Barabasi-Albert graph with Rank model extension
 artificial_network = atr.get_simulation_network(getModel = False)
 
-
 file_path = 'italy_cities.csv'
 cities = gpd.read_file(file_path)
-
 
 
 # 3) Simulation of the diffusion process on the graph
@@ -156,6 +153,4 @@ def get_susceptible_node(index_iteration, test):
     
     return susceptible_node
 
-def get_number_of_nodes_in_simulation():
-    return n
 
