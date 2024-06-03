@@ -256,6 +256,6 @@ def create_complete_multiple_choroplet_view(index_iteration, test, cities_flag):
     ax3.set_title('Susceptible in test '+ str(test) + " (iterations n°: "+ str(index_iteration) + ")", loc='center')
     
     plt.savefig("Visualization/img_output/choroplet_complete_multiple_view_"+ str(test) +".png")
-    plt.savefig("Visualization/img_output/choroplet_complete_multiple_view_"+ str(test) +".svg", format = "svg")
+    plt.savefig("Visualization/svg_output/choroplet_complete_multiple_view_"+ str(test) +".svg", format = "svg")
     
     plt.show()
