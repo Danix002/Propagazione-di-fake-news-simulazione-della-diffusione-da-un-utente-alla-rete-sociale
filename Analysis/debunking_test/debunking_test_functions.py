@@ -46,7 +46,7 @@ def print_test_results(name_test, iterations, initial_status_count):
     print("\n\n<---------END TEST: ", name_test, "--------->\n")
                  
 def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration = False, initial_status = None):
-    colors = ["blue"] * len(g.nodes)
+   
     
     if only_initial_iteration:
         count_infected = 0
@@ -54,20 +54,17 @@ def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration 
         count_susceptible = 0
         for key in initial_status.keys():
                     if initial_status[key] == 1:  # State infected
-                        colors[key] = 'red'
+                        g.nodes[key]['color'] = 'red'
                         count_infected += 1
                         
                     if initial_status[key] == 2: # State recovered
-                        colors[key] = 'green'
+                        g.nodes[key]['color'] = 'green'
                         count_recovered += 1
                     
                     if initial_status[key] == 0:  # State suceptible
+                        g.nodes[key]['color'] = 'blue'
                         count_susceptible +=1
-                        
-        # Add the 'color' attribute to the nodes
-        for node, color in zip(g.nodes(), colors):
-            g.nodes[node]['color'] = color
-            
+                          
         #write the graph to a file
         nx.write_graphml(g, file_name)
         return {0: count_susceptible, 1: count_infected, 2: count_recovered}
@@ -76,13 +73,12 @@ def write_graph_to_file(g, file_name, iterations = None, only_initial_iteration 
         node_statuses = iterations[i]["status"]
         for key in node_statuses.keys():
             if node_statuses[key] == 1:  # State infected
-                colors[key] = 'red'
+                g.nodes[key]['color'] = 'red'
             if node_statuses[key] == 2: # State recovered
-                colors[key] = 'green'
-                
-    # Add the 'color' attribute to the nodes
-    for node, color in zip(g.nodes(), colors):
-        g.nodes[node]['color'] = color
+                g.nodes[key]['color'] = 'green'
+            if node_statuses[key] == 0:  # State suceptible
+                g.nodes[key]['color'] = 'blue'
+    
         
     #write the graph to a file
     nx.write_graphml(g, file_name)
