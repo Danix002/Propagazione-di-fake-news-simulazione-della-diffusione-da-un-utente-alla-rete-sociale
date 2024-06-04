@@ -97,7 +97,8 @@ def _color_density(number, max_count, status):
         hex_color = '#FFFFFF'
     return hex_color
 
-def create_sample_choroplet_view(status, index_iteration, test):
+def create_sample_choroplet_view(status, index_iteration):
+    test = sam.get_choosed_test()
     file_path = 'italy_cities.csv'
     cities = gpd.read_file(file_path)
 
@@ -157,5 +158,5 @@ def create_sample_choroplet_view(status, index_iteration, test):
     plt.show()
 
 # Run in Jupyter Notebook
-create_sample_choroplet_view(str(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
+create_sample_choroplet_view(str(sys.argv[1]), int(sys.argv[2]))
 

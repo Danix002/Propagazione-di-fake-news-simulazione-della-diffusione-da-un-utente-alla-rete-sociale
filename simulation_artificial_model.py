@@ -28,9 +28,9 @@ def choose_network():
     print("2) Real Network")
     choice = 0
     while choice != '1' and choice != '2':
-        print("Invalid choice, please choose between 1 and 2")
         choice = input()
-        
+        if choice != '1' and choice != '2':
+            print("Invalid choice, please choose between 1 and 2")
     if choice == '1':
         print("You choose the Artificial Network. Simulation is starting...")
         # 1) Creation of a Barabasi-Albert graph with Rank model extension
@@ -198,3 +198,5 @@ def get_susceptible_node(index_iteration, test):
     return susceptible_node
 
 
+def get_choosed_test():
+    return test_simulation

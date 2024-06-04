@@ -70,7 +70,8 @@ def _color_density(number, max_count, status):
     #hsv_color[1] *= number / number_of_nodes_in_simulation
     return hex_color
 
-def create_complete_choroplet_view(status, index_iteration, test):
+def create_complete_choroplet_view(status, index_iteration):
+    test = sam.get_choosed_test()
     file_path = 'italy_cities.csv'
     cities = gpd.read_file(file_path)
 
@@ -170,4 +171,4 @@ def create_complete_choroplet_view(status, index_iteration, test):
 
 
 # Run in Jupyter Notebook
-create_complete_choroplet_view(str(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
+create_complete_choroplet_view(str(sys.argv[1]), int(sys.argv[2]))
