@@ -1,5 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import json
+from networkx.readwrite import json_graph
 
 # A function that takes two graphs as input, calculates number of nodes, number of edges of each graph, and plots the comparison in subplots
 def plot_graph_comparison(model_graph, real_graph):
@@ -42,13 +44,17 @@ def plot_graph_comparison(model_graph, real_graph):
     plt.show()
     fig.savefig('graph_comparison.png')
 
-# Create two graphs
-g1 = nx.barabasi_albert_graph(11, 3)
-g2 = nx.barabasi_albert_graph(10, 1)
+model_net = None
+# read a graph from json file
+with open('artificial_network.json') as f:
+    data = json.load(f)
+    model_net = json_graph.node_link_graph(data)
 
-connectivity = nx.node_connectivity(g1)
-diameter = nx.diameter(g1)
+# read a graph from json file
+real_net = None
+with open('real_network.json') as f:
+    data = json.load(f)
+    real_net = json_graph.node_link_graph(data)
+    
 
-# Plot the comparison
-plot_graph_comparison(g1, g2)
-
+plot_graph_comparison(model_net, real_net)

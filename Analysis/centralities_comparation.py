@@ -4,7 +4,7 @@ import json
 from networkx.readwrite import json_graph
 
 # A function that takes two graphs as input, calculates various centralities, and then plots the comparison
-def plot_centralities(model_graph, real_graph):
+def plot_centralities(model_graph = nx.Graph(), real_graph = nx.Graph()):
     degree_centrality_model = nx.degree_centrality(model_graph)
     degree_centrality_real = nx.degree_centrality(real_graph)
     
@@ -49,11 +49,22 @@ def plot_centralities(model_graph, real_graph):
     plt.show()
     fig.savefig('centralities_comparison.png')
     
-    
+
+model_net = None
 # read a graph from json file
-with open('real_network.json') as f:
+with open('artificial_network.json') as f:
     data = json.load(f)
     model_net = json_graph.node_link_graph(data)
+
+# read a graph from json file
+real_net = None
+with open('real_network.json') as f:
+    data = json.load(f)
+    real_net = json_graph.node_link_graph(data)
+    
+plot_centralities(model_net, real_net)
+
+    
     
 
 

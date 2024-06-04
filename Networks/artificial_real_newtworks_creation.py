@@ -142,7 +142,7 @@ def get_simulation_network(getModel = True):
         data = nx.node_link_data(artificial_network)
         with open('Networks/artificial_network_graph.json', 'w') as outfile:
             json.dump(data, outfile)
-        
+            
     if(getModel):
         return artificial_network
     return real_network

@@ -1,5 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import json
+from networkx.readwrite import json_graph
 
 # A function that takes two graphs as input, calculates the degree of each node, and plots degree distribution comparison
 def plot_degree_distribution(model_graph, real_graph):
@@ -29,13 +31,19 @@ def plot_degree_distribution(model_graph, real_graph):
     fig.savefig('degree_distribution.png')
     
 
-    # Create two graphs
-g1 = nx.barabasi_albert_graph(11, 3)
-g2 = nx.barabasi_albert_graph(10, 1)
+model_net = None
+# read a graph from json file
+with open('artificial_network.json') as f:
+    data = json.load(f)
+    model_net = json_graph.node_link_graph(data)
 
-connectivity = nx.node_connectivity(g1)
-diameter = nx.diameter(g1)
+# read a graph from json file
+real_net = None
+with open('real_network.json') as f:
+    data = json.load(f)
+    real_net = json_graph.node_link_graph(data)
+    
+plot_degree_distribution(model_net, real_net)
 
 
-plot_degree_distribution(g1, g2)
 
