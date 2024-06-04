@@ -103,9 +103,9 @@ def _build_test_model(g, fake_news_credibility):
     model.add_rule("Infected", "Recovered", c2)
 
     # Setting the threshold for each node
-    for i in g.nodes():
-        custom_infection_probability = cib.custom_infection_probability(i, g, fake_news_credibility)
-        config.add_node_configuration("threshold", i, custom_infection_probability-0.1)
+    for key in g.nodes().keys():
+        custom_infection_probability = cib.custom_infection_probability(key, g, fake_news_credibility)
+        config.add_node_configuration("threshold", key, custom_infection_probability-0.1)
 
     return model, config
 

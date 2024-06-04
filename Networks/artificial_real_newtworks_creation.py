@@ -46,8 +46,8 @@ def _rank_model_graph_generate(n, m):
         rank_probabilities = (ranks + 1) / np.sum(ranks + 1)    
         existing_nodes = list(G.nodes())
         chosen_nodes = np.random.choice(existing_nodes, m, replace=False, p=rank_probabilities)
-    for node in chosen_nodes:
-            G.add_edge(new_node, node)      
+        for node in chosen_nodes:
+                G.add_edge(new_node, node)      
     return G
 
 
@@ -58,6 +58,7 @@ def _create_graph_from_edgelist(filename):
         for line in file:     
             node1, node2, weight = line.split()
             G.add_edge(int(node1), int(node2), weight=int(weight))
+    print(G.number_of_nodes())
     return G
 
 
@@ -72,40 +73,70 @@ def _snowball_sampling(G, start_node, num_nodes):
         
     # Generate the subgraph from the sampled nodes
     sampled_subgraph = G.subgraph(nodes).copy()
+    print(sampled_subgraph)
     return sampled_subgraph
 
 
+
+def random_walk(G, start_node, length):
+    walk = [start_node]
+    current_node = start_node
+    for _ in range(length - 1):
+        neighbors = list(G.neighbors(current_node))
+        if neighbors:
+            current_node = random.choice(neighbors)
+            walk.append(current_node)
+        else:
+            break
+    return walk
+
+
+
 def _create_real_network():
+    new_created = False
     #check if a file graphml file called "real_network_graph" exist in the current folder
     try:
         real_network = nx.read_graphml('Networks/real_network_graph.graphml')
     except:
+        new_created = True
         print("Real network not found, creating it from edgelist")
         real_network = _create_graph_from_edgelist('Networks/higgs-retweet_network/higgs-retweet_network.edgelist')       
         #create a sampling of 10.000 nodes from the network
         #get node with the highest degree 
-        start_node = max(dict(real_network.degree()).items(), key=lambda x: x[1])[0]     
-        real_network = _snowball_sampling(real_network, start_node, 10)    
-        nx.write_graphml(real_network, 'Networks/real_network_graph.graphml')
-    return real_network
+        #choice a random node, no with the highest degree
+        start_node = real_network.nodes()
+        #get first node 
+        start_node = list(start_node)[0]
+        print("Start node: ", start_node)
+        real_network = _snowball_sampling(real_network, start_node, 300)
+           
+    return real_network, new_created
 
 
 def _create_artificial_network(number_of_nodes, m=5):
-    
+    new_created = False 
     #check if a file graphml file called "artificial_network_graph" exist in the current folder
     try:
         artificial_network = nx.read_graphml('Networks/artificial_network_graph.graphml')  
     except:
+        new_created = True  
         print("Artificial network not found, creating it from edgelist")
-        artificial_network = _rank_model_graph_generate(number_of_nodes, m)  
-        nx.write_graphml(artificial_network, 'Networks/artificial_network_graph.graphml')  
-    return artificial_network
+        artificial_network = _rank_model_graph_generate(number_of_nodes, m)   
+    return artificial_network, new_created
 
 def get_simulation_network(getModel = True):
-    real_network = _create_real_network()
-    artificial_network = _create_artificial_network(real_network.number_of_nodes(), 3)
+    real_network, real_create = _create_real_network()
+    artificial_network, artificial_create = _create_artificial_network(real_network.number_of_nodes(), 3)
+    
     real_network, artificial_network = _set_all_nodes_attribute(real_network, artificial_network)
- 
+
+    if(real_create):
+        
+        nx.write_graphml(real_network, 'Networks/real_network_graph.graphml')
+        
+    if(artificial_create):
+        nx.write_graphml(artificial_network, 'Networks/artificial_network_graph.graphml') 
+        
     if(getModel):
         return artificial_network
     return real_network
