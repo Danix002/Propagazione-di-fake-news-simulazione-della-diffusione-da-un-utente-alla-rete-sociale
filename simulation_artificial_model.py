@@ -22,9 +22,31 @@ from Analysis.debunking_test.debunking_test_functions import make_test_1_debunki
 import Networks.artificial_real_newtworks_creation as atr
     
 
-# 1) Creation of a Barabasi-Albert graph with Rank model extension
-artificial_network = atr.get_simulation_network(getModel = False)
+def choose_network():
+    print("Choose the network you want to use for the simulation")
+    print("1) Artificial Network")
+    print("2) Real Network")
+    choice = 0
+    while choice != '1' and choice != '2':
+        print("Invalid choice, please choose between 1 and 2")
+        choice = input()
+        
 
+    if choice == '1':
+        print("You chose the Artificial Network. Simulation is starting...")
+        # 1) Creation of a Barabasi-Albert graph with Rank model extension
+        artificial_network = atr.get_simulation_network(getModel = True)
+        return artificial_network
+        
+    if choice == '2':
+        print("You chose the Real Network. Simulation will start!!")
+        # 2) Creation of a real network
+        real_network = atr.get_simulation_network(getModel = False)
+        return real_network
+    
+    return nx.Graph()
+
+simulated_network = choose_network()
 
 file_path = 'italy_cities.csv'
 cities = gpd.read_file(file_path)
@@ -35,23 +57,23 @@ cities = gpd.read_file(file_path)
 fake_news_credibility = 0.7
 
 #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
-iterations_test_one = make_test_1_debunking(artificial_network, 50, fake_news_credibility,  150)
+iterations_test_one = make_test_1_debunking(simulated_network, 50, fake_news_credibility,  150)
 
 #-- DEBUNKING TEST 2: setting the n nodes with the highes betweennes centrality as initial seed
-iterations_test_two = make_test_2_debunking(artificial_network, 50, fake_news_credibility, 150)
+iterations_test_two = make_test_2_debunking(simulated_network, 50, fake_news_credibility, 150)
 
 #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
-iterations_test_three = make_test_3_debunking(artificial_network, 50, fake_news_credibility, 150)
+iterations_test_three = make_test_3_debunking(simulated_network, 50, fake_news_credibility, 150)
 
 
 try:
     #-- DEBUNKING TEST 4: setting the n nodes with the highest eigenvector centrality nodes as initial seed
-    iterations_test_four = make_test_4_debunking(artificial_network, 50, fake_news_credibility, 150)
+    iterations_test_four = make_test_4_debunking(simulated_network, 50, fake_news_credibility, 150)
 except:
     print("Test 4 failed, eigenvector centrality calculation failed")
 
 #-- DEBUNKING TEST 5: setting the n  nodes with the highest closeness centrality nodes as initial seed
-iterations_test_five = make_test_5_debunking(artificial_network, 50, fake_news_credibility, 150)
+iterations_test_five = make_test_5_debunking(simulated_network, 50, fake_news_credibility, 150)
 
 def get_infected_node(index_iteration, test):
     infected_node = []
@@ -60,31 +82,31 @@ def get_infected_node(index_iteration, test):
             node_statuses = iterations_test_one[i]["status"]
             for key in node_statuses.keys():
                 if node_statuses[key] == 1:  # State infected
-                    infected_node.append(artificial_network.nodes()[key])
+                    infected_node.append(simulated_network.nodes()[key])
     if(test == 2):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_two[i]["status"]
             for key in node_statuses.keys():
                 if node_statuses[key] == 1:  # State infected
-                    infected_node.append(artificial_network.nodes()[key])
+                    infected_node.append(simulated_network.nodes()[key])
     if(test == 3):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_three[i]["status"]
             for key in node_statuses.keys():
                 if node_statuses[key] == 1:  # State infected
-                    infected_node.append(artificial_network.nodes()[key])
+                    infected_node.append(simulated_network.nodes()[key])
     if(test == 4):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_four[i]["status"]
             for key in node_statuses.keys():
                 if node_statuses[key] == 1:  # State infected
-                    infected_node.append(artificial_network.nodes()[key])
+                    infected_node.append(simulated_network.nodes()[key])
     if(test == 5):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_five[i]["status"]
             for key in node_statuses.keys():
                 if node_statuses[key] == 1:
-                    infected_node.append(artificial_network.nodes()[key])
+                    infected_node.append(simulated_network.nodes()[key])
                     
     return infected_node
 
@@ -95,31 +117,31 @@ def get_recovered_node(index_iteration, test):
             node_statuses = iterations_test_one[i]["status"]
             for key in node_statuses.keys(): # State recovered
                 if node_statuses[key] == 2:
-                    recovered_node.append(artificial_network.nodes()[key])
+                    recovered_node.append(simulated_network.nodes()[key])
     if(test == 2):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_two[i]["status"]
             for key in node_statuses.keys(): # State recovered
                 if node_statuses[key] == 2:
-                    recovered_node.append(artificial_network.nodes()[key])
+                    recovered_node.append(simulated_network.nodes()[key])
     if(test == 3):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_three[i]["status"]
             for key in node_statuses.keys(): # State recovered
                 if node_statuses[key] == 2:
-                    recovered_node.append(artificial_network.nodes()[key])
+                    recovered_node.append(simulated_network.nodes()[key])
     if(test == 4):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_four[i]["status"]
             for key in node_statuses.keys(): # State recovered
                 if node_statuses[key] == 2:
-                    recovered_node.append(artificial_network.nodes()[key])
+                    recovered_node.append(simulated_network.nodes()[key])
     if(test == 5):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_five[i]["status"]
             for key in node_statuses.keys(): # State recovered
                 if node_statuses[key] == 2:
-                    recovered_node.append(artificial_network.nodes()[key])
+                    recovered_node.append(simulated_network.nodes()[key])
     
     return recovered_node           
 
@@ -130,31 +152,31 @@ def get_susceptible_node(index_iteration, test):
             node_statuses = iterations_test_one[i]["status"]
             for key in node_statuses.keys():  # State susceptible
                 if node_statuses[key] == 0:
-                    susceptible_node.append(artificial_network.nodes()[key])
+                    susceptible_node.append(simulated_network.nodes()[key])
     if(test == 2):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_two[i]["status"]
             for key in node_statuses.keys():  # State susceptible
                 if node_statuses[key] == 0:
-                    susceptible_node.append(artificial_network.nodes()[key])
+                    susceptible_node.append(simulated_network.nodes()[key])
     if(test == 3):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_three[i]["status"]
             for key in node_statuses.keys():  # State susceptible
                 if node_statuses[key] == 0:
-                    susceptible_node.append(artificial_network.nodes()[key])
+                    susceptible_node.append(simulated_network.nodes()[key])
     if(test == 4):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_four[i]["status"]
             for key in node_statuses.keys():  # State susceptible
                 if node_statuses[key] == 0:
-                    susceptible_node.append(artificial_network.nodes()[key])
+                    susceptible_node.append(simulated_network.nodes()[key])
     if(test == 5):
         for i  in range(0, index_iteration):
             node_statuses = iterations_test_five[i]["status"]
             for key in node_statuses.keys():
                 if node_statuses[key] == 0:
-                    susceptible_node.append(artificial_network.nodes()[key])
+                    susceptible_node.append(simulated_network.nodes()[key])
     
     return susceptible_node
 

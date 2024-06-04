@@ -46,13 +46,13 @@ def plot_graph_comparison(model_graph, real_graph):
 
 model_net = None
 # read a graph from json file
-with open('artificial_network.json') as f:
+with open('Networks/artificial_network_graph.json') as f:
     data = json.load(f)
     model_net = json_graph.node_link_graph(data)
 
 # read a graph from json file
 real_net = None
-with open('real_network.json') as f:
+with open('Networks/real_network_graph.json') as f:
     data = json.load(f)
     real_net = json_graph.node_link_graph(data)
     
