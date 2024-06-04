@@ -5,6 +5,8 @@ import geopandas as gpd
 import random
 import sys
 import os
+import json
+from networkx.readwrite import json_graph
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import attribute.age as ag
 import attribute.instruction as ins
@@ -103,12 +105,10 @@ def _create_real_network():
         real_network = _create_graph_from_edgelist('Networks/higgs-retweet_network/higgs-retweet_network.edgelist')       
         #create a sampling of 10.000 nodes from the network
         #get node with the highest degree 
-        #choice a random node, no with the highest degree
-        start_node = real_network.nodes()
-        #get first node 
-        start_node = list(start_node)[0]
-        print("Start node: ", start_node)
-        real_network = _snowball_sampling(real_network, start_node, 300)
+       
+        start_node = random.choice(list(real_network.nodes()))
+
+        real_network = _snowball_sampling(real_network, start_node, 4000)
            
     return real_network, new_created
 
@@ -129,13 +129,19 @@ def get_simulation_network(getModel = True):
     artificial_network, artificial_create = _create_artificial_network(real_network.number_of_nodes(), 3)
     
     real_network, artificial_network = _set_all_nodes_attribute(real_network, artificial_network)
-
+    print("Real network nodes: ", real_network)
+    print("Artificial network nodes: ", artificial_network)
     if(real_create):
-        
         nx.write_graphml(real_network, 'Networks/real_network_graph.graphml')
+        data = nx.node_link_data(real_network)
+        with open('Networks/real_network_graph.json', 'w') as outfile:
+            json.dump(data, outfile)
         
     if(artificial_create):
         nx.write_graphml(artificial_network, 'Networks/artificial_network_graph.graphml') 
+        data = nx.node_link_data(artificial_network)
+        with open('Networks/artificial_network_graph.json', 'w') as outfile:
+            json.dump(data, outfile)
         
     if(getModel):
         return artificial_network

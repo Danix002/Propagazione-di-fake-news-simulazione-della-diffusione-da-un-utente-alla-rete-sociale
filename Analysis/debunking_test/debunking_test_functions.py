@@ -214,7 +214,7 @@ def make_test_4_debunking(g, num_iterations, fake_news_credibility, num_highest_
     model, config = _build_test_model(g, fake_news_credibility)
     intial_seed = []
     
-    eigenvector_centrality = nx.eigenvector_centrality(g)
+    eigenvector_centrality = nx.eigenvector_centrality(g, max_iter=1000)
 
     sorted_nodes = sorted(eigenvector_centrality, key=eigenvector_centrality.get, reverse=True)
     highest_eigenvector_nodes = sorted_nodes[:num_highest_eigenvector]

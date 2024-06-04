@@ -43,8 +43,12 @@ iterations_test_two = make_test_2_debunking(artificial_network, 50, fake_news_cr
 #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
 iterations_test_three = make_test_3_debunking(artificial_network, 50, fake_news_credibility, 150)
 
-#-- DEBUNKING TEST 4: setting the n nodes with the highest eigenvector centrality nodes as initial seed
-iterations_test_four = make_test_4_debunking(artificial_network, 50, fake_news_credibility, 150)
+
+try:
+    #-- DEBUNKING TEST 4: setting the n nodes with the highest eigenvector centrality nodes as initial seed
+    iterations_test_four = make_test_4_debunking(artificial_network, 50, fake_news_credibility, 150)
+except:
+    print("Test 4 failed, eigenvector centrality calculation failed")
 
 #-- DEBUNKING TEST 5: setting the n  nodes with the highest closeness centrality nodes as initial seed
 iterations_test_five = make_test_5_debunking(artificial_network, 50, fake_news_credibility, 150)

@@ -1,5 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import json
+from networkx.readwrite import json_graph
 
 # A function that takes two graphs as input, calculates various centralities, and then plots the comparison
 def plot_centralities(model_graph, real_graph):
@@ -48,11 +50,11 @@ def plot_centralities(model_graph, real_graph):
     fig.savefig('centralities_comparison.png')
     
     
-    # Create two graphs
-g1 = nx.barabasi_albert_graph(11, 3)
-g2 = nx.barabasi_albert_graph(10, 1)
+# read a graph from json file
+with open('real_network.json') as f:
+    data = json.load(f)
+    model_net = json_graph.node_link_graph(data)
+    
 
-connectivity = nx.node_connectivity(g1)
-diameter = nx.diameter(g1)
 
-plot_centralities(g1, g2)
+
