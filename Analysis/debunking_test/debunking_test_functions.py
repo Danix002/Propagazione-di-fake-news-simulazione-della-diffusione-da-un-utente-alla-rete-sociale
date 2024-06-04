@@ -15,6 +15,8 @@ from ndlib.viz.mpl.TrendComparison import DiffusionTrendComparison
 import ndlib.models.ModelConfig as mc
 import ndlib.models.CompositeModel as gc
 import ndlib.models.compartments as cpm
+import json
+from networkx.readwrite import json_graph
 
 def print_test_results(name_test, iterations, initial_status_count):
     # visualize all iteration but merge iteration that have the same status
@@ -134,9 +136,19 @@ def make_test_1_debunking(g, num_iterations, fake_news_credibility, num_hub):
 
     # Visualization of the simulation results
     name_test = "Debunking test 1: setting as initial recovered seed all the hub of the graph"
+    
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test1/inital_status_infection_and_debunking_test_1_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+
     print_test_results(name_test, iterations, initial_status_count)
+    
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test1/final_status_infection_and_debunking_test_1_hubs.graphml", iterations)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test1/final_status_infection_and_debunking_test_1_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     build_trend_plot(model, iterations, 1)
     return iterations
 
@@ -164,6 +176,10 @@ def make_test_2_debunking(g, num_iterations, fake_news_credibility, num_bridging
 
     initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test2/inital_status_infection_and_debunking_test_2_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test2/inital_status_infection_and_debunking_test_2_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     # Esecution of the simulation
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
@@ -173,6 +189,10 @@ def make_test_2_debunking(g, num_iterations, fake_news_credibility, num_bridging
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test2/final_status_infection_and_debunking_test_2_hubs.graphml", iterations)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test2/final_status_infection_and_debunking_test_2_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     build_trend_plot(model, iterations, 2)
     
     return iterations
@@ -197,6 +217,10 @@ def make_test_3_debunking(g, num_iterations, fake_news_credibility, num_initial_
 
     initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test3/inital_status_infection_and_debunking_test_3_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test3/inital_status_infection_and_debunking_test_3_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     # Esecution of the simulation
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
     
@@ -206,6 +230,10 @@ def make_test_3_debunking(g, num_iterations, fake_news_credibility, num_initial_
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test3/final_status_infection_and_debunking_test_3_hubs.graphml", iterations)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test3/final_status_infection_and_debunking_test_3_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     build_trend_plot(model, iterations, 3)
     return iterations
     
@@ -228,6 +256,10 @@ def make_test_4_debunking(g, num_iterations, fake_news_credibility, num_highest_
 
     initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test4/inital_status_infection_and_debunking_test_4_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test4/inital_status_infection_and_debunking_test_4_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     # Esecution of the simulation
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
@@ -237,6 +269,10 @@ def make_test_4_debunking(g, num_iterations, fake_news_credibility, num_highest_
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test4/final_status_infection_and_debunking_test_4_hubs.graphml", iterations)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test4/final_status_infection_and_debunking_test_4_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     build_trend_plot(model, iterations, 4)
     return iterations
 
@@ -259,6 +295,10 @@ def make_test_5_debunking(g, num_iterations, fake_news_credibility, num_highest_
 
     initial_status_count =  write_graph_to_file(g, "Analysis/debunking_test/test_results/test5/inital_status_infection_and_debunking_test_5_hubs.graphml", only_initial_iteration=True, initial_status = model.status)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test5/inital_status_infection_and_debunking_test_5_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     # Esecution of the simulation
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
@@ -268,6 +308,10 @@ def make_test_5_debunking(g, num_iterations, fake_news_credibility, num_highest_
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test5/final_status_infection_and_debunking_test_5_hubs.graphml", iterations)
     
+    data = nx.node_link_data(g)
+    with open('Analysis/debunking_test/test_results/test5/final_status_infection_and_debunking_test_5_hubs.json', 'w') as outfile:
+        json.dump(data, outfile)
+        
     build_trend_plot(model, iterations, 5)
     return iterations
     
