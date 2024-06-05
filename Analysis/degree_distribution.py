@@ -35,13 +35,14 @@ model_net = None
 # read a graph from json file
 with open('artificial_network_graph.json') as f:
     data = json.load(f)
-    model_net = json_graph.node_link_graph(data)
+    model_net = nx.node_link_graph(data)
 
 # read a graph from json file
 real_net = None
 with open('real_network_graph.json') as f:
     data = json.load(f)
-    real_net = json_graph.node_link_graph(data)
+    real_net = nx.node_link_graph(data)
+
     
 plot_degree_distribution(model_net, real_net)
 

@@ -62,6 +62,7 @@ def choose_simulation_test():
     return int(choice)
 
 simulated_network = choose_network()
+print(simulated_network.number_of_nodes())
 test_simulation = choose_simulation_test()
 
 file_path = 'italy_cities.csv'

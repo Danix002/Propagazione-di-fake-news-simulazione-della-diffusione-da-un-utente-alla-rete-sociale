@@ -101,6 +101,8 @@ def _create_real_network():
         start_node = random.choice(list(real_network.nodes()))
 
         real_network = _snowball_sampling(real_network, start_node, 3000)
+        #realable real network in order to have nodes from 0 to 2999
+        real_network = nx.convert_node_labels_to_integers(real_network, first_label=0, ordering='default', label_attribute=None)
            
     return real_network, new_created
 
@@ -122,17 +124,17 @@ def get_simulation_network(getModel = True):
     
     real_network, artificial_network = _set_all_nodes_attribute(real_network, artificial_network)
 
-    if(real_create):
-        nx.write_graphml(real_network, 'Networks/real_network_graph.graphml')
-        data = nx.node_link_data(real_network)
-        with open('Networks/real_network_graph.json', 'w') as outfile:
-            json.dump(data, outfile)
+    #if(real_create):
+    nx.write_graphml(real_network, 'real_network_graph.graphml')
+    data = nx.node_link_data(real_network)
+    with open('real_network_graph.json', 'w') as outfile:
+        json.dump(data, outfile)
         
-    if(artificial_create):
-        nx.write_graphml(artificial_network, 'Networks/artificial_network_graph.graphml') 
-        data = nx.node_link_data(artificial_network)
-        with open('Networks/artificial_network_graph.json', 'w') as outfile:
-            json.dump(data, outfile)
+    #if(artificial_create):
+    nx.write_graphml(artificial_network, 'artificial_network_graph.graphml') 
+    data = nx.node_link_data(artificial_network)
+    with open('artificial_network_graph.json', 'w') as outfile:
+        json.dump(data, outfile)
             
     if(getModel):
         return artificial_network
