@@ -1,11 +1,11 @@
 # Code structure
 
 # Runner files:
-    - Real_vs_Artificial_comparation.ipynb
-    - data_viz_first_part.ipynb
-    - test_visualization.ipynb
-    - main_multiple_choroplet.py
-    - simulation_model.py
+    - Real_vs_Artificial_comparation.ipynb: statistical plot generator
+    - data_viz_first_part.ipynb: choropleth generator
+    - test_visualization.ipynb: choropleth generator (test)
+    - main_multiple_choroplet.py choropleth multiple generator
+    - simulation_model.py: simulation starter (only simulation without plot)
 
 # Explain files:
     - Real_vs_Artificial_comparation.ipynb
