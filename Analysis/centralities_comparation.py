@@ -15,8 +15,8 @@ def plot_centralities(model_graph = nx.Graph(), real_graph = nx.Graph()):
     betweenness_centrality_model = nx.betweenness_centrality(model_graph)
     betweenness_centrality_real = nx.betweenness_centrality(real_graph)
     
-    eigenvector_centrality_model = nx.eigenvector_centrality(model_graph)
-    eigenvector_centrality_real = nx.eigenvector_centrality(real_graph)
+    eigenvector_centrality_model = nx.eigenvector_centrality(model_graph, max_iter=1000)
+    eigenvector_centrality_real = nx.eigenvector_centrality(real_graph, max_iter = 1000)
     
     fig, axs = plt.subplots(2, 2, figsize=(10, 10))
     fig.suptitle('Centralities Comparison between Real and Artificial Network', fontsize=12, fontweight='bold')
