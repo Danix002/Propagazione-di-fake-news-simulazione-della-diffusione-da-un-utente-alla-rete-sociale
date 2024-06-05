@@ -11,7 +11,7 @@
     - Real_vs_Artificial_comparation.ipynb
     - data_viz_first_part.ipynb
 
-# folder:
+# Principal folder:
     - d3.js 
     - Network 
     - Analysis
