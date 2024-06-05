@@ -40,19 +40,6 @@ def _set_all_nodes_attribute(real_network, artificial_network):
     return real_network, artificial_network
 
 
-def _rank_model_graph_generate(n, m):
-    G = nx.complete_graph(m)
-    for new_node in range(m, n):
-        degrees = np.array([G.degree(node) for node in G.nodes()])
-        ranks = np.argsort(degrees)    
-        rank_probabilities = (ranks + 1) / np.sum(ranks + 1)    
-        existing_nodes = list(G.nodes())
-        chosen_nodes = np.random.choice(existing_nodes, m, replace=False, p=rank_probabilities)
-        for node in chosen_nodes:
-                G.add_edge(new_node, node)      
-    return G
-
-
 # Function to read edgelist and create graph
 def _create_graph_from_edgelist(filename):
     G = nx.Graph()  
@@ -60,22 +47,29 @@ def _create_graph_from_edgelist(filename):
         for line in file:     
             node1, node2, weight = line.split()
             G.add_edge(int(node1), int(node2), weight=int(weight))
-    print(G.number_of_nodes())
     return G
 
 
 def _snowball_sampling(G, start_node, num_nodes):
     nodes = set([start_node])
     queue = [start_node]
+  
     while len(nodes) < num_nodes and queue:
         current = queue.pop(0)
         neighbors = set(G.neighbors(current)) - nodes
-        queue.extend(neighbors)
-        nodes.update(neighbors)
+        #add the neighbors to the nodes set, but when len nodes > num_nodes break
+        for node in neighbors:
+            nodes.add(node)
+            queue.append(node)
+            if len(nodes) >= num_nodes:
+                break
+        
+       
+        
         
     # Generate the subgraph from the sampled nodes
     sampled_subgraph = G.subgraph(nodes).copy()
-    print(sampled_subgraph)
+
     return sampled_subgraph
 
 
@@ -103,12 +97,10 @@ def _create_real_network():
         new_created = True
         print("Real network not found, creating it from edgelist")
         real_network = _create_graph_from_edgelist('Networks/higgs-retweet_network/higgs-retweet_network.edgelist')       
-        #create a sampling of 10.000 nodes from the network
-        #get node with the highest degree 
-       
+    
         start_node = random.choice(list(real_network.nodes()))
 
-        real_network = _snowball_sampling(real_network, start_node, 4000)
+        real_network = _snowball_sampling(real_network, start_node, 3000)
            
     return real_network, new_created
 
@@ -120,25 +112,24 @@ def _create_artificial_network(number_of_nodes, m=5):
         artificial_network = nx.read_graphml('Networks/artificial_network_graph.graphml')  
     except:
         new_created = True  
-        print("Artificial network not found, creating it from edgelist")
-        artificial_network = _rank_model_graph_generate(number_of_nodes, m)   
+        print("Artificial network not found, creating it from real network")
+        artificial_network = nx.barabasi_albert_graph(number_of_nodes, m) 
     return artificial_network, new_created
 
 def get_simulation_network(getModel = True):
     real_network, real_create = _create_real_network()
-    artificial_network, artificial_create = _create_artificial_network(real_network.number_of_nodes(), 3)
+    artificial_network, artificial_create = _create_artificial_network(real_network.number_of_nodes(), 30)
     
     real_network, artificial_network = _set_all_nodes_attribute(real_network, artificial_network)
-    print("Real network nodes: ", real_network)
-    print("Artificial network nodes: ", artificial_network)
+
     if(real_create):
-        nx.write_graphml(real_network, 'Analysis/real_network_graph.graphml')
+        nx.write_graphml(real_network, 'Networks/real_network_graph.graphml')
         data = nx.node_link_data(real_network)
         with open('Networks/real_network_graph.json', 'w') as outfile:
             json.dump(data, outfile)
         
     if(artificial_create):
-        nx.write_graphml(artificial_network, 'Analysis/artificial_network_graph.graphml') 
+        nx.write_graphml(artificial_network, 'Networks/artificial_network_graph.graphml') 
         data = nx.node_link_data(artificial_network)
         with open('Networks/artificial_network_graph.json', 'w') as outfile:
             json.dump(data, outfile)

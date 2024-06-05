@@ -5,6 +5,7 @@ from networkx.readwrite import json_graph
 
 # A function that takes two graphs as input, calculates various centralities, and then plots the comparison
 def plot_centralities(model_graph = nx.Graph(), real_graph = nx.Graph()):
+    
     degree_centrality_model = nx.degree_centrality(model_graph)
     degree_centrality_real = nx.degree_centrality(real_graph)
     
@@ -16,6 +17,19 @@ def plot_centralities(model_graph = nx.Graph(), real_graph = nx.Graph()):
     
     eigenvector_centrality_model = nx.eigenvector_centrality(model_graph)
     eigenvector_centrality_real = nx.eigenvector_centrality(real_graph)
+    
+    #write centralities to file.txt divide by model and real
+    with open('centralities_model.txt', 'w') as f:
+        f.write(str(degree_centrality_model))
+        f.write(str(closeness_centrality_model))
+        f.write(str(betweenness_centrality_model))
+        f.write(str(eigenvector_centrality_model))
+    
+    with open('centralities_real.txt', 'w') as f:
+        f.write(str(degree_centrality_real))
+        f.write(str(closeness_centrality_real))
+        f.write(str(betweenness_centrality_real))
+        f.write(str(eigenvector_centrality_real))
     
     fig, axs = plt.subplots(2, 2, figsize=(10, 10))
     fig.suptitle('Centralities Comparison between Real and Artificial Network', fontsize=12, fontweight='bold')
@@ -52,13 +66,13 @@ def plot_centralities(model_graph = nx.Graph(), real_graph = nx.Graph()):
 
 model_net = None
 # read a graph from json file
-with open('Networks/artificial_network_graph.json') as f:
+with open('artificial_network_graph.json') as f:
     data = json.load(f)
     model_net = json_graph.node_link_graph(data)
 
 # read a graph from json file
 real_net = None
-with open('Networks/real_network_graph.json') as f:
+with open('eal_network_graph.json') as f:
     data = json.load(f)
     real_net = json_graph.node_link_graph(data)
     

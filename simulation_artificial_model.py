@@ -31,19 +31,19 @@ def choose_network():
         choice = input()
         if choice != '1' and choice != '2':
             print("Invalid choice, please choose between 1 and 2")
-    if choice == '1':
-        print("You choose the Artificial Network. Simulation is starting...")
-        # 1) Creation of a Barabasi-Albert graph with Rank model extension
-        artificial_network = atr.get_simulation_network(getModel = True)
-        return artificial_network
+        if choice == '1':
+            print("You choose the Artificial Network")
+            # 1) Creation of a Barabasi-Albert graph with Rank model extension
+            artificial_network = atr.get_simulation_network(getModel = True)
+            return artificial_network
+            
+        if choice == '2':
+            print("You choose the Real Network")
+            # 2) Creation of a real network
+            real_network = atr.get_simulation_network(getModel = False)
+            return real_network
         
-    if choice == '2':
-        print("You choose the Real Network")
-        # 2) Creation of a real network
-        real_network = atr.get_simulation_network(getModel = False)
-        return real_network
-    
-    return nx.Graph()
+        return nx.Graph()
 
 def choose_simulation_test():
     print("Choose the simulation test you want to run")
@@ -54,8 +54,9 @@ def choose_simulation_test():
     print("5) Test 5: Closeness Centrality")
     choice = 0
     while choice != '1' and choice != '2' and choice != '3' and choice != '4' and choice != '5':
-        print("Invalid choice, please choose between 1 and 5")
         choice = input()
+        if choice != '1' and choice != '2' and choice != '3' and choice != '4' and choice != '5':
+            print("Invalid choice, please choose between 1 and 5")
     
     print("\nYou choose test ", choice, ". Simulation is starting...") 
     return int(choice)
@@ -68,29 +69,28 @@ cities = gpd.read_file(file_path)
 
 
 # 3) Simulation of the diffusion process on the graph
-
 fake_news_credibility = 0.7
 
 # choose the test specified by the user
 if test_simulation == 1:
     #-- DEBUNKING TEST 1: setting as initial recovered seed all the hub of the graph, using the degree centrality
-    iterations_test_one = make_test_1_debunking(simulated_network, 50, fake_news_credibility,  150)
+    iterations_test_one = make_test_1_debunking(simulated_network, 50, fake_news_credibility,  120)
 if test_simulation == 2:
     #-- DEBUNKING TEST 2: setting the n nodes with the highes betweennes centrality as initial seed
-    iterations_test_two = make_test_2_debunking(simulated_network, 50, fake_news_credibility, 150)
+    iterations_test_two = make_test_2_debunking(simulated_network, 50, fake_news_credibility, 120)
 if test_simulation == 3:
     #-- DEBUNKING TEST 3: setting a random number of nodes as initial seed
-    iterations_test_three = make_test_3_debunking(simulated_network, 50, fake_news_credibility, 150)
+    iterations_test_three = make_test_3_debunking(simulated_network, 50, fake_news_credibility, 120)
 if test_simulation == 4:
     try:
         #-- DEBUNKING TEST 4: setting the n nodes with the highest eigenvector centrality nodes as initial seed
-        iterations_test_four = make_test_4_debunking(simulated_network, 50, fake_news_credibility, 150)
+        iterations_test_four = make_test_4_debunking(simulated_network, 50, fake_news_credibility, 120)
     except:
         print("Test 4 failed, eigenvector centrality calculation failed")
 
 if test_simulation == 5:
     #-- DEBUNKING TEST 5: setting the n  nodes with the highest closeness centrality nodes as initial seed
-    iterations_test_five = make_test_5_debunking(simulated_network, 50, fake_news_credibility, 150)
+    iterations_test_five = make_test_5_debunking(simulated_network, 50, fake_news_credibility, 120)
 
 def get_infected_node(index_iteration, test):
     infected_node = []

@@ -94,7 +94,7 @@ def _build_test_model(g, fake_news_credibility):
     model.add_status("Recovered")
 
     config = mc.Configuration()
-    config.add_model_parameter('fraction_infected', 0.1)
+    config.add_model_parameter('fraction_infected', 0.08)
 
     # Transition from Susceptible to Infected
     c1 = cpm.NodeStochastic(0, triggering_status = "Infected")
@@ -107,7 +107,10 @@ def _build_test_model(g, fake_news_credibility):
     # Setting the threshold for each node
     for key in g.nodes().keys():
         custom_infection_probability = cib.custom_infection_probability(key, g, fake_news_credibility)
-        config.add_node_configuration("threshold", key, custom_infection_probability-0.1)
+        if(custom_infection_probability > 0.3):
+            config.add_node_configuration("threshold", key, custom_infection_probability-0.2)
+        else:
+            config.add_node_configuration("threshold", key, 0.1)
 
     return model, config
 
@@ -135,7 +138,7 @@ def make_test_1_debunking(g, num_iterations, fake_news_credibility, num_hub):
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
     # Visualization of the simulation results
-    name_test = "Debunking test 1: setting as initial recovered seed all the hub of the graph"
+    name_test = "Debunking test 1: setting as initial recovered seed "+ str(num_hub) + " hub of the graph"
     
     data = nx.node_link_data(g)
     with open('Analysis/debunking_test/test_results/test1/inital_status_infection_and_debunking_test_1_hubs.json', 'w') as outfile:
@@ -184,7 +187,7 @@ def make_test_2_debunking(g, num_iterations, fake_news_credibility, num_bridging
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
     # Visualization of the simulation results
-    name_test = "Debunking test 2: setting as initial recovered seed all the local bridges nodes"
+    name_test = "Debunking test 2: setting as initial recovered seed the "+ str(num_bridging_nodes) + " bridges nodes"
     print_test_results(name_test, iterations, initial_status_count)
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test2/final_status_infection_and_debunking_test_2_hubs.graphml", iterations)
@@ -225,7 +228,7 @@ def make_test_3_debunking(g, num_iterations, fake_news_credibility, num_initial_
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
     
     # Visualization of the simulation results
-    name_test = "Debunking test 3: setting a random number of nodes as initial seed"
+    name_test = "Debunking test 3: setting a random number of "+ str(num_initial_seed) + "nodes as initial seed"
     print_test_results(name_test, iterations, initial_status_count)
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test3/final_status_infection_and_debunking_test_3_hubs.graphml", iterations)
@@ -264,7 +267,7 @@ def make_test_4_debunking(g, num_iterations, fake_news_credibility, num_highest_
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
     # Visualization of the simulation results
-    name_test = "Debunking test 4: setting as initial recovered seed the nodes with the highest eigenvector centrality"
+    name_test = "Debunking test 4: setting as initial recovered seed the "+ str(num_highest_eigenvector) + " nodes with the highest eigenvector centrality"
     print_test_results(name_test, iterations, initial_status_count)
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test4/final_status_infection_and_debunking_test_4_hubs.graphml", iterations)
@@ -303,7 +306,7 @@ def make_test_5_debunking(g, num_iterations, fake_news_credibility, num_highest_
     iterations = cib.custom_iteration_bunch(model, g, num_iterations, fake_news_credibility)
 
     # Visualization of the simulation results
-    name_test = "Debunking test 5: setting as initial recovered seed the nodes with the highest closeness centrality"
+    name_test = "Debunking test 5: setting as initial recovered seed the "+ str(num_highest_closeness) + " nodes with the highest closeness centrality"
     print_test_results(name_test, iterations, initial_status_count)
     
     write_graph_to_file(g, "Analysis/debunking_test/test_results/test5/final_status_infection_and_debunking_test_5_hubs.graphml", iterations)
