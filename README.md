@@ -21,5 +21,6 @@
     - covert.py
     - custom_iterations_bunch.py
     - artificial_network_generate.py
+    - attribute folder
 
 

@@ -124,17 +124,17 @@ def get_simulation_network(getModel = True):
     
     real_network, artificial_network = _set_all_nodes_attribute(real_network, artificial_network)
 
-    #if(real_create):
-    nx.write_graphml(real_network, 'real_network_graph.graphml')
-    data = nx.node_link_data(real_network)
-    with open('real_network_graph.json', 'w') as outfile:
-        json.dump(data, outfile)
+    if(real_create):
+        nx.write_graphml(real_network, 'Networks/real_network_graph.graphml')
+        data = nx.node_link_data(real_network)
+        with open('real_network_graph.json', 'w') as outfile:
+            json.dump(data, outfile)
         
-    #if(artificial_create):
-    nx.write_graphml(artificial_network, 'artificial_network_graph.graphml') 
-    data = nx.node_link_data(artificial_network)
-    with open('artificial_network_graph.json', 'w') as outfile:
-        json.dump(data, outfile)
+    if(artificial_create):
+        nx.write_graphml(artificial_network, 'Networks/artificial_network_graph.graphml') 
+        data = nx.node_link_data(artificial_network)
+        with open('artificial_network_graph.json', 'w') as outfile:
+            json.dump(data, outfile)
             
     if(getModel):
         return artificial_network
