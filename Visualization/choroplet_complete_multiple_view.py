@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import simulation_artificial_model as sam
+import simulation_model as sam
 import mpld3
 from mpld3 import plugins
 import italy_complete_view_with_cities as icvc

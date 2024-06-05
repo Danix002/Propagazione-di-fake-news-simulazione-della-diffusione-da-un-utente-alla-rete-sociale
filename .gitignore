@@ -172,3 +172,7 @@ italy.geojson
 Visualization/svg_output/
 Networks/artificial_network_graph.graphml
 Networks/real_network_graph.graphml
+real_network_graph.graphml
+real_network_graph.json
+artificial_network_graph.graphml
+artificial_network_graph.json

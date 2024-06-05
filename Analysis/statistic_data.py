@@ -53,9 +53,11 @@ def plot_graph_comparison(model_graph, real_graph):
     axs[2, 0].set_title('Connectivity')
     axs[2, 0].set_ylabel('Connectivity')
     
+    axs[2, 1].axis('off')
 
     plt.legend()
     plt.show()
+
     fig.savefig('Analysis/statistic_plot/graph_comparison.png')
     
     
@@ -137,8 +139,6 @@ def plot_centralities(model_graph, real_graph):
     axs[1, 1].plot(eigenvector_centrality_real.values(), label='Real Network')
     axs[1, 1].set_title('Eigenvector Centrality')
     axs[1, 1].legend()
-    
-    
     
     plt.show()
     fig.savefig('Analysis/statistic_plot/centralities_comparation_real_vs_artificial_net.png')

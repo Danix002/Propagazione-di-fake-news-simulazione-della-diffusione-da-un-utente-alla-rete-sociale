@@ -1,4 +1,4 @@
-import simulation_artificial_model as sam
+import simulation_model as sam
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'Visualization')))

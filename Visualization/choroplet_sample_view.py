@@ -14,7 +14,7 @@ import matplotlib.patches as mpatches
 import matplotlib as mpl
 mpl.rcParams.update(mpl.rcParamsDefault)
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import simulation_artificial_model as sam
+import simulation_model as sam
 
 regions_counts = [
     {"region": "Abruzzo", "count": 0},
