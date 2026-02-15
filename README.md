@@ -102,15 +102,17 @@ The experimental results are documented in the `real_vs_artificial_comparation.i
   - Buttons for switching between tests.  
   - Zoom and pan features on geographical views.  
 
-![Viz1](images/viz1.png)
-![Viz2](images/viz2.png)
-![Viz3](images/viz3.png)
+![Viz1](img/viz1.png)
+![Viz2](img/viz2.png)
+![Viz3](img/viz3.png)
 
 ## Installation
 
 ```bash
 git clone https://github.com/PatricReineri/Propagation-of-Fake-News-Simulation-from-Different-Nodes-of-a-Graph.git
+
 cd Propagation-of-Fake-News-Simulation-from-Different-Nodes-of-a-Graph
+
 pip install -r requirements.txt
 ```
 
