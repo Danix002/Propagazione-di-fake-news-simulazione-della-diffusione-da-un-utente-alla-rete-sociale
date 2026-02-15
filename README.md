@@ -109,10 +109,6 @@ The experimental results are documented in the `real_vs_artificial_comparation.i
 ## Installation
 
 ```bash
-git clone https://github.com/PatricReineri/Propagation-of-Fake-News-Simulation-from-Different-Nodes-of-a-Graph.git
-
-cd Propagation-of-Fake-News-Simulation-from-Different-Nodes-of-a-Graph
-
 pip install -r requirements.txt
 ```
 
